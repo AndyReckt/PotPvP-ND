@@ -1,0 +1,9 @@
+Mongo:
+  URI: "mongodb://127.0.0.1/PotPvPtestServer"
+  Database: "PotPvPtestServer"
+Redis:
+  Host: localhost
+  Port: 6379
+  Authentication:
+    Enabled: false
+    Password: ""

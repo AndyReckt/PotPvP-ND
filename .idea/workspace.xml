@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="potpvp-nd:jar" />
+    </artifacts-to-build>
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="2bc1f08b-3a85-4ee4-89c3-a72e9b59e95a" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2020.2.2\plugins\maven\lib\maven3" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="1" />
+  </component>
+  <component name="ProjectId" id="1Ucb9XSHXWgs6H97xMys5bTF9Gv" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1572486003413" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/kotlin/com/qrakn/morpheus/game/task" />
+    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.1150748" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyKotlinDeclarationDialog.RECENTS_KEY">
+      <recent name="net.frozenorb.potpvp" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="J:\Minecraft Servers\Source Codes\My Projects\PotPvP-ND By Drizzy\src\main\kotlin\com\qrakn\morpheus\game\task" />
+      <recent name="J:\Minecraft Servers\Source Codes\My Projects\PotPvP-ND By Drizzy\src\main\kotlin\com\qrakn\morpheus" />
+      <recent name="J:\Minecraft Servers\Source Codes\My Projects\PotPvP-ND By Drizzy\src\main\java\net\frozenorb\potpvp" />
+      <recent name="J:\Minecraft Servers\Source Codes\My Projects\PotPvP-ND By Drizzy\src\main\java\net\frozenorb\potpvp\kit" />
+      <recent name="J:\Minecraft Servers\Source Codes\My Projects\PotPvP-ND By Drizzy\src\main\java\net\frozenorb\potpvp\kit\menu\editkit" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="Applet">
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Build PotPvP" type="AntRunConfiguration">
+      <method v="2">
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="potpvp-nd:jar" />
+        </option>
+      </method>
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="TestNG">
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+      <option name="PROGRAM_PARAMETERS" />
+      <predefined_log_file enabled="true" id="idea.log" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2bc1f08b-3a85-4ee4-89c3-a72e9b59e95a" name="Default Changelist" comment="" />
+      <created>1553213960639</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1553213960639</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="500" y="247" key="#BuildArtifactsBeforeRunChooser" timestamp="1614090354132">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="500" y="247" key="#BuildArtifactsBeforeRunChooser/0.0.1440.860@0.0.1440.860" timestamp="1614090354132" />
+    <state x="174" y="0" width="1092" height="860" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1614090370452">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="174" y="0" width="1092" height="860" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1440.860@0.0.1440.860" timestamp="1614090370452" />
+    <state x="525" y="136" key="#com.intellij.ide.util.MemberChooser" timestamp="1615187754401">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="525" y="136" key="#com.intellij.ide.util.MemberChooser/0.0.1440.860@0.0.1440.860" timestamp="1615187754401" />
+    <state x="290" y="364" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1614936687981">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="258" y="416" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1280.984@0.0.1280.984" timestamp="1606845959524" />
+    <state x="290" y="364" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1440.860@0.0.1440.860" timestamp="1614936687981" />
+    <state x="503" y="299" width="436" height="268" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1614938112060">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="503" y="299" width="436" height="268" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1440.860@0.0.1440.860" timestamp="1614938112060" />
+    <state x="516" y="311" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages" timestamp="1614809387056">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="516" y="311" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages/0.0.1440.860@0.0.1440.860" timestamp="1614809387056" />
+    <state x="518" y="221" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1608705925337">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="518" y="221" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1440.860@0.0.1440.860" timestamp="1608705925337" />
+    <state x="370" y="239" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog" timestamp="1606844952692">
+      <screen x="0" y="0" width="1280" height="984" />
+    </state>
+    <state x="370" y="239" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog/0.0.1280.984@0.0.1280.984" timestamp="1606844952692" />
+    <state x="567" y="189" key="#com.intellij.util.ui.classpath.ChooseLibrariesDialog" timestamp="1608547098591">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="567" y="189" key="#com.intellij.util.ui.classpath.ChooseLibrariesDialog/0.0.1440.860@0.0.1440.860" timestamp="1608547098591" />
+    <state x="449" y="140" key="FileChooserDialogImpl" timestamp="1608630210214">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="561" y="252" key="FileChooserDialogImpl/0.0.1280.984@0.0.1280.984" timestamp="1606920394645" />
+    <state x="449" y="140" key="FileChooserDialogImpl/0.0.1440.860@0.0.1440.860" timestamp="1608630210214" />
+    <state width="1397" height="231" key="GridCell.Tab.0.bottom" timestamp="1608537448478">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state width="1220" height="271" key="GridCell.Tab.0.bottom/0.0.1280.984@0.0.1280.984" timestamp="1606951991523" />
+    <state width="1397" height="231" key="GridCell.Tab.0.bottom/0.0.1440.860@0.0.1440.860" timestamp="1608537448478" />
+    <state width="1397" height="231" key="GridCell.Tab.0.center" timestamp="1608537448478">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state width="1220" height="271" key="GridCell.Tab.0.center/0.0.1280.984@0.0.1280.984" timestamp="1606951991522" />
+    <state width="1397" height="231" key="GridCell.Tab.0.center/0.0.1440.860@0.0.1440.860" timestamp="1608537448478" />
+    <state width="1397" height="231" key="GridCell.Tab.0.left" timestamp="1608537448478">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state width="1220" height="271" key="GridCell.Tab.0.left/0.0.1280.984@0.0.1280.984" timestamp="1606951991522" />
+    <state width="1397" height="231" key="GridCell.Tab.0.left/0.0.1440.860@0.0.1440.860" timestamp="1608537448478" />
+    <state width="1397" height="231" key="GridCell.Tab.0.right" timestamp="1608537448478">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state width="1220" height="271" key="GridCell.Tab.0.right/0.0.1280.984@0.0.1280.984" timestamp="1606951991523" />
+    <state width="1397" height="231" key="GridCell.Tab.0.right/0.0.1440.860@0.0.1440.860" timestamp="1608537448478" />
+    <state x="317" y="9" key="SettingsEditor" timestamp="1614362075109">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="282" y="156" key="SettingsEditor/0.0.1280.984@0.0.1280.984" timestamp="1606920429656" />
+    <state x="317" y="9" key="SettingsEditor/0.0.1440.860@0.0.1440.860" timestamp="1614362075109" />
+    <state x="748" y="244" width="628" height="616" key="find.popup" timestamp="1614991619656">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="665" y="315" width="555" height="592" key="find.popup/0.0.1280.984@0.0.1280.984" timestamp="1606857043960" />
+    <state x="748" y="244" width="628" height="616" key="find.popup/0.0.1440.860@0.0.1440.860" timestamp="1614991619656" />
+    <state x="340" y="249" key="refactoring.ChangeSignatureDialog" timestamp="1606843509031">
+      <screen x="0" y="0" width="1280" height="984" />
+    </state>
+    <state x="340" y="249" key="refactoring.ChangeSignatureDialog/0.0.1280.984@0.0.1280.984" timestamp="1606843509031" />
+    <state x="376" y="195" key="run.anything.popup" timestamp="1615187252863">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="376" y="195" key="run.anything.popup/0.0.1440.860@0.0.1440.860" timestamp="1615187252863" />
+    <state x="383" y="180" width="672" height="678" key="search.everywhere.popup" timestamp="1614799076233">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="383" y="180" width="672" height="678" key="search.everywhere.popup/0.0.1440.860@0.0.1440.860" timestamp="1614799076233" />
+  </component>
+</project>

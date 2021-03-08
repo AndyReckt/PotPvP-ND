@@ -1,0 +1,6 @@
+name: PotPvP
+author: Moonworth Development Team
+version: 1.0
+main: net.frozenorb.potpvp.PotPvPSI
+depend:
+  - ProtocolLib
