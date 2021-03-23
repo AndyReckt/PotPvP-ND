@@ -1,15 +1,6 @@
-/*
- * Decompiled with CFR 0.150.
- *
- * Could not load the following classes:
- *  org.bukkit.entity.Player
- *  org.bukkit.event.EventHandler
- *  org.bukkit.event.Listener
- *  org.bukkit.event.player.PlayerQuitEvent
- */
 package net.frozenorb.potpvp.party.listener;
 
-import net.frozenorb.potpvp.PotPvPSI;
+import net.frozenorb.potpvp.PotPvPND;
 import net.frozenorb.potpvp.match.event.MatchSpectatorLeaveEvent;
 import net.frozenorb.potpvp.party.Party;
 import net.frozenorb.potpvp.party.PartyHandler;
@@ -27,7 +18,7 @@ public final class PartyLeaveListener
     public void onPlayerQuit(PlayerQuitEvent event) {
         Player player=event.getPlayer();
         UUID playerUuid=player.getUniqueId();
-        for ( Party party : PotPvPSI.getInstance().getPartyHandler().getParties() ) {
+        for ( Party party : PotPvPND.getInstance().getPartyHandler().getParties() ) {
             PartyInvite invite;
             if (party.isMember(playerUuid)) {
                 party.leave(player);
@@ -39,7 +30,7 @@ public final class PartyLeaveListener
 
     @EventHandler
     public void onMatchSpectatorLeave(MatchSpectatorLeaveEvent event) {
-        PartyHandler partyHandler=PotPvPSI.getInstance().getPartyHandler();
+        PartyHandler partyHandler=PotPvPND.getInstance().getPartyHandler();
         Party party=partyHandler.getParty(event.getSpectator());
         if (party != null) {
             party.leave(event.getSpectator());

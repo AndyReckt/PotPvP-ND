@@ -8,7 +8,7 @@
 package net.frozenorb.potpvp.party.command;
 
 import net.frozenorb.potpvp.PotPvPLang;
-import net.frozenorb.potpvp.PotPvPSI;
+import net.frozenorb.potpvp.PotPvPND;
 import net.frozenorb.potpvp.kt.command.Command;
 import net.frozenorb.potpvp.party.Party;
 import net.frozenorb.potpvp.party.PartyAccessRestriction;
@@ -18,7 +18,7 @@ import org.bukkit.entity.Player;
 public final class PartyOpenCommand {
     @Command(names={"party open", "p open", "t open", "team open", "f open", "party unlock", "p unlock", "t unlock", "team unlock", "f unlock"}, permission="practice.donator")
     public static void partyOpen(Player sender) {
-        Party party=PotPvPSI.getInstance().getPartyHandler().getParty(sender);
+        Party party=PotPvPND.getInstance().getPartyHandler().getParty(sender);
         if (party == null) {
             sender.sendMessage(PotPvPLang.NOT_IN_PARTY);
         } else if (!party.isLeader(sender.getUniqueId())) {

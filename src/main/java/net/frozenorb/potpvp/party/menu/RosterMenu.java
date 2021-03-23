@@ -1,6 +1,6 @@
 package net.frozenorb.potpvp.party.menu;
 
-import net.frozenorb.potpvp.PotPvPSI;
+import net.frozenorb.potpvp.PotPvPND;
 import net.frozenorb.potpvp.kt.menu.Button;
 import net.frozenorb.potpvp.kt.menu.pagination.PaginatedMenu;
 import net.frozenorb.potpvp.party.Party;
@@ -96,7 +96,7 @@ public class RosterMenu
                         RosterMenu.this.party.message(player.getDisplayName() + ChatColor.YELLOW + " has set " + member.getDisplayName() + ChatColor.YELLOW + "'s " + ChatColor.YELLOW + " kit to " + ChatColor.GRAY + next2.getName() + ChatColor.YELLOW + ".");
                         RosterMenu.this.party.getKits().put(uuid, next2);
                         for ( UUID other : RosterMenu.this.party.getMembers() ) {
-                            PotPvPSI.getInstance().getPartyHandler().updatePartyCache(other, RosterMenu.this.party);
+                            PotPvPND.getInstance().getPartyHandler().updatePartyCache(other, RosterMenu.this.party);
                         }
                     }
                 }

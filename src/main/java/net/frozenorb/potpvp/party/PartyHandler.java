@@ -10,15 +10,13 @@
 package net.frozenorb.potpvp.party;
 
 import com.google.common.collect.ImmutableSet;
-import net.frozenorb.potpvp.PotPvPSI;
+import net.frozenorb.potpvp.PotPvPND;
 import net.frozenorb.potpvp.party.listener.PartyChatListener;
 import net.frozenorb.potpvp.party.listener.PartyItemListener;
 import net.frozenorb.potpvp.party.listener.PartyLeaveListener;
 import net.frozenorb.potpvp.util.InventoryUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
-import org.bukkit.event.Listener;
-import org.bukkit.plugin.Plugin;
 
 import java.util.Collections;
 import java.util.Map;
@@ -32,9 +30,9 @@ public final class PartyHandler {
     private final Map<UUID, Party> playerPartyCache=new ConcurrentHashMap<UUID, Party>();
 
     public PartyHandler() {
-        Bukkit.getPluginManager().registerEvents(new PartyChatListener(), PotPvPSI.getInstance());
-        Bukkit.getPluginManager().registerEvents(new PartyItemListener(this), PotPvPSI.getInstance());
-        Bukkit.getPluginManager().registerEvents(new PartyLeaveListener(), PotPvPSI.getInstance());
+        Bukkit.getPluginManager().registerEvents(new PartyChatListener(), PotPvPND.getInstance());
+        Bukkit.getPluginManager().registerEvents(new PartyItemListener(this), PotPvPND.getInstance());
+        Bukkit.getPluginManager().registerEvents(new PartyLeaveListener(), PotPvPND.getInstance());
     }
 
     public Set<Party> getParties() {

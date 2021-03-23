@@ -8,7 +8,7 @@ public final class NightModeListener implements Listener {
 
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent event) {
-        SettingHandler settingHandler = PotPvPSI.getInstance().getSettingHandler();
+        SettingHandler settingHandler = PotPvPND.getInstance().getSettingHandler();
 
         if (settingHandler.getSetting(event.getPlayer(), Setting.NIGHT_MODE)) {
             event.getPlayer().setPlayerTime(NIGHT_TIME, false);

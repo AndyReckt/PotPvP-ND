@@ -1,7 +1,6 @@
 package net.frozenorb.potpvp.listener;
 
-import net.frozenorb.potpvp.PotPvPSI;
-import org.bukkit.Bukkit;
+import net.frozenorb.potpvp.PotPvPND;
 import org.bukkit.GameMode;
 import org.bukkit.Material;
 import org.bukkit.entity.EntityType;
@@ -18,29 +17,6 @@ import org.bukkit.event.weather.ThunderChangeEvent;
 import org.bukkit.event.weather.WeatherChangeEvent;
 
 public final class BasicPreventionListener implements Listener {
-
-    @EventHandler
-    public void onPlayerLogin(PlayerLoginEvent event) {
-        // if we have a whitelist we probably are manually
-        // controlling who can log in and don't need this
-        if (true || Bukkit.hasWhitelist()) {
-            return;
-        }
-
-        //        ProfileHandler profileHandler = Hydrogen.getInstance().getProfileHandler();
-        //        Optional<Profile> profileOpt = profileHandler.getProfile(event.getPlayer().getUniqueId());
-        //
-        //        boolean allowed = false;
-        //
-        //        if (profileOpt.isPresent()) {
-        //            Map<String, Boolean> perms = profileOpt.get().getPermissions();
-        //            allowed = perms.getOrDefault("potpvp.vip", false);
-        //        }
-        //
-        //        if (!allowed) {
-        //            event.disallow(PlayerLoginEvent.Result.KICK_OTHER, ChatColor.DARK_PURPLE + "PotPvP is VIP-only for testing");
-        //        }
-    }
 
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent event) {
@@ -122,12 +98,12 @@ public final class BasicPreventionListener implements Listener {
     }
 
     private boolean canInteractWithBlocks(Player player) {
-        if (PotPvPSI.getInstance().getMatchHandler().isPlayingMatch(player)) {
+        if (PotPvPND.getInstance().getMatchHandler().isPlayingMatch(player)) {
             // completely ignore players in matches, MatchBuildListener handles this.
             return true;
         }
 
-        boolean inLobby = PotPvPSI.getInstance().getLobbyHandler().isInLobby(player);
+        boolean inLobby = PotPvPND.getInstance().getLobbyHandler().isInLobby(player);
         boolean isCreative = player.getGameMode() == GameMode.CREATIVE;
         boolean isOp = player.isOp();
         boolean buildMeta = player.hasMetadata("Build");

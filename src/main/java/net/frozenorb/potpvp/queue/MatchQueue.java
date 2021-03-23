@@ -3,7 +3,7 @@ package net.frozenorb.potpvp.queue;
 import com.google.common.base.Joiner;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
-import net.frozenorb.potpvp.PotPvPSI;
+import net.frozenorb.potpvp.PotPvPND;
 import net.frozenorb.potpvp.elo.EloHandler;
 import net.frozenorb.potpvp.kittype.KitType;
 import net.frozenorb.potpvp.match.Match;
@@ -29,7 +29,7 @@ public final class MatchQueue {
 
     void tick() {
         ArrayList<MatchQueueEntry> entriesCopy=new ArrayList<>(this.entries);
-        EloHandler eloHandler=PotPvPSI.getInstance().getEloHandler();
+        EloHandler eloHandler=PotPvPND.getInstance().getEloHandler();
         if (this.ranked) {
             entriesCopy.sort(Comparator.comparing(e -> eloHandler.getElo(e.getMembers(), this.kitType)));
         }
@@ -65,8 +65,8 @@ public final class MatchQueue {
 
     private void createMatchAndRemoveEntries(MatchQueueEntry entryA, MatchQueueEntry entryB) {
         MatchTeam teamB;
-        MatchHandler matchHandler=PotPvPSI.getInstance().getMatchHandler();
-        QueueHandler queueHandler=PotPvPSI.getInstance().getQueueHandler();
+        MatchHandler matchHandler=PotPvPND.getInstance().getMatchHandler();
+        QueueHandler queueHandler=PotPvPND.getInstance().getQueueHandler();
         MatchTeam teamA=new MatchTeam(entryA.getMembers());
         Match match=matchHandler.startMatch(ImmutableList.of(teamA, teamB=new MatchTeam(entryB.getMembers())), this.kitType, this.ranked, !this.ranked);
         if (match != null) {
@@ -75,7 +75,7 @@ public final class MatchQueue {
             String teamAElo="";
             String teamBElo="";
             if (this.ranked) {
-                EloHandler eloHandler=PotPvPSI.getInstance().getEloHandler();
+                EloHandler eloHandler=PotPvPND.getInstance().getEloHandler();
                 teamAElo=" (" + eloHandler.getElo(teamA.getAliveMembers(), this.kitType) + ")";
                 teamBElo=" (" + eloHandler.getElo(teamB.getAliveMembers(), this.kitType) + ")";
             }

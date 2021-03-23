@@ -2,7 +2,7 @@ package net.frozenorb.potpvp.kit.menu.kits;
 
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
-import net.frozenorb.potpvp.PotPvPSI;
+import net.frozenorb.potpvp.PotPvPND;
 import net.frozenorb.potpvp.kit.KitHandler;
 import net.frozenorb.potpvp.kittype.KitType;
 import net.frozenorb.potpvp.kt.menu.Button;
@@ -51,7 +51,7 @@ final class KitDeleteButton extends Button {
 
     @Override
     public void clicked(Player player, int slot, ClickType clickType, InventoryView view) {
-        KitHandler kitHandler = PotPvPSI.getInstance().getKitHandler();
+        KitHandler kitHandler = PotPvPND.getInstance().getKitHandler();
         kitHandler.removeKit(player, kitType, this.slot);
     }
 

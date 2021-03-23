@@ -1,6 +1,6 @@
 package net.frozenorb.potpvp.tab;
 
-import net.frozenorb.potpvp.PotPvPSI;
+import net.frozenorb.potpvp.PotPvPND;
 import net.frozenorb.potpvp.kt.tab.TabLayout;
 import net.frozenorb.potpvp.match.Match;
 import net.frozenorb.potpvp.match.MatchTeam;
@@ -13,7 +13,7 @@ import java.util.function.BiConsumer;
 final class MatchParticipantLayoutProvider implements BiConsumer<Player, TabLayout> {
     @Override
     public void accept(final Player player, final TabLayout tabLayout) {
-        final Match match=PotPvPSI.getInstance().getMatchHandler().getMatchPlaying(player);
+        final Match match=PotPvPND.getInstance().getMatchHandler().getMatchPlaying(player);
         final List<MatchTeam> teams=match.getTeams();
         if (teams.size() == 2) {
             final MatchTeam ourTeam=match.getTeam(player.getUniqueId());
@@ -41,9 +41,9 @@ final class MatchParticipantLayoutProvider implements BiConsumer<Player, TabLayo
             final Map<String, Integer> deadLines=new LinkedHashMap<>();
             for ( final UUID teamMember : ourTeam2.getAllMembers() ) {
                 if (ourTeam2.isAlive(teamMember)) {
-                    aliveLines.put(ChatColor.GREEN + PotPvPSI.getInstance().getUuidCache().name(teamMember), PotPvPLayoutProvider.getPingOrDefault(teamMember));
+                    aliveLines.put(ChatColor.GREEN + PotPvPND.getInstance().getUuidCache().name(teamMember), PotPvPLayoutProvider.getPingOrDefault(teamMember));
                 } else {
-                    deadLines.put("&7&m" + PotPvPSI.getInstance().getUuidCache().name(teamMember), PotPvPLayoutProvider.getPingOrDefault(teamMember));
+                    deadLines.put("&7&m" + PotPvPND.getInstance().getUuidCache().name(teamMember), PotPvPLayoutProvider.getPingOrDefault(teamMember));
                 }
             }
             entries.putAll(aliveLines);
@@ -55,9 +55,9 @@ final class MatchParticipantLayoutProvider implements BiConsumer<Player, TabLayo
                 }
                 for ( final UUID enemy : otherTeam2.getAllMembers() ) {
                     if (otherTeam2.isAlive(enemy)) {
-                        entries.put(ChatColor.RED + PotPvPSI.getInstance().getUuidCache().name(enemy), PotPvPLayoutProvider.getPingOrDefault(enemy));
+                        entries.put(ChatColor.RED + PotPvPND.getInstance().getUuidCache().name(enemy), PotPvPLayoutProvider.getPingOrDefault(enemy));
                     } else {
-                        deadLines2.put("&7&m" + PotPvPSI.getInstance().getUuidCache().name(enemy), PotPvPLayoutProvider.getPingOrDefault(enemy));
+                        deadLines2.put("&7&m" + PotPvPND.getInstance().getUuidCache().name(enemy), PotPvPLayoutProvider.getPingOrDefault(enemy));
                     }
                 }
             }
@@ -132,9 +132,9 @@ final class MatchParticipantLayoutProvider implements BiConsumer<Player, TabLayo
         for ( final UUID member : team.getAllMembers() ) {
             final int ping=PotPvPLayoutProvider.getPingOrDefault(member);
             if (team.isAlive(member)) {
-                aliveLines.put(aliveColor + PotPvPSI.getInstance().getUuidCache().name(member), ping);
+                aliveLines.put(aliveColor + PotPvPND.getInstance().getUuidCache().name(member), ping);
             } else {
-                deadLines.put("&7&m" + PotPvPSI.getInstance().getUuidCache().name(member), ping);
+                deadLines.put("&7&m" + PotPvPND.getInstance().getUuidCache().name(member), ping);
             }
         }
         final Map<String, Integer> result=new LinkedHashMap<>();

@@ -3,7 +3,7 @@ package net.frozenorb.potpvp.setting.repository;
 import com.google.common.collect.ImmutableMap;
 import com.mongodb.MongoException;
 import com.mongodb.client.MongoCollection;
-import net.frozenorb.potpvp.PotPvPSI;
+import net.frozenorb.potpvp.PotPvPND;
 import net.frozenorb.potpvp.setting.Setting;
 import net.frozenorb.potpvp.util.MongoUtils;
 import org.bson.Document;
@@ -40,7 +40,7 @@ public final class MongoSettingRepository implements SettingRepository {
             try {
                 parsedSettings.put(Setting.valueOf(rawSetting), (Boolean) value);
             } catch (Exception ex) {
-                PotPvPSI.getInstance().getLogger().info("Failed to load setting " + rawSetting + " (value=" + value + ") for " + playerUuid + ".");
+                PotPvPND.getInstance().getLogger().info("Failed to load setting " + rawSetting + " (value=" + value + ") for " + playerUuid + ".");
             }
         });
 

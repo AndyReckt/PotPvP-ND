@@ -1,10 +1,4 @@
-/*
- * Decompiled with CFR 0.150.
- *
- * Could not load the following classes:
- *  org.bukkit.ChatColor
- *  org.bukkit.entity.Player
- */
+
 package net.frozenorb.potpvp.kittype.command;
 
 import net.frozenorb.potpvp.kittype.KitType;

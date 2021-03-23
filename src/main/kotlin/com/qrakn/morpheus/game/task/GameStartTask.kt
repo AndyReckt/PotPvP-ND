@@ -3,12 +3,8 @@ package com.qrakn.morpheus.game.task
 import com.qrakn.morpheus.game.Game
 import com.qrakn.morpheus.game.GameState
 import com.qrakn.morpheus.game.bukkit.event.GameStateChangeEvent
-import net.frozenorb.potpvp.PotPvPSI
+import net.frozenorb.potpvp.PotPvPND
 import net.frozenorb.potpvp.arena.Arena
-import net.md_5.bungee.api.chat.BaseComponent
-import net.md_5.bungee.api.chat.ClickEvent
-import net.md_5.bungee.api.chat.HoverEvent
-import net.md_5.bungee.api.chat.TextComponent
 import org.apache.commons.lang.StringUtils
 import org.bukkit.Bukkit
 import org.bukkit.ChatColor
@@ -19,11 +15,11 @@ import java.util.concurrent.TimeUnit
 
 class GameStartTask(private val plugin: JavaPlugin, game: Game) {
 
-    private val startsAt = System.currentTimeMillis() + TimeUnit.SECONDS.toMillis(60) - 5
+    private val startsAt = System.currentTimeMillis() + TimeUnit.SECONDS.toMillis(45) - 5
     private val interval = 15
 
     init {
-        val arena: Optional<Arena> = PotPvPSI.getInstance().arenaHandler.allocateUnusedArena {it.event == game.event && it.isEnabled}
+        val arena: Optional<Arena> = PotPvPND.getInstance().arenaHandler.allocateUnusedArena {it.event == game.event && it.isEnabled}
 
         if (arena.isPresent) {
             Bukkit.getPluginManager().callEvent(GameStateChangeEvent(game, GameState.STARTING))
@@ -41,9 +37,6 @@ class GameStartTask(private val plugin: JavaPlugin, game: Game) {
     }
 
     inner class Task(private val game: Game) : BukkitRunnable() {
-        private val before = TextComponent(ChatColor.GRAY.toString() + "█" + ChatColor.RED + "█████" + ChatColor.GRAY + "█" + " " + ChatColor.GREEN + "Type " + ChatColor.RED + "/play " + ChatColor.GREEN + "or ")
-        private val clickable = TextComponent("click here")
-        private val after = TextComponent(ChatColor.GREEN.toString() + " to join!")
 
         override fun run() {
 
@@ -58,24 +51,16 @@ class GameStartTask(private val plugin: JavaPlugin, game: Game) {
             }
 
             for (player in Bukkit.getOnlinePlayers()) {
-                // TODO: Maybe fix this section bellow, it looks odd
-
-                val runCommand = ClickEvent.Action.RUN_COMMAND
-                val showText = HoverEvent.Action.SHOW_TEXT
-
-                clickable.color = net.md_5.bungee.api.ChatColor.RED
-                clickable.clickEvent = ClickEvent(runCommand, "/play")
-                clickable.hoverEvent = HoverEvent(showText, arrayOf<BaseComponent>(TextComponent(ChatColor.GREEN.toString() + "Click here to join!")))
-
                 player.sendMessage(arrayOf("",
                         ChatColor.GRAY.toString() + "███████",
-                        ChatColor.GRAY.toString() + "█" + ChatColor.AQUA + "█████" + ChatColor.GRAY + "█" + " " + ChatColor.AQUA + ChatColor.BOLD + "${game.event.getName()} " + ChatColor.GREEN + "Event",
-                        ChatColor.GRAY.toString() + "█" + ChatColor.AQUA + "█" + ChatColor.GRAY + "█████" + " ",
-                        ChatColor.GRAY.toString() + "█" + ChatColor.AQUA + "████" + ChatColor.GRAY + "██" + " " +  game.host.displayName + ChatColor.GREEN + " is hosting an event!",
-                        ChatColor.GRAY.toString() + "█" + ChatColor.AQUA + "█" + ChatColor.GRAY + "█████" + " " + ChatColor.GREEN + "Starts in " + ChatColor.AQUA + (formatIntoDetailedString(((startsAt + 500 - System.currentTimeMillis()) / 1000).toInt()))
-                ))
-                player.spigot().sendMessage(before, clickable, after)
-                player.sendMessage(arrayOf(ChatColor.GRAY.toString() + "███████", ""))
+                        ChatColor.GRAY.toString() + "█" + ChatColor.DARK_PURPLE + "█████" + ChatColor.GRAY + "█" + " " + ChatColor.DARK_PURPLE + "[${game.event.getName()} Event]",
+                        ChatColor.GRAY.toString() + "█" + ChatColor.DARK_PURPLE + "█" + ChatColor.GRAY + "█████" + " " + game.host.displayName + ChatColor.GRAY + " is hosting an event!",
+                        ChatColor.GRAY.toString() + "█" + ChatColor.DARK_PURPLE + "████" + ChatColor.GRAY + "██" + " " + ChatColor.GRAY + "Starts in " + ChatColor.AQUA + (formatIntoDetailedString(((startsAt + 500 - System.currentTimeMillis()) / 1000).toInt())),
+                        ChatColor.GRAY.toString() + "█" + ChatColor.DARK_PURPLE + "█" + ChatColor.GRAY + "█████" + " " + ChatColor.GRAY + "Join with the ${ChatColor.GREEN}emerald${ChatColor.GRAY} in your hotbar.",
+                        ChatColor.GRAY.toString() + "█" + ChatColor.DARK_PURPLE + "█████" + ChatColor.GRAY + "█" + " " + ChatColor.GRAY + ChatColor.ITALIC + "Event Type: (" + StringUtils.join(game.parameters.map { it.getDisplayName() }, ", ") + ")",
+                        ChatColor.GRAY.toString() + "███████",
+                        "")
+                )
             }
 
         }

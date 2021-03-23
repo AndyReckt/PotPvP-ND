@@ -2,7 +2,7 @@ package net.frozenorb.potpvp.command;
 
 import com.qrakn.morpheus.game.Game;
 import com.qrakn.morpheus.game.GameQueue;
-import net.frozenorb.potpvp.PotPvPSI;
+import net.frozenorb.potpvp.PotPvPND;
 import net.frozenorb.potpvp.follow.FollowHandler;
 import net.frozenorb.potpvp.kt.command.Command;
 import net.frozenorb.potpvp.kt.command.data.parameter.Param;
@@ -52,7 +52,7 @@ public final class VDebugCommand {
             a.hidePlayer(b);
             b.hidePlayer(a);
 
-            Bukkit.getScheduler().runTaskLater(PotPvPSI.getInstance(), () -> {
+            Bukkit.getScheduler().runTaskLater(PotPvPND.getInstance(), () -> {
                 a.showPlayer(b);
                 b.showPlayer(a);
             }, 10L);
@@ -105,10 +105,10 @@ public final class VDebugCommand {
     }
 
     private static String debug(Player viewer, Player target) {
-        SettingHandler settingHandler = PotPvPSI.getInstance().getSettingHandler();
-        FollowHandler followHandler = PotPvPSI.getInstance().getFollowHandler();
-        PartyHandler partyHandler = PotPvPSI.getInstance().getPartyHandler();
-        MatchHandler matchHandler = PotPvPSI.getInstance().getMatchHandler();
+        SettingHandler settingHandler = PotPvPND.getInstance().getSettingHandler();
+        FollowHandler followHandler = PotPvPND.getInstance().getFollowHandler();
+        PartyHandler partyHandler = PotPvPND.getInstance().getPartyHandler();
+        MatchHandler matchHandler = PotPvPND.getInstance().getMatchHandler();
 
         Match targetMatch = matchHandler.getMatchPlayingOrSpectating(target);
 

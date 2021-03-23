@@ -1,6 +1,6 @@
 package net.frozenorb.potpvp.kt.tab
 
-import net.frozenorb.potpvp.PotPvPSI
+import net.frozenorb.potpvp.PotPvPND
 import org.bukkit.Bukkit
 
 class TabThread : Thread("stark - Tab Thread") {
@@ -12,10 +12,10 @@ class TabThread : Thread("stark - Tab Thread") {
     }
 
     override fun run() {
-        while (PotPvPSI.getInstance().isEnabled && protocolLib != null && protocolLib.isEnabled) {
-            for (online in PotPvPSI.getInstance().server.onlinePlayers) {
+        while (PotPvPND.getInstance().isEnabled && protocolLib != null && protocolLib.isEnabled) {
+            for (online in PotPvPND.getInstance().server.onlinePlayers) {
                 try {
-                    PotPvPSI.getInstance().tabEngine.updatePlayer(online)
+                    PotPvPND.getInstance().tabEngine.updatePlayer(online)
                 } catch (e: Exception) {
                     e.printStackTrace()
                 }

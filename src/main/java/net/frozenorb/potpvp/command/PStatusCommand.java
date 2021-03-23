@@ -1,6 +1,6 @@
 package net.frozenorb.potpvp.command;
 
-import net.frozenorb.potpvp.PotPvPSI;
+import net.frozenorb.potpvp.PotPvPND;
 import net.frozenorb.potpvp.follow.FollowHandler;
 import net.frozenorb.potpvp.kt.command.Command;
 import net.frozenorb.potpvp.kt.command.data.parameter.Param;
@@ -16,10 +16,10 @@ public final class PStatusCommand {
 
     @Command(names = {"pstatus"}, permission = "op")
     public static void pStatus(Player sender, @Param(name = "target", defaultValue = "self") Player target) {
-        MatchHandler matchHandler = PotPvPSI.getInstance().getMatchHandler();
-        QueueHandler queueHandler = PotPvPSI.getInstance().getQueueHandler();
-        PartyHandler partyHandler = PotPvPSI.getInstance().getPartyHandler();
-        FollowHandler followHandler = PotPvPSI.getInstance().getFollowHandler();
+        MatchHandler matchHandler = PotPvPND.getInstance().getMatchHandler();
+        QueueHandler queueHandler = PotPvPND.getInstance().getQueueHandler();
+        PartyHandler partyHandler = PotPvPND.getInstance().getPartyHandler();
+        FollowHandler followHandler = PotPvPND.getInstance().getFollowHandler();
 
         sender.sendMessage(ChatColor.RED + target.getName() + ":");
         sender.sendMessage("In match: " + matchHandler.isPlayingMatch(target));
@@ -34,7 +34,7 @@ public final class PStatusCommand {
     }
 
     private static boolean noCacheIsPlayingMatch(Player target) {
-        for (Match match : PotPvPSI.getInstance().getMatchHandler().getHostedMatches()) {
+        for (Match match : PotPvPND.getInstance().getMatchHandler().getHostedMatches()) {
             for (MatchTeam team : match.getTeams()) {
                 if (team.isAlive(target.getUniqueId())) {
                     return true;
@@ -46,7 +46,7 @@ public final class PStatusCommand {
     }
 
     private static boolean noCacheIsSpectatingMatch(Player target) {
-        for (Match match : PotPvPSI.getInstance().getMatchHandler().getHostedMatches()) {
+        for (Match match : PotPvPND.getInstance().getMatchHandler().getHostedMatches()) {
             if (match.isSpectator(target.getUniqueId())) {
                 return true;
             }

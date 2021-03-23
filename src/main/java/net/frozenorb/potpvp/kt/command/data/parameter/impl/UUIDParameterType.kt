@@ -1,6 +1,6 @@
 package net.frozenorb.potpvp.kt.command.data.parameter.impl
 
-import net.frozenorb.potpvp.PotPvPSI
+import net.frozenorb.potpvp.PotPvPND
 import net.frozenorb.potpvp.kt.command.data.parameter.ParameterType
 import org.bukkit.Bukkit
 import org.bukkit.ChatColor
@@ -18,7 +18,7 @@ class UUIDParameterType : ParameterType<UUID?> {
         return try {
             UUID.fromString(source)
         } catch (e: Exception) {
-            val fromCache = PotPvPSI.getInstance().uuidCache.uuid(source)
+            val fromCache = PotPvPND.getInstance().uuidCache.uuid(source)
 
             if (fromCache != null) {
                 return fromCache

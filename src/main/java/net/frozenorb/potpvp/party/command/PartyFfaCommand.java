@@ -8,8 +8,7 @@
 package net.frozenorb.potpvp.party.command;
 
 import net.frozenorb.potpvp.PotPvPLang;
-import net.frozenorb.potpvp.PotPvPSI;
-import net.frozenorb.potpvp.kittype.KitType;
+import net.frozenorb.potpvp.PotPvPND;
 import net.frozenorb.potpvp.kittype.menu.select.SelectKitTypeMenu;
 import net.frozenorb.potpvp.kt.command.Command;
 import net.frozenorb.potpvp.kt.command.data.parameter.Param;
@@ -25,20 +24,19 @@ import org.bukkit.entity.Player;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.List;
 import java.util.UUID;
 
 public final class PartyFfaCommand {
     @Command(names={"party ffa", "p ffa", "t ffa", "team ffa", "f ffa"}, permission="")
     public static void partyFfa(Player sender) {
-        PartyHandler partyHandler=PotPvPSI.getInstance().getPartyHandler();
+        PartyHandler partyHandler=PotPvPND.getInstance().getPartyHandler();
         Party party=partyHandler.getParty(sender);
         if (party == null) {
             sender.sendMessage(PotPvPLang.NOT_IN_PARTY);
         } else if (!party.isLeader(sender.getUniqueId())) {
             sender.sendMessage(PotPvPLang.NOT_LEADER_OF_PARTY);
         } else {
-            MatchHandler matchHandler=PotPvPSI.getInstance().getMatchHandler();
+            MatchHandler matchHandler=PotPvPND.getInstance().getMatchHandler();
             if (!PotPvPValidation.canStartFfa(party, sender)) {
                 return;
             }
@@ -58,14 +56,14 @@ public final class PartyFfaCommand {
 
     @Command(names={"party devffa", "p devffa", "t devffa", "team devffa", "f devffa"}, permission="")
     public static void partyDevFfa(Player sender, @Param(name="team size", defaultValue="1") int teamSize) {
-        PartyHandler partyHandler=PotPvPSI.getInstance().getPartyHandler();
+        PartyHandler partyHandler=PotPvPND.getInstance().getPartyHandler();
         Party party=partyHandler.getParty(sender);
         if (party == null) {
             sender.sendMessage(PotPvPLang.NOT_IN_PARTY);
         } else if (!party.isLeader(sender.getUniqueId())) {
             sender.sendMessage(PotPvPLang.NOT_LEADER_OF_PARTY);
         } else {
-            MatchHandler matchHandler=PotPvPSI.getInstance().getMatchHandler();
+            MatchHandler matchHandler=PotPvPND.getInstance().getMatchHandler();
             if (!PotPvPValidation.canStartFfa(party, sender)) {
                 return;
             }

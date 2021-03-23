@@ -1,6 +1,6 @@
 package net.frozenorb.potpvp.party.listener;
 
-import net.frozenorb.potpvp.PotPvPSI;
+import net.frozenorb.potpvp.PotPvPND;
 import net.frozenorb.potpvp.party.Party;
 import net.frozenorb.potpvp.party.PartyHandler;
 import net.frozenorb.potpvp.party.PartyItems;
@@ -37,7 +37,7 @@ public final class PartyItemListener
         boolean bl=permitted=canUseButton.getOrDefault(event.getPlayer().getUniqueId(), 0L) < System.currentTimeMillis();
         if (permitted) {
             Player player=event.getPlayer();
-            Party party=PotPvPSI.getInstance().getPartyHandler().getParty(player);
+            Party party=PotPvPND.getInstance().getPartyHandler().getParty(player);
             if (party != null && PartyItems.icon(party).isSimilar(event.getItem())) {
                 event.setCancelled(true);
                 PartyInfoCommand.partyInfo(player, player);

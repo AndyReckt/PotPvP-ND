@@ -1,6 +1,6 @@
 package net.frozenorb.potpvp.match.listener;
 
-import net.frozenorb.potpvp.PotPvPSI;
+import net.frozenorb.potpvp.PotPvPND;
 import net.frozenorb.potpvp.match.Match;
 import net.frozenorb.potpvp.match.MatchHandler;
 import net.frozenorb.potpvp.match.MatchTeam;
@@ -30,7 +30,7 @@ public final class MatchWizardListener implements Listener {
             return;
         }
 
-        MatchHandler matchHandler = PotPvPSI.getInstance().getMatchHandler();
+        MatchHandler matchHandler = PotPvPND.getInstance().getMatchHandler();
         Player player = event.getPlayer();
         Match match = matchHandler.getMatchPlaying(player);
 
@@ -77,7 +77,7 @@ public final class MatchWizardListener implements Listener {
                 }
             }
 
-        }.runTaskTimer(PotPvPSI.getInstance(), 1L, 1L);
+        }.runTaskTimer(PotPvPND.getInstance(), 1L, 1L);
     }
 
 }

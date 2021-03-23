@@ -1,6 +1,6 @@
 package net.frozenorb.potpvp.command;
 
-import net.frozenorb.potpvp.PotPvPSI;
+import net.frozenorb.potpvp.PotPvPND;
 import net.frozenorb.potpvp.elo.repository.EloRepository;
 import net.frozenorb.potpvp.kittype.KitType;
 import net.frozenorb.potpvp.kt.command.Command;
@@ -19,7 +19,7 @@ public final class EloConvertCommand {
     public static void eloconvert(Player sender) {
         OfflinePlayer[] offlinePlayers = Bukkit.getOfflinePlayers();
 
-        EloRepository repository = PotPvPSI.getInstance().getEloHandler().getEloRepository();
+        EloRepository repository = PotPvPND.getInstance().getEloHandler().getEloRepository();
 
         for (int i = 0; i < offlinePlayers.length; i++) {
             OfflinePlayer target = offlinePlayers[i];

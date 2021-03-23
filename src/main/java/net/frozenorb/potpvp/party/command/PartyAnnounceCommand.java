@@ -2,7 +2,7 @@ package net.frozenorb.potpvp.party.command;
 
 import mkremins.fanciful.FancyMessage;
 import net.frozenorb.potpvp.PotPvPLang;
-import net.frozenorb.potpvp.PotPvPSI;
+import net.frozenorb.potpvp.PotPvPND;
 import net.frozenorb.potpvp.kt.command.Command;
 import net.frozenorb.potpvp.party.Party;
 import net.frozenorb.potpvp.party.PartyAccessRestriction;
@@ -14,9 +14,9 @@ import org.bukkit.entity.Player;
 
 public final class PartyAnnounceCommand {
 
-    @Command(names = {"party announce", "p announce", "t announce", "team announce", "f announce"}, permission = "potpvp.party.announce", vipFeature = true)
+    @Command(names = {"party announce", "p announce", "t announce", "team announce", "f announce"}, permission = "potpvp.party.announce")
     public static void announce(Player sender) {
-        PartyHandler partyHandler = PotPvPSI.getInstance().getPartyHandler();
+        PartyHandler partyHandler = PotPvPND.getInstance().getPartyHandler();
         Party party = partyHandler.getParty(sender);
 
         if (party == null) {
@@ -28,13 +28,13 @@ public final class PartyAnnounceCommand {
             return;
         }
 
-        if (PotPvPSI.getInstance().getAnnounceCooldown().isOnCooldown(sender)) {
+        if (PotPvPND.getInstance().getAnnounceCooldown().isOnCooldown(sender)) {
             sender.sendMessage(ChatColor.RED + "You must wait to use that command again.");
             return;
         }
 
-        if (party.getAccessRestriction() != PartyAccessRestriction.PUBLIC) {
-            party.setAccessRestriction(PartyAccessRestriction.PUBLIC);
+        if (party.getAccessRestriction() != PartyAccessRestriction.Public) {
+            party.setAccessRestriction(PartyAccessRestriction.Public);
             sender.sendMessage(CC.translate(
                 "&eYour party is now &aopen&e."));
         }
@@ -45,7 +45,7 @@ public final class PartyAnnounceCommand {
         clickable.command("/p join" + sender.getName());
 
         if (!sender.hasPermission("potpvp.bypass")) {
-            PotPvPSI.getInstance().getAnnounceCooldown().setCooldown(sender);
+            PotPvPND.getInstance().getAnnounceCooldown().setCooldown(sender);
         }
 
         Bukkit.getOnlinePlayers().forEach(clickable::send);

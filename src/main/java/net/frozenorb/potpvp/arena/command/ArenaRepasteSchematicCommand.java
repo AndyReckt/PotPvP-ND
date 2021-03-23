@@ -1,6 +1,6 @@
 package net.frozenorb.potpvp.arena.command;
 
-import net.frozenorb.potpvp.PotPvPSI;
+import net.frozenorb.potpvp.PotPvPND;
 import net.frozenorb.potpvp.arena.ArenaGrid;
 import net.frozenorb.potpvp.arena.ArenaHandler;
 import net.frozenorb.potpvp.arena.ArenaSchematic;
@@ -13,7 +13,7 @@ public final class ArenaRepasteSchematicCommand {
 
     @Command(names = {"arena repasteSchematic"}, permission = "op")
     public static void arenaRepasteSchematic(Player sender, @Param(name = "schematic") String schematicName) {
-        ArenaHandler arenaHandler = PotPvPSI.getInstance().getArenaHandler();
+        ArenaHandler arenaHandler = PotPvPND.getInstance().getArenaHandler();
         ArenaSchematic schematic = arenaHandler.getSchematic(schematicName);
 
         if (schematic == null) {

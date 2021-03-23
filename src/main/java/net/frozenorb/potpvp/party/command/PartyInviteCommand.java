@@ -14,7 +14,7 @@
  */
 package net.frozenorb.potpvp.party.command;
 
-import net.frozenorb.potpvp.PotPvPSI;
+import net.frozenorb.potpvp.PotPvPND;
 import net.frozenorb.potpvp.kt.command.Command;
 import net.frozenorb.potpvp.kt.command.data.parameter.Param;
 import net.frozenorb.potpvp.party.Party;
@@ -32,7 +32,7 @@ import java.util.UUID;
 public final class PartyInviteCommand {
     @Command(names={"party invite", "p invite", "t invite", "team invite", "invite", "inv", "party inv", "p inv", "t inv", "team invite", "f invite", "f inv"}, permission="")
     public static void partyInvite(Player sender, @Param(name="player") Player target) {
-        PartyHandler partyHandler=PotPvPSI.getInstance().getPartyHandler();
+        PartyHandler partyHandler=PotPvPND.getInstance().getPartyHandler();
         Party party=partyHandler.getParty(sender);
         if (sender == target) {
             sender.sendMessage(ChatColor.RED + "You cannot invite yourself to your own party.");
@@ -70,7 +70,7 @@ public final class PartyInviteCommand {
 
     @Command(names={"party invite **", "p invite **", "t invite **", "team invite **", "invite **", "inv **", "party inv **", "p inv **", "t inv **", "team invite **", "f invite **", "f inv **"}, permission="op")
     public static void partyInviteAll(Player sender) {
-        PartyHandler partyHandler=PotPvPSI.getInstance().getPartyHandler();
+        PartyHandler partyHandler=PotPvPND.getInstance().getPartyHandler();
         Party party=partyHandler.getOrCreateParty(sender);
         if (sender.hasMetadata("ModMode")) {
             sender.sendMessage(ChatColor.RED + "You cannot do this while in silent mode!");

@@ -5,7 +5,7 @@ import com.google.common.collect.Maps;
 import com.mongodb.MongoException;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.model.Sorts;
-import net.frozenorb.potpvp.PotPvPSI;
+import net.frozenorb.potpvp.PotPvPND;
 import net.frozenorb.potpvp.elo.EloHandler;
 import net.frozenorb.potpvp.kittype.KitType;
 import net.frozenorb.potpvp.kt.command.Command;
@@ -33,7 +33,7 @@ public final class MongoEloRepository implements EloRepository {
         instance = this;
         MongoUtils.getCollection(MONGO_COLLECTION_NAME).createIndex(new Document("players", 1));
 
-        Bukkit.getScheduler().runTaskTimerAsynchronously(PotPvPSI.getInstance(), () -> {
+        Bukkit.getScheduler().runTaskTimerAsynchronously(PotPvPND.getInstance(), () -> {
             refreshFormattedElo();
         }, 5 * 30, 5 * 30);
     }

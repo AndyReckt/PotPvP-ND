@@ -1,6 +1,6 @@
 package net.frozenorb.potpvp.kt.tab
 
-import net.frozenorb.potpvp.PotPvPSI
+import net.frozenorb.potpvp.PotPvPND
 import net.frozenorb.potpvp.kt.scoreboard.ScoreboardTeamPacketMod
 import net.minecraft.server.v1_7_R4.ChatSerializer
 import net.minecraft.util.com.mojang.authlib.GameProfile
@@ -67,8 +67,8 @@ class Tab(private val player: Player) {
     }
 
     fun update() {
-        if (PotPvPSI.getInstance().tabEngine.layoutProvider != null) {
-            val tabLayout = PotPvPSI.getInstance().tabEngine.layoutProvider?.provide(this.player)
+        if (PotPvPND.getInstance().tabEngine.layoutProvider != null) {
+            val tabLayout = PotPvPND.getInstance().tabEngine.layoutProvider?.provide(this.player)
             if (tabLayout == null) {
                 reset()
                 return

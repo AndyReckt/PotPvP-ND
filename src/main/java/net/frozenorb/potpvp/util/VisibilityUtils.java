@@ -3,7 +3,7 @@ package net.frozenorb.potpvp.util;
 import com.qrakn.morpheus.game.Game;
 import com.qrakn.morpheus.game.GameQueue;
 import lombok.experimental.UtilityClass;
-import net.frozenorb.potpvp.PotPvPSI;
+import net.frozenorb.potpvp.PotPvPND;
 import net.frozenorb.potpvp.follow.FollowHandler;
 import net.frozenorb.potpvp.match.Match;
 import net.frozenorb.potpvp.match.MatchHandler;
@@ -26,7 +26,7 @@ public final class VisibilityUtils {
             otherPlayer.hidePlayer(target);
         }
 
-        Bukkit.getScheduler().runTaskLater(PotPvPSI.getInstance(), () -> updateVisibility(target), 10L);
+        Bukkit.getScheduler().runTaskLater(PotPvPND.getInstance(), () -> updateVisibility(target), 10L);
     }
 
     public static void updateVisibility(Player target) {
@@ -51,10 +51,10 @@ public final class VisibilityUtils {
 
 
     public static boolean shouldSeePlayer(Player viewer, Player target) {
-        SettingHandler settingHandler = PotPvPSI.getInstance().getSettingHandler();
-        FollowHandler followHandler = PotPvPSI.getInstance().getFollowHandler();
-        PartyHandler partyHandler = PotPvPSI.getInstance().getPartyHandler();
-        MatchHandler matchHandler = PotPvPSI.getInstance().getMatchHandler();
+        SettingHandler settingHandler = PotPvPND.getInstance().getSettingHandler();
+        FollowHandler followHandler = PotPvPND.getInstance().getFollowHandler();
+        PartyHandler partyHandler = PotPvPND.getInstance().getPartyHandler();
+        MatchHandler matchHandler = PotPvPND.getInstance().getMatchHandler();
 
         Match targetMatch = matchHandler.getMatchPlayingOrSpectating(target);
 

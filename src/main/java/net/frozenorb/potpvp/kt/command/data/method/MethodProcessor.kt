@@ -1,6 +1,6 @@
 package net.frozenorb.potpvp.kt.command.data.method
 
-import net.frozenorb.potpvp.PotPvPSI
+import net.frozenorb.potpvp.PotPvPND
 import net.frozenorb.potpvp.kt.command.Command
 import net.frozenorb.potpvp.kt.command.CommandHandler
 import net.frozenorb.potpvp.kt.command.CommandNode
@@ -37,7 +37,7 @@ class MethodProcessor : Processor<Method, Set<CommandNode>?> {
                                 param.wildcard,
                                 i,
                                 hash,
-                                PotPvPSI.getInstance().commandHandler.parameterTypeMap[parameter.type]?.javaClass
+                                PotPvPND.getInstance().commandHandler.parameterTypeMap[parameter.type]?.javaClass
                             )
                             allParams.add(data)
                         } else {

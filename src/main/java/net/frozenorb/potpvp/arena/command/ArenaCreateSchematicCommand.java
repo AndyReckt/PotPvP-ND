@@ -1,6 +1,6 @@
 package net.frozenorb.potpvp.arena.command;
 
-import net.frozenorb.potpvp.PotPvPSI;
+import net.frozenorb.potpvp.PotPvPND;
 import net.frozenorb.potpvp.arena.ArenaHandler;
 import net.frozenorb.potpvp.arena.ArenaSchematic;
 import net.frozenorb.potpvp.kt.command.Command;
@@ -14,7 +14,7 @@ public final class ArenaCreateSchematicCommand {
 
     @Command(names = {"arena createSchematic"}, permission = "op")
     public static void arenaCreateSchematic(Player sender, @Param(name = "schematic") String schematicName) {
-        ArenaHandler arenaHandler = PotPvPSI.getInstance().getArenaHandler();
+        ArenaHandler arenaHandler = PotPvPND.getInstance().getArenaHandler();
 
         if (arenaHandler.getSchematic(schematicName) != null) {
             sender.sendMessage(ChatColor.RED + "Schematic " + schematicName + " already exists");

@@ -5,7 +5,6 @@ import com.qrakn.morpheus.game.event.impl.brackets.BracketsGameEvent
 import com.qrakn.morpheus.game.event.impl.lms.LastManStandingGameEvent
 import com.qrakn.morpheus.game.event.impl.skywars.SkywarsGameEvent
 import com.qrakn.morpheus.game.event.impl.sumo.SumoGameEvent
-import com.qrakn.morpheus.game.event.impl.t4g.T4gGameEvent
 import com.qrakn.morpheus.game.parameter.GameParameter
 import net.frozenorb.potpvp.kt.util.ItemBuilder.Companion.of
 import org.bukkit.ChatColor
@@ -17,7 +16,7 @@ import org.bukkit.inventory.ItemStack
 interface GameEvent {
 
     companion object {
-        @JvmStatic val events = arrayListOf(SumoGameEvent, BracketsGameEvent, LastManStandingGameEvent, SkywarsGameEvent, T4gGameEvent)
+        @JvmStatic val events = arrayListOf(SumoGameEvent, BracketsGameEvent, LastManStandingGameEvent, SkywarsGameEvent)
         @JvmStatic val leaveItem = arrayOf(of(Material.INK_SACK).data(1).name(ChatColor.RED.toString() + "Leave Event").build())
     }
 
@@ -31,6 +30,7 @@ interface GameEvent {
     fun getScoreboardScores(player: Player, game: Game): List<String>
     fun getListeners(): List<Listener>
     fun getParameters(): List<GameParameter>
+    fun getLobbyItems(): List<ItemStack>
     fun getMaxInstances(): Int {
         return 1
     }

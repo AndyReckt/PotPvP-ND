@@ -1,25 +1,23 @@
 package net.frozenorb.potpvp.kit;
 
-import com.google.common.base.Charsets;
 import com.google.common.collect.ImmutableList;
-import com.google.common.io.Files;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.util.JSON;
-import net.frozenorb.potpvp.PotPvPSI;
+import net.frozenorb.potpvp.PotPvPND;
 import net.frozenorb.potpvp.kit.listener.KitEditorListener;
 import net.frozenorb.potpvp.kit.listener.KitItemListener;
 import net.frozenorb.potpvp.kit.listener.KitLoadListener;
 import net.frozenorb.potpvp.kittype.KitType;
+import net.frozenorb.potpvp.kt.util.ItemBuilder;
 import net.frozenorb.potpvp.util.MongoUtils;
 import org.bson.Document;
 import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
+import org.bukkit.Material;
+import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.craftbukkit.libs.com.google.gson.reflect.TypeToken;
 import org.bukkit.entity.Player;
 
-import java.io.File;
 import java.io.IOException;
-import java.io.Reader;
 import java.lang.reflect.Type;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
@@ -32,9 +30,9 @@ public final class KitHandler {
     private final Map<UUID, List<Kit>> kitData=new ConcurrentHashMap<>();
 
     public KitHandler() {
-        Bukkit.getPluginManager().registerEvents(new KitEditorListener(), PotPvPSI.getInstance());
-        Bukkit.getPluginManager().registerEvents(new KitItemListener(), PotPvPSI.getInstance());
-        Bukkit.getPluginManager().registerEvents(new KitLoadListener(), PotPvPSI.getInstance());
+        Bukkit.getPluginManager().registerEvents(new KitEditorListener(), PotPvPND.getInstance());
+        Bukkit.getPluginManager().registerEvents(new KitItemListener(), PotPvPND.getInstance());
+        Bukkit.getPluginManager().registerEvents(new KitLoadListener(), PotPvPND.getInstance());
     }
 
     public List<Kit> getKits(Player player, KitType kitType) {
@@ -72,18 +70,25 @@ public final class KitHandler {
         if (removed) {
             saveKitsAsync(player);
         }
+        PotPvPND.getInstance().getKitsConfig().getConfiguration().set("kits." + kitType.getName(), null);
+        try {
+            PotPvPND.getInstance().getKitsConfig().getConfiguration().save(PotPvPND.getInstance().getKitsConfig().getFile());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public void saveKitsAsync(Player player) {
-        Bukkit.getScheduler().runTaskAsynchronously(PotPvPSI.getInstance(), () -> {
+        Bukkit.getScheduler().runTaskAsynchronously(PotPvPND.getInstance(), () -> {
             MongoCollection<Document> collection=MongoUtils.getCollection(MONGO_COLLECTION_NAME);
-            List kitJson=(List) JSON.parse(PotPvPSI.getGson().toJson(kitData.getOrDefault(player.getUniqueId(), ImmutableList.of())));
+            List kitJson=(List) JSON.parse(PotPvPND.getGson().toJson(kitData.getOrDefault(player.getUniqueId(), ImmutableList.of())));
 
             Document query=new Document("_id", player.getUniqueId().toString());
             Document kitUpdate=new Document("$set", new Document("kits", kitJson));
 
             collection.updateOne(query, kitUpdate, MongoUtils.UPSERT_OPTIONS);
         });
+        this.saveConfigKits();
     }
 
     public void wipeKitsForPlayer(UUID target) {
@@ -119,38 +124,48 @@ public final class KitHandler {
             Type listKit=new TypeToken<List<Kit>>() {
             }.getType();
 
-            kitData.put(playerUuid, PotPvPSI.getGson().fromJson(JSON.serialize(kits), listKit));
+            kitData.put(playerUuid, PotPvPND.getGson().fromJson(JSON.serialize(kits), listKit));
         }
     }
 
-    public void loadJSONKits() {
-        final File file = new File(PotPvPSI.getInstance().getDataFolder(), "kitTypes.json");
-        if (file.exists()) {
-            try (final Reader schematicsFileReader = Files.newReader(file, Charsets.UTF_8)) {
-                final Type schematicListType = new com.google.gson.reflect.TypeToken<List<KitType>>() {}.getType();
-                final List<KitType> kitTypes = PotPvPSI.plainGson.fromJson(schematicsFileReader, schematicListType);
-                for (final KitType kitType : kitTypes) {
-                    KitType.getAllTypes().removeIf(otherKitType -> otherKitType.getId().equals(kitType.getId()));
-                    KitType.getAllTypes().add(kitType);
-                    kitType.saveAsync();
-                }
-            }
-            catch (IOException e) {
-                e.printStackTrace();
-                Bukkit.getConsoleSender().sendMessage(ChatColor.RED + "Failed to import kits from kitTypes.json!");
-            }
+    public void loadConfigKits() {
+        final YamlConfiguration configFile = PotPvPND.getInstance().getKitsConfig().getConfiguration();
+        for (String key : configFile.getConfigurationSection("kits").getKeys(false)) {
+            String path="kits." + key;
+            KitType kitType = new KitType(key.toUpperCase());
+            kitType.setDisplayName(configFile.getString(path + ".display-name"));
+            kitType.setHidden(!Boolean.parseBoolean(configFile.getString(path + ".enabled")));
+            kitType.setIcon(new ItemBuilder(Material.getMaterial(configFile.getString(path + "icon.material"))).data((short) configFile.getInt(path + "icon.durability")).build().getData());
+            kitType.setSupportsRanked(Boolean.parseBoolean(configFile.getString(path + ".ranked-allowed")));
+            kitType.setBuildingAllowed(Boolean.parseBoolean(configFile.getString(path + ".build-allowed")));
+            kitType.setEditorSpawnAllowed(Boolean.parseBoolean(configFile.getString(path + "editor-spawn")));
+            kitType.setPearlDamage(Boolean.parseBoolean(configFile.getString(path + "pearl-damage")));
+            kitType.setHealthShown(Boolean.parseBoolean(configFile.getString(path + ".health-above-name")));
+            kitType.setHardcoreHealing(Boolean.parseBoolean(configFile.getString(path + ".hardcore-healing")));
         }
     }
 
-    public void saveJSONKits() {
-        String json=PotPvPSI.plainGson.toJson(KitType.getAllTypes());
+    public void saveConfigKits() {
+        final YamlConfiguration configFile = PotPvPND.getInstance().getKitsConfig().getConfiguration();
+        for ( KitType kitType : KitType.getAllTypes() ) {
+            String path = "kits." + kitType.getName();
+            configFile.set(path + ".enabled", !kitType.isHidden());
+            configFile.set(path + ".display-name", kitType.getDisplayName());
+            configFile.set(path + "icon.material", kitType.getIcon().toItemStack().getType());
+            configFile.set(path + "icon.durability", kitType.getIcon().toItemStack().getDurability());
+            configFile.set(path + ".ranked-allowed", kitType.isSupportsRanked());
+            configFile.set(path + ".pearl-damage", kitType.isPearlDamage());
+            configFile.set(path + ".hardcore-healing", kitType.isHardcoreHealing());
+            configFile.set(path + ".health-above-name", kitType.isHealthShown());
+            configFile.set(path + ".editor-spawn", kitType.isEditorSpawnAllowed());
+            configFile.set(path + ".build-allowed", kitType.isBuildingAllowed());
+        }
         try {
-            Files.write(json, new File(PotPvPSI.getInstance().getDataFolder(), "kitTypes.json"), Charsets.UTF_8);
-            Bukkit.getConsoleSender().sendMessage(ChatColor.GREEN + "Saved Kits Successfully!");
+            configFile.save(PotPvPND.getInstance().getKitsConfig().getFile());
         } catch (IOException e) {
-            e.printStackTrace();
-            Bukkit.getConsoleSender().sendMessage(ChatColor.RED + "Failed to save Kits!");
+            //
         }
+
     }
 
     public void unloadKits(Player player) {

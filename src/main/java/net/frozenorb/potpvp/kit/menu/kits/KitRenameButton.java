@@ -2,7 +2,7 @@ package net.frozenorb.potpvp.kit.menu.kits;
 
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
-import net.frozenorb.potpvp.PotPvPSI;
+import net.frozenorb.potpvp.PotPvPND;
 import net.frozenorb.potpvp.kit.Kit;
 import net.frozenorb.potpvp.kt.menu.Button;
 import org.bukkit.ChatColor;
@@ -45,7 +45,7 @@ final class KitRenameButton extends Button {
 
     @Override
     public void clicked(Player player, int slot, ClickType clickType, InventoryView view) {
-        ConversationFactory factory = new ConversationFactory(PotPvPSI.getInstance()).withFirstPrompt(new StringPrompt() {
+        ConversationFactory factory = new ConversationFactory(PotPvPND.getInstance()).withFirstPrompt(new StringPrompt() {
 
             @Override
             public String getPromptText(ConversationContext context) {
@@ -61,10 +61,10 @@ final class KitRenameButton extends Button {
 
                 kit.setName(s);
 
-                PotPvPSI.getInstance().getKitHandler().saveKitsAsync(player);
+                PotPvPND.getInstance().getKitHandler().saveKitsAsync(player);
 
                 ctx.getForWhom().sendRawMessage(ChatColor.YELLOW + "Kit renamed.");
-                if (!PotPvPSI.getInstance().getMatchHandler().isPlayingMatch(player)) {
+                if (!PotPvPND.getInstance().getMatchHandler().isPlayingMatch(player)) {
                     new KitsMenu(kit.getType()).openMenu(player);
                 }
                 return Prompt.END_OF_CONVERSATION;

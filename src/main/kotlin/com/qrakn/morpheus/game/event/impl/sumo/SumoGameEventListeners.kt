@@ -2,8 +2,6 @@ package com.qrakn.morpheus.game.event.impl.sumo
 
 import com.qrakn.morpheus.game.GameQueue
 import com.qrakn.morpheus.game.GameState
-import net.frozenorb.util.BlockUtil
-import org.bukkit.Material
 import org.bukkit.entity.Player
 import org.bukkit.event.EventHandler
 import org.bukkit.event.Listener
@@ -19,7 +17,8 @@ class SumoGameEventListeners : Listener {
             val game = GameQueue.getCurrentGame(event.player) ?: return
             val logic = game.logic as? SumoGameEventLogic ?: return
             val participant = logic.get(event.player) ?: return
-            if ((event.to.block.type == Material.WATER || event.to.block.type == Material.STATIONARY_WATER)) {
+
+            if (event.to.blockY + 5 < game.getFirstSpawnLocations()[0].blockY && participant.fighting) {
                 participant.died(event.player)
 
                 if (participant.isFinished()) {
@@ -42,7 +41,8 @@ class SumoGameEventListeners : Listener {
             if (game.event != SumoGameEvent) {
                 return
             }
-            if (game.players.contains(player) && game.state == GameState.RUNNING) {
+
+            if (game.players.contains(player) && game.state != GameState.STARTING) {
                 val participant = logic.get(player)
 
                 if (participant != null) {

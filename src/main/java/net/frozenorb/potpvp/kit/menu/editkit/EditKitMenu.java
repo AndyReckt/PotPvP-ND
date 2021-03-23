@@ -21,7 +21,7 @@ public final class EditKitMenu extends Menu {
     private final KitType kit;
 
     public EditKitMenu(KitType kit) {
-        super("Editing " + kit.getDisplayName());
+        super("Editing " + kit.getName());
 
         setNoncancellingInventory(true);
         setUpdateAfterClick(false);
@@ -35,7 +35,7 @@ public final class EditKitMenu extends Menu {
         player.getInventory().setContents(kit.getDefaultInventory());
         player.getInventory().setContents(kit.getDefaultArmor());
 
-        Bukkit.getScheduler().runTaskLater(PotPvPSI.getInstance(), player::updateInventory, 1L);
+        Bukkit.getScheduler().runTaskLater(PotPvPND.getInstance(), player::updateInventory, 1L);
     }*/
 
     /* @Override

@@ -5,6 +5,7 @@ import com.qrakn.morpheus.game.GameState
 import com.qrakn.morpheus.game.util.GameEventCountdown
 import com.qrakn.morpheus.game.util.team.GameTeam
 import com.qrakn.morpheus.game.util.team.GameTeamEventLogic
+import net.frozenorb.potpvp.PotPvPND
 import org.apache.commons.lang.StringUtils
 import org.bukkit.Bukkit
 import org.bukkit.ChatColor
@@ -87,11 +88,11 @@ open class LastManStandingGameEventLogic(val game: Game) : GameTeamEventLogic(ga
         for (player in Bukkit.getOnlinePlayers()) {
             player.sendMessage(arrayOf("",
                     ChatColor.GRAY.toString() + "███████",
-                    ChatColor.GRAY.toString() + "█" + ChatColor.GOLD + "█████" + ChatColor.GRAY + "█" + " " + ChatColor.GOLD + "[${game.event.getName()} Event Winner]",
-                    ChatColor.GRAY.toString() + "█" + ChatColor.GOLD + "█" + ChatColor.GRAY + "█████" + " ",
-                    ChatColor.GRAY.toString() + "█" + ChatColor.GOLD + "████" + ChatColor.GRAY + "██" + " " + winner.getName() + ChatColor.GRAY + " has won the event!",
-                    ChatColor.GRAY.toString() + "█" + ChatColor.GOLD + "█" + ChatColor.GRAY + "█████" + " ",
-                    ChatColor.GRAY.toString() + "█" + ChatColor.GOLD + "█████" + ChatColor.GRAY + "█" + " " + ChatColor.GRAY + ChatColor.ITALIC + "Event Type: (" + StringUtils.join(game.parameters.map { it.getDisplayName() }, ", ") + ")",
+                    ChatColor.GRAY.toString() + "█" + PotPvPND.getInstance().dominantColor + "█████" + ChatColor.GRAY + "█" + " " + PotPvPND.getInstance().dominantColor + "[${game.event.getName()} Event Winner]",
+                    ChatColor.GRAY.toString() + "█" + PotPvPND.getInstance().dominantColor + "█" + ChatColor.GRAY + "█████" + " ",
+                    ChatColor.GRAY.toString() + "█" + PotPvPND.getInstance().dominantColor + "████" + ChatColor.GRAY + "██" + " " + winner.getName() + ChatColor.GRAY + " has won the event!",
+                    ChatColor.GRAY.toString() + "█" + PotPvPND.getInstance().dominantColor + "█" + ChatColor.GRAY + "█████" + " ",
+                    ChatColor.GRAY.toString() + "█" + PotPvPND.getInstance().dominantColor + "█████" + ChatColor.GRAY + "█" + " " + ChatColor.GRAY + ChatColor.ITALIC + "Event Type: (" + StringUtils.join(game.parameters.map { it.getDisplayName() }, ", ") + ")",
                     ChatColor.GRAY.toString() + "███████",
                     "")
             )

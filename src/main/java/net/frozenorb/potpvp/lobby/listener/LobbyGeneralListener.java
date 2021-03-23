@@ -1,6 +1,5 @@
 package net.frozenorb.potpvp.lobby.listener;
 
-import net.frozenorb.potpvp.PotPvPSI;
 import net.frozenorb.potpvp.kit.listener.KitEditorListener;
 import net.frozenorb.potpvp.kt.menu.Menu;
 import net.frozenorb.potpvp.lobby.LobbyHandler;

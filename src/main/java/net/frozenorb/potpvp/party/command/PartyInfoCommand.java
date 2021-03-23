@@ -14,7 +14,7 @@ package net.frozenorb.potpvp.party.command;
 
 import com.google.common.base.Joiner;
 import net.frozenorb.potpvp.PotPvPLang;
-import net.frozenorb.potpvp.PotPvPSI;
+import net.frozenorb.potpvp.PotPvPND;
 import net.frozenorb.potpvp.kt.command.Command;
 import net.frozenorb.potpvp.kt.command.data.parameter.Param;
 import net.frozenorb.potpvp.party.Party;
@@ -29,7 +29,7 @@ import org.bukkit.entity.Player;
 public final class PartyInfoCommand {
     @Command(names={"party info", "p info", "t info", "team info", "f info", "p i", "t i", "f i", "party i", "team i"}, permission="")
     public static void partyInfo(Player sender, @Param(name="player", defaultValue="self") Player target) {
-        Party party=PotPvPSI.getInstance().getPartyHandler().getParty(target);
+        Party party=PotPvPND.getInstance().getPartyHandler().getParty(target);
         if (party == null) {
             if (sender == target) {
                 sender.sendMessage(PotPvPLang.NOT_IN_PARTY);
@@ -38,7 +38,7 @@ public final class PartyInfoCommand {
             }
             return;
         }
-        String leaderName=PotPvPSI.getInstance().getUuidCache().name(party.getLeader());
+        String leaderName=PotPvPND.getInstance().getUuidCache().name(party.getLeader());
         int memberCount=party.getMembers().size();
         String members=Joiner.on(", ").join(PatchedPlayerUtils.mapToNames(party.getMembers()));
         sender.sendMessage(ChatColor.GRAY + PotPvPLang.LONG_LINE);

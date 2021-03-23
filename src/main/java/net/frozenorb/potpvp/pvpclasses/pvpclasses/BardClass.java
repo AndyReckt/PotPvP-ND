@@ -2,7 +2,7 @@ package net.frozenorb.potpvp.pvpclasses.pvpclasses;
 
 import com.google.common.collect.ImmutableSet;
 import lombok.Getter;
-import net.frozenorb.potpvp.PotPvPSI;
+import net.frozenorb.potpvp.PotPvPND;
 import net.frozenorb.potpvp.match.Match;
 import net.frozenorb.potpvp.match.MatchTeam;
 import net.frozenorb.potpvp.pvpclasses.PvPClass;
@@ -73,7 +73,7 @@ public class BardClass extends PvPClass implements Listener {
         new BukkitRunnable() {
 
             public void run() {
-                for (Player player : PotPvPSI.getInstance().getServer().getOnlinePlayers()) {
+                for (Player player : PotPvPND.getInstance().getServer().getOnlinePlayers()) {
                     if (!PvPClassHandler.hasKitOn(player, BardClass.this)) {
                         continue;
                     }
@@ -96,7 +96,7 @@ public class BardClass extends PvPClass implements Listener {
                 }
             }
 
-        }.runTaskTimer(PotPvPSI.getInstance(), 15L, 20L);
+        }.runTaskTimer(PotPvPND.getInstance(), 15L, 20L);
     }
 
     @Override
@@ -227,13 +227,13 @@ public class BardClass extends PvPClass implements Listener {
 
                 break;
             default:
-                PotPvPSI.getInstance().getLogger().warning("No custom Bard effect defined for " + material + ".");
+                PotPvPND.getInstance().getLogger().warning("No custom Bard effect defined for " + material + ".");
         }
     }
 
     public List<Player> getNearbyPlayers(Player player, boolean friendly) {
         List<Player> valid = new ArrayList<>();
-        Match match = PotPvPSI.getInstance().getMatchHandler().getMatchPlaying(player);
+        Match match = PotPvPND.getInstance().getMatchHandler().getMatchPlaying(player);
         MatchTeam sourceTeam = match.getTeam(player.getUniqueId());
 
         // We divide by 2 so that the range isn't as much on the Y level (and can't be abused by standing on top of / under events)

@@ -2,7 +2,7 @@ package net.frozenorb.potpvp.kt.scoreboard
 
 import com.google.common.base.Preconditions
 import com.google.common.collect.ImmutableSet
-import net.frozenorb.potpvp.PotPvPSI
+import net.frozenorb.potpvp.PotPvPND
 import net.minecraft.server.v1_7_R4.Packet
 import net.minecraft.server.v1_7_R4.PacketPlayOutScoreboardScore
 import org.bukkit.ChatColor
@@ -31,7 +31,7 @@ class Scoreboard(private val player: Player) {
     private val localList: ThreadLocal<LinkedList<String>> = ThreadLocal.withInitial { LinkedList<String>() }
 
     init {
-        val board = PotPvPSI.getInstance().server.scoreboardManager.newScoreboard
+        val board = PotPvPND.getInstance().server.scoreboardManager.newScoreboard
 
         objective = board.registerNewObjective("Fyre", "dummy")
         objective.displaySlot = DisplaySlot.SIDEBAR
@@ -40,7 +40,7 @@ class Scoreboard(private val player: Player) {
     }
 
     fun update() {
-        val configuration = PotPvPSI.getInstance().scoreboardEngine.configuration!!
+        val configuration = PotPvPND.getInstance().scoreboardEngine.configuration!!
         val untranslatedTitle = configuration.titleGetter.getTitle(player)
         val title = ChatColor.translateAlternateColorCodes('&', untranslatedTitle)
         val lines = localList.get()
@@ -180,7 +180,7 @@ class Scoreboard(private val player: Player) {
                 suffix = this.separateScores[2]
             }
             else -> {
-                PotPvPSI.getInstance().logger.warning("Failed to separate scoreboard line. Input: $line")
+                PotPvPND.getInstance().logger.warning("Failed to separate scoreboard line. Input: $line")
             }
         }
 

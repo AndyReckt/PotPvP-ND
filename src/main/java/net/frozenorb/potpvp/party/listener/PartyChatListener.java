@@ -10,7 +10,7 @@
  */
 package net.frozenorb.potpvp.party.listener;
 
-import net.frozenorb.potpvp.PotPvPSI;
+import net.frozenorb.potpvp.PotPvPND;
 import net.frozenorb.potpvp.party.Party;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
@@ -34,7 +34,7 @@ public final class PartyChatListener
         event.setCancelled(true);
         Player player=event.getPlayer();
         String message=event.getMessage().substring(1).trim();
-        Party party=PotPvPSI.getInstance().getPartyHandler().getParty(player);
+        Party party=PotPvPND.getInstance().getPartyHandler().getParty(player);
         if (party == null) {
             player.sendMessage(ChatColor.RED + "You aren't in a party!");
             return;
@@ -43,10 +43,10 @@ public final class PartyChatListener
             player.sendMessage(ChatColor.RED + "Wait a bit before sending another message.");
             return;
         }
-        ChatColor prefixColor=party.isLeader(player.getUniqueId()) ? ChatColor.AQUA : ChatColor.LIGHT_PURPLE;
+        ChatColor prefixColor=party.isLeader(player.getUniqueId()) ? PotPvPND.getInstance().getDominantColor() : ChatColor.LIGHT_PURPLE;
         party.message(prefixColor.toString() + ChatColor.BOLD + "[P] " + player.getName() + ": " + ChatColor.LIGHT_PURPLE + message);
         this.canUsePartyChat.put(player.getUniqueId(), System.currentTimeMillis() + 2000L);
-        PotPvPSI.getInstance().getLogger().info("[Party Chat] " + player.getName() + ": " + message);
+        PotPvPND.getInstance().getLogger().info("[Party Chat] " + player.getName() + ": " + message);
     }
 }
 

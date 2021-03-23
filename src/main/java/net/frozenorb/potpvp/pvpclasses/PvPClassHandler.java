@@ -1,7 +1,7 @@
 package net.frozenorb.potpvp.pvpclasses;
 
 import lombok.Getter;
-import net.frozenorb.potpvp.PotPvPSI;
+import net.frozenorb.potpvp.PotPvPND;
 import net.frozenorb.potpvp.kittype.KitType;
 import net.frozenorb.potpvp.match.Match;
 import net.frozenorb.potpvp.pvpclasses.event.BardRestoreEvent;
@@ -32,16 +32,16 @@ public class PvPClassHandler extends BukkitRunnable implements Listener {
         pvpClasses.add(new BardClass());
 
         for (PvPClass pvpClass : pvpClasses) {
-            PotPvPSI.getInstance().getServer().getPluginManager().registerEvents(pvpClass, PotPvPSI.getInstance());
+            PotPvPND.getInstance().getServer().getPluginManager().registerEvents(pvpClass, PotPvPND.getInstance());
         }
 
-        PotPvPSI.getInstance().getServer().getScheduler().runTaskTimer(PotPvPSI.getInstance(), this, 2L, 2L);
-        PotPvPSI.getInstance().getServer().getPluginManager().registerEvents(this, PotPvPSI.getInstance());
+        PotPvPND.getInstance().getServer().getScheduler().runTaskTimer(PotPvPND.getInstance(), this, 2L, 2L);
+        PotPvPND.getInstance().getServer().getPluginManager().registerEvents(this, PotPvPND.getInstance());
     }
 
     @Override
     public void run() {
-        for (Player player : PotPvPSI.getInstance().getServer().getOnlinePlayers()) {
+        for (Player player : PotPvPND.getInstance().getServer().getOnlinePlayers()) {
             // Remove kit if player took off armor, otherwise .tick();
             if (equippedKits.containsKey(player.getName())) {
                 PvPClass equippedPvPClass = equippedKits.get(player.getName());
@@ -55,7 +55,7 @@ public class PvPClassHandler extends BukkitRunnable implements Listener {
                     equippedPvPClass.tick(player);
                 }
             } else {
-                Match match = PotPvPSI.getInstance().getMatchHandler().getMatchPlayingOrSpectating(player);
+                Match match = PotPvPND.getInstance().getMatchHandler().getMatchPlayingOrSpectating(player);
                 if (match == null) continue;
                 if (!match.getKitType().equals(KitType.teamFight)) continue;
 

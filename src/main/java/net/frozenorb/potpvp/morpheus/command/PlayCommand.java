@@ -3,7 +3,7 @@ package net.frozenorb.potpvp.morpheus.command;
 import com.qrakn.morpheus.game.Game;
 import com.qrakn.morpheus.game.GameQueue;
 import com.qrakn.morpheus.game.GameState;
-import net.frozenorb.potpvp.PotPvPSI;
+import net.frozenorb.potpvp.PotPvPND;
 import net.frozenorb.potpvp.kt.command.Command;
 import net.frozenorb.potpvp.lobby.LobbyHandler;
 import net.frozenorb.potpvp.party.PartyHandler;
@@ -15,13 +15,13 @@ public class PlayCommand {
 
     @Command(names = {"play"}, permission = "")
     public static void host(Player sender) {
-        LobbyHandler lobbyHandler = PotPvPSI.getInstance().getLobbyHandler();
+        LobbyHandler lobbyHandler = PotPvPND.getInstance().getLobbyHandler();
         if (!lobbyHandler.isInLobby(sender) || lobbyHandler.isInSpectatorMode(sender)) return;
 
-        QueueHandler queueHandler = PotPvPSI.getInstance().getQueueHandler();
+        QueueHandler queueHandler = PotPvPND.getInstance().getQueueHandler();
         if (queueHandler.isQueued(sender.getUniqueId())) return;
 
-        PartyHandler partyHandler = PotPvPSI.getInstance().getPartyHandler();
+        PartyHandler partyHandler = PotPvPND.getInstance().getPartyHandler();
         if (partyHandler.hasParty(sender)) {
             sender.sendMessage(ChatColor.RED + "You must leave your party to join the event!");
             return;

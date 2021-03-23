@@ -1,7 +1,7 @@
 package net.frozenorb.potpvp.tab;
 
 import com.google.common.collect.Sets;
-import net.frozenorb.potpvp.PotPvPSI;
+import net.frozenorb.potpvp.PotPvPND;
 import net.frozenorb.potpvp.elo.EloHandler;
 import net.frozenorb.potpvp.kittype.KitType;
 import net.frozenorb.potpvp.kt.tab.TabLayout;
@@ -16,19 +16,16 @@ import java.util.function.BiConsumer;
 
 final class LobbyLayoutProvider implements BiConsumer<Player, TabLayout> {
 
-    LobbyLayoutProvider() {
-    }
-
     @Override
     public void accept(Player player, TabLayout tabLayout) {
-        Party party=PotPvPSI.getInstance().getPartyHandler().getParty(player);
-        EloHandler eloHandler=PotPvPSI.getInstance().getEloHandler();
-        tabLayout.set(1, 3, PotPvPSI.getInstance().getDominantColor().toString() + ChatColor.BOLD + "Your Rankings");
+        Party party=PotPvPND.getInstance().getPartyHandler().getParty(player);
+        EloHandler eloHandler=PotPvPND.getInstance().getEloHandler();
+        tabLayout.set(1, 3, PotPvPND.getInstance().getDominantColor().toString() + ChatColor.BOLD + "Your Rankings");
         int x=0;
         int y=4;
         for ( KitType kitType : KitType.getAllTypes() ) {
             if (kitType.isHidden() || !kitType.isSupportsRanked()) continue;
-            tabLayout.set(x++, y, ChatColor.translateAlternateColorCodes('&', "&b" + kitType.getDisplayName() + " &7- &b" + eloHandler.getElo(player, kitType)));
+            tabLayout.set(x++, y, ChatColor.translateAlternateColorCodes('&', "&b" + kitType.getName() + " &7- &b" + eloHandler.getElo(player, kitType)));
             if (x != 3) continue;
             x=0;
             ++y;
@@ -36,13 +33,13 @@ final class LobbyLayoutProvider implements BiConsumer<Player, TabLayout> {
         if (party == null) {
             return;
         }
-        tabLayout.set(1, 8, ChatColor.BLUE.toString() + ChatColor.BOLD + "Your Party");
+        tabLayout.set(1, 8, PotPvPND.getInstance().getDominantColor().toString() + ChatColor.BOLD + "Your Party");
         x=0;
         y=9;
         for ( UUID member : this.getOrderedMembers(player, party) ) {
             int ping=PotPvPLayoutProvider.getPingOrDefault(member);
             String suffix=member == party.getLeader() ? ChatColor.GRAY + "*" : "";
-            String displayName=ChatColor.BLUE + PotPvPSI.getInstance().getUuidCache().name(member) + suffix;
+            String displayName=ChatColor.BLUE + PotPvPND.getInstance().getUuidCache().name(member) + suffix;
             tabLayout.set(x++, y, displayName, ping);
             if (x == 3 && y == 20) break;
             if (x != 3) continue;

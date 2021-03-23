@@ -4,7 +4,7 @@ import com.comphenix.protocol.PacketType
 import com.comphenix.protocol.events.PacketAdapter
 import com.comphenix.protocol.events.PacketContainer
 import com.comphenix.protocol.events.PacketEvent
-import net.frozenorb.potpvp.PotPvPSI
+import net.frozenorb.potpvp.PotPvPND
 import net.minecraft.server.v1_7_R4.EntityTrackerEntry
 import net.minecraft.server.v1_7_R4.PacketPlayOutNamedEntitySpawn
 import net.minecraft.server.v1_7_R4.PacketPlayOutPlayerInfo
@@ -18,13 +18,13 @@ import java.lang.reflect.Field
 import java.util.*
 
 class TabAdapter : PacketAdapter(
-    PotPvPSI.getInstance(),
+    PotPvPND.getInstance(),
     PacketType.Play.Server.PLAYER_INFO,
     PacketType.Play.Server.NAMED_ENTITY_SPAWN
 ) {
 
     override fun onPacketSending(event: PacketEvent) {
-        if (PotPvPSI.getInstance().tabEngine.layoutProvider == null || !this.shouldForbid(event.player)) {
+        if (PotPvPND.getInstance().tabEngine.layoutProvider == null || !this.shouldForbid(event.player)) {
             return
         }
 
@@ -52,7 +52,7 @@ class TabAdapter : PacketAdapter(
             }
 
             val bukkitPlayer = Bukkit.getPlayer(gameProfile.id)
-            Bukkit.getScheduler().runTask(PotPvPSI.getInstance()) {
+            Bukkit.getScheduler().runTask(PotPvPND.getInstance()) {
                 if (bukkitPlayer != null) {
                     (event.player as CraftPlayer).handle.playerConnection.sendPacket(
                         PacketPlayOutPlayerInfo.removePlayer(
@@ -90,7 +90,7 @@ class TabAdapter : PacketAdapter(
 
     private fun shouldForbid(player: Player): Boolean {
         val playerName = player.name
-        val playerTab = PotPvPSI.getInstance().tabEngine.tabs[playerName]
+        val playerTab = PotPvPND.getInstance().tabEngine.tabs[playerName]
         return playerTab != null
     }
 

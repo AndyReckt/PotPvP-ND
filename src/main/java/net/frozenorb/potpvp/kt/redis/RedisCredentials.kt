@@ -1,16 +1,16 @@
 package net.frozenorb.potpvp.kt.redis
 
-import net.frozenorb.potpvp.PotPvPSI
+import net.frozenorb.potpvp.PotPvPND
 
 data class RedisCredentials(
-    var host: String = PotPvPSI.getInstance().config.getString("Redis.Host"),
-    var port: Int = PotPvPSI.getInstance().config.getInt("Redis.Port"),
-    var password: String = PotPvPSI.getInstance().config.getString("Redis.Authentication.Password"),
+    var host: String = PotPvPND.getInstance().mainConfig.getString("Redis.Host"),
+    var port: Int = PotPvPND.getInstance().mainConfig.getInteger("Redis.Port"),
+    var password: String = PotPvPND.getInstance().mainConfig.getString("Redis.Authentication.Password"),
     var dbId: Int = 0
 ) {
 
     fun shouldAuthenticate(): Boolean {
-        return password.isNotEmpty() && password.isNotBlank() && PotPvPSI.getInstance().config.getBoolean("LocalRedis.Authentication.Enabled")
+        return password.isNotEmpty() && password.isNotBlank() && PotPvPND.getInstance().config.getBoolean("Redis.Authentication.Enabled")
     }
 
     class Builder {

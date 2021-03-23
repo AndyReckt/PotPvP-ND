@@ -1,6 +1,6 @@
 package net.frozenorb.potpvp.setting.command;
 
-import net.frozenorb.potpvp.PotPvPSI;
+import net.frozenorb.potpvp.PotPvPND;
 import net.frozenorb.potpvp.kt.command.Command;
 import net.frozenorb.potpvp.setting.Setting;
 import net.frozenorb.potpvp.setting.SettingHandler;
@@ -19,7 +19,7 @@ public final class ToggleDuelCommand {
             return;
         }
 
-        SettingHandler settingHandler = PotPvPSI.getInstance().getSettingHandler();
+        SettingHandler settingHandler = PotPvPND.getInstance().getSettingHandler();
         boolean enabled = !settingHandler.getSetting(sender, Setting.RECEIVE_DUELS);
 
         settingHandler.updateSetting(sender, Setting.RECEIVE_DUELS, enabled);

@@ -3,7 +3,7 @@ package net.frozenorb.potpvp.validation;
 import com.qrakn.morpheus.game.Game;
 import com.qrakn.morpheus.game.GameQueue;
 import lombok.experimental.UtilityClass;
-import net.frozenorb.potpvp.PotPvPSI;
+import net.frozenorb.potpvp.PotPvPND;
 import net.frozenorb.potpvp.follow.FollowHandler;
 import net.frozenorb.potpvp.lobby.LobbyHandler;
 import net.frozenorb.potpvp.match.MatchHandler;
@@ -380,17 +380,17 @@ public final class PotPvPValidation {
     }
 
     private static boolean getSetting(Player player, Setting setting) {
-        SettingHandler settingHandler = PotPvPSI.getInstance().getSettingHandler();
+        SettingHandler settingHandler = PotPvPND.getInstance().getSettingHandler();
         return settingHandler.getSetting(player, setting);
     }
 
     private static boolean isInParty(Player player) {
-        PartyHandler partyHandler = PotPvPSI.getInstance().getPartyHandler();
+        PartyHandler partyHandler = PotPvPND.getInstance().getPartyHandler();
         return partyHandler.hasParty(player);
     }
 
     private static boolean isInQueue(Player player) {
-        QueueHandler queueHandler = PotPvPSI.getInstance().getQueueHandler();
+        QueueHandler queueHandler = PotPvPND.getInstance().getQueueHandler();
         return queueHandler.isQueued(player.getUniqueId());
     }
 
@@ -403,27 +403,27 @@ public final class PotPvPValidation {
     }
 
     private static boolean isInQueue(Party party) {
-        QueueHandler queueHandler = PotPvPSI.getInstance().getQueueHandler();
+        QueueHandler queueHandler = PotPvPND.getInstance().getQueueHandler();
         return queueHandler.isQueued(party);
     }
 
     private boolean isInMatch(Player player) {
-        MatchHandler matchHandler = PotPvPSI.getInstance().getMatchHandler();
+        MatchHandler matchHandler = PotPvPND.getInstance().getMatchHandler();
         return matchHandler.isPlayingMatch(player);
     }
 
     private boolean isInLobby(Player player) {
-        LobbyHandler lobbyHandler = PotPvPSI.getInstance().getLobbyHandler();
+        LobbyHandler lobbyHandler = PotPvPND.getInstance().getLobbyHandler();
         return lobbyHandler.isInLobby(player);
     }
 
     private boolean isFollowingSomeone(Player player) {
-        FollowHandler followHandler = PotPvPSI.getInstance().getFollowHandler();
+        FollowHandler followHandler = PotPvPND.getInstance().getFollowHandler();
         return followHandler.getFollowing(player).isPresent();
     }
 
     private boolean isInTournament(Party party) {
-        TournamentHandler tournamentHandler = PotPvPSI.getInstance().getTournamentHandler();
+        TournamentHandler tournamentHandler = PotPvPND.getInstance().getTournamentHandler();
         return tournamentHandler.isInTournament(party);
     }
 

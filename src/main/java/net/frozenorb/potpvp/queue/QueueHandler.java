@@ -2,7 +2,7 @@ package net.frozenorb.potpvp.queue;
 
 import com.google.common.collect.HashBasedTable;
 import com.google.common.collect.Table;
-import net.frozenorb.potpvp.PotPvPSI;
+import net.frozenorb.potpvp.PotPvPND;
 import net.frozenorb.potpvp.kittype.KitType;
 import net.frozenorb.potpvp.party.Party;
 import net.frozenorb.potpvp.queue.listener.QueueGeneralListener;
@@ -18,7 +18,6 @@ import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
 
 public final class QueueHandler {
-    public static final int RANKED_WINDOW_GROWTH_PER_SECOND=5;
     private static final String JOIN_SOLO_MESSAGE=ChatColor.GREEN + "You are now queued for %s %s" + ChatColor.GREEN + ".";
     private static final String LEAVE_SOLO_MESSAGE=ChatColor.GREEN + "You are no longer queued for %s %s" + ChatColor.GREEN + ".";
     private static final String JOIN_PARTY_MESSAGE=ChatColor.GREEN + "Your party is now queued for %s %s" + ChatColor.GREEN + ".";
@@ -26,19 +25,19 @@ public final class QueueHandler {
     private final Table<KitType, Boolean, MatchQueue> soloQueues=HashBasedTable.create();
     private final Table<KitType, Boolean, MatchQueue> partyQueues=HashBasedTable.create();
     private final Map<UUID, SoloMatchQueueEntry> soloQueueCache=new ConcurrentHashMap<>();
-    private final Map<Party, PartyMatchQueueEntry> partyQueueCache=new ConcurrentHashMap<Party, PartyMatchQueueEntry>();
+    private final Map<Party, PartyMatchQueueEntry> partyQueueCache=new ConcurrentHashMap<>();
     private int queuedCount=0;
 
     public QueueHandler() {
-        Bukkit.getPluginManager().registerEvents(new QueueGeneralListener(this), PotPvPSI.getInstance());
-        Bukkit.getPluginManager().registerEvents(new QueueItemListener(this), PotPvPSI.getInstance());
+        Bukkit.getPluginManager().registerEvents(new QueueGeneralListener(this), PotPvPND.getInstance());
+        Bukkit.getPluginManager().registerEvents(new QueueItemListener(this), PotPvPND.getInstance());
         for ( KitType kitType : KitType.getAllTypes() ) {
             this.soloQueues.put(kitType, true, new MatchQueue(kitType, true));
             this.soloQueues.put(kitType, false, new MatchQueue(kitType, false));
             this.partyQueues.put(kitType, true, new MatchQueue(kitType, true));
             this.partyQueues.put(kitType, false, new MatchQueue(kitType, false));
         }
-        Bukkit.getScheduler().runTaskTimer(PotPvPSI.getInstance(), () -> {
+        Bukkit.getScheduler().runTaskTimer(PotPvPND.getInstance(), () -> {
             this.soloQueues.values().forEach(MatchQueue::tick);
             this.partyQueues.values().forEach(MatchQueue::tick);
             int i=0;

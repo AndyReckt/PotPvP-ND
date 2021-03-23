@@ -27,6 +27,21 @@ public enum Setting {
         true,
         null // no permission required
     ),
+    SHOW_SCOREBOARD(
+            ChatColor.AQUA + "Toggle Scoreboard",
+            ImmutableList.of(
+                    ChatColor.BLUE + "If enabled, you can view your",
+                    ChatColor.BLUE + "scoreboard for details.",
+                    "",
+                    ChatColor.BLUE + "Disable to hide match scoreboard."
+            ),
+            3,
+            Material.PAINTING,
+            ChatColor.GREEN + "Enable",
+            ChatColor.RED + "Disable",
+            true,
+            null // no permission required
+    ),
     VIEW_OTHER_SPECTATORS(
         ChatColor.GRAY + "See Spectator",
         ImmutableList.of(

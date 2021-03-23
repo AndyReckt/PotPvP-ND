@@ -3,7 +3,7 @@ package net.frozenorb.potpvp.scoreboard;
 import com.qrakn.morpheus.game.Game;
 import com.qrakn.morpheus.game.GameQueue;
 import com.qrakn.morpheus.game.GameState;
-import net.frozenorb.potpvp.PotPvPSI;
+import net.frozenorb.potpvp.PotPvPND;
 import net.frozenorb.potpvp.kt.scoreboard.ScoreGetter;
 import net.frozenorb.potpvp.match.MatchHandler;
 import net.frozenorb.potpvp.setting.Setting;
@@ -26,11 +26,11 @@ final class MultiplexingScoreGetter implements ScoreGetter {
 
     @Override
     public void getScores(final LinkedList<String> scores, final Player player) {
-        if (PotPvPSI.getInstance() == null) {
+        if (PotPvPND.getInstance() == null) {
             return;
         }
-        final MatchHandler matchHandler=PotPvPSI.getInstance().getMatchHandler();
-        final SettingHandler settingHandler=PotPvPSI.getInstance().getSettingHandler();
+        final MatchHandler matchHandler=PotPvPND.getInstance().getMatchHandler();
+        final SettingHandler settingHandler=PotPvPND.getInstance().getSettingHandler();
         if (settingHandler.getSetting(player, Setting.SHOW_SCOREBOARD)) {
             if (matchHandler.isPlayingOrSpectatingMatch(player)) {
                 this.matchScoreGetter.accept(player, scores);
@@ -46,7 +46,7 @@ final class MultiplexingScoreGetter implements ScoreGetter {
         if (!scores.isEmpty()) {
             scores.addFirst("&a&7&m--------------------");
             scores.add("");
-            scores.add("&blunar.gg");
+            scores.add(PotPvPND.getInstance().getDominantColor().toString() + PotPvPND.getInstance().getMainConfig().getString("Practice.Scoreboard-IP"));
             scores.add("&f&7&m--------------------");
         }
     }

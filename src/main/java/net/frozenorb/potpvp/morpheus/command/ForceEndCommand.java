@@ -8,7 +8,7 @@ import org.bukkit.entity.Player;
 public class ForceEndCommand {
     @Command(names={"forceend"}, permission="op")
     public static void host(Player sender) {
-        Game game=GameQueue.INSTANCE.getCurrentGame(sender);
+        Game game = GameQueue.INSTANCE.getCurrentGame(sender);
         if (game == null) {
             sender.sendMessage("You're not in a game");
             return;

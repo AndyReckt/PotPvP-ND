@@ -7,3 +7,7 @@ Redis:
   Authentication:
     Enabled: false
     Password: ""
+Practice:
+  Scoreboard-IP: "lunar.gg"
+  Scoreboard-Header: "NA Practice"
+  Matches-Required-Ranked: 10

@@ -1,6 +1,6 @@
 package net.frozenorb.potpvp.kt.visibility
 
-import net.frozenorb.potpvp.PotPvPSI
+import net.frozenorb.potpvp.PotPvPND
 import org.apache.commons.lang.StringUtils
 import org.bukkit.Bukkit
 import org.bukkit.event.EventHandler
@@ -13,7 +13,7 @@ class VisibilityListener : Listener {
 
     @EventHandler(priority = EventPriority.LOWEST)
     fun onPlayerJoin(event: PlayerJoinEvent) {
-        PotPvPSI.getInstance().visibilityEngine.update(event.player)
+        PotPvPND.getInstance().visibilityEngine.update(event.player)
     }
 
     @EventHandler(priority = EventPriority.LOWEST)
@@ -23,7 +23,7 @@ class VisibilityListener : Listener {
         completions.clear()
 
         for (target in Bukkit.getOnlinePlayers()) {
-            if (!PotPvPSI.getInstance().visibilityEngine.treatAsOnline(target, event.player)) {
+            if (!PotPvPND.getInstance().visibilityEngine.treatAsOnline(target, event.player)) {
                 continue
             }
 

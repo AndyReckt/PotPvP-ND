@@ -2,7 +2,7 @@ package net.frozenorb.potpvp.kt.command
 
 import com.google.common.base.Strings
 import mkremins.fanciful.FancyMessage
-import net.frozenorb.potpvp.PotPvPSI
+import net.frozenorb.potpvp.PotPvPND
 import net.frozenorb.potpvp.kt.command.data.Data
 import net.frozenorb.potpvp.kt.command.data.argument.Arguments
 import net.frozenorb.potpvp.kt.command.data.flag.FlagData
@@ -255,7 +255,7 @@ class CommandNode(
                     argument = arguments.join(index)
                 }
 
-                var type: ParameterType<*>? = PotPvPSI.getInstance().commandHandler.getParameterType(data.type)
+                var type: ParameterType<*>? = PotPvPND.getInstance().commandHandler.getParameterType(data.type)
 
                 if (data.parameterType != null) {
                     try {
@@ -300,7 +300,7 @@ class CommandNode(
             val executionThreshold = 10 // command threshold
 
             if (!async && logToConsole && stop - start >= executionThreshold) {
-                PotPvPSI.getInstance().logger.warning("Command '/" + getFullLabel() + "' took " + (stop - start) + "ms!")
+                PotPvPND.getInstance().logger.warning("Command '/" + getFullLabel() + "' took " + (stop - start) + "ms!")
             }
 
             return true

@@ -1,6 +1,6 @@
 package net.frozenorb.potpvp.match.listener;
 
-import net.frozenorb.potpvp.PotPvPSI;
+import net.frozenorb.potpvp.PotPvPND;
 import net.frozenorb.potpvp.match.Match;
 import net.frozenorb.potpvp.match.MatchHandler;
 import net.frozenorb.potpvp.match.MatchState;
@@ -28,7 +28,7 @@ public final class MatchCountdownListener implements Listener {
             return;
         }
 
-        MatchHandler matchHandler = PotPvPSI.getInstance().getMatchHandler();
+        MatchHandler matchHandler = PotPvPND.getInstance().getMatchHandler();
         Match match = matchHandler.getMatchPlaying((Player) event.getEntity());
 
         if (match != null && match.getState() != MatchState.IN_PROGRESS) {
@@ -49,7 +49,7 @@ public final class MatchCountdownListener implements Listener {
         Material type = item.getType();
 
         if ((type == Material.POTION && Potion.fromItemStack(item).isSplash()) || type == Material.ENDER_PEARL || type == Material.SNOW_BALL) {
-            MatchHandler matchHandler = PotPvPSI.getInstance().getMatchHandler();
+            MatchHandler matchHandler = PotPvPND.getInstance().getMatchHandler();
             Match match = matchHandler.getMatchPlaying(event.getPlayer());
 
             if (match != null && match.getState() == MatchState.COUNTDOWN) {
@@ -73,7 +73,7 @@ public final class MatchCountdownListener implements Listener {
 
         Player player = (Player) event.getEntity().getShooter();
 
-        MatchHandler matchHandler = PotPvPSI.getInstance().getMatchHandler();
+        MatchHandler matchHandler = PotPvPND.getInstance().getMatchHandler();
         Match match = matchHandler.getMatchPlaying(player);
 
         if (match != null && match.getState() == MatchState.COUNTDOWN) {

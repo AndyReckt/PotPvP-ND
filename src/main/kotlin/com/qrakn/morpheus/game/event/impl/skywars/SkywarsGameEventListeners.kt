@@ -5,7 +5,7 @@ import com.qrakn.morpheus.game.GameState
 import com.qrakn.morpheus.game.bukkit.event.PlayerGameInteractionEvent
 import com.qrakn.morpheus.game.bukkit.event.PlayerQuitGameEvent
 import com.qrakn.morpheus.game.event.impl.skywars.loot.SkywarsGameEventLoot
-import net.frozenorb.potpvp.PotPvPSI
+import net.frozenorb.potpvp.PotPvPND
 import org.bukkit.Bukkit
 import org.bukkit.Material
 import org.bukkit.block.Chest

@@ -1,6 +1,6 @@
 package net.frozenorb.potpvp.scoreboard;
 
-import net.frozenorb.potpvp.PotPvPSI;
+import net.frozenorb.potpvp.PotPvPND;
 import net.frozenorb.potpvp.kittype.HealingMethod;
 import net.frozenorb.potpvp.kt.scoreboard.ScoreFunction;
 import net.frozenorb.potpvp.kt.util.PlayerUtils;
@@ -24,8 +24,8 @@ final class MatchScoreGetter implements BiConsumer<Player, LinkedList<String>> {
     private Map<UUID, Integer> healsLeft;
 
     MatchScoreGetter() {
-        Bukkit.getScheduler().runTaskTimer(PotPvPSI.getInstance(), () -> {
-            MatchHandler matchHandler=PotPvPSI.getInstance().getMatchHandler();
+        Bukkit.getScheduler().runTaskTimer(PotPvPND.getInstance(), () -> {
+            MatchHandler matchHandler=PotPvPND.getInstance().getMatchHandler();
             Map<UUID, Integer> newHealsLeft=new HashMap<>();
 
             for ( Player player : Bukkit.getOnlinePlayers() ) {
@@ -51,13 +51,13 @@ final class MatchScoreGetter implements BiConsumer<Player, LinkedList<String>> {
 
     @Override
     public void accept(final Player player, final LinkedList<String> scores) {
-        final MatchHandler matchHandler=PotPvPSI.getInstance().getMatchHandler();
+        final MatchHandler matchHandler=PotPvPND.getInstance().getMatchHandler();
         final Match match=matchHandler.getMatchPlayingOrSpectating(player);
         if (match == null) {
             return;
         }
         final boolean participant=match.getTeam(player.getUniqueId()) != null;
-        boolean renderPing=false;
+        boolean renderPing=true;
         if (participant) {
             renderPing=this.renderParticipantLines(scores, match, player);
         } else {
@@ -93,19 +93,19 @@ final class MatchScoreGetter implements BiConsumer<Player, LinkedList<String>> {
         final String bardEffectScore=this.getBardEffectScore(player);
         final String bardEnergyScore=this.getBardEnergyScore(player);
         if (archerMarkScore != null) {
-            scores.add("&fArcher Mark&7: &c" + archerMarkScore);
+            scores.add("&fArcher Mark&7: " + PotPvPND.getInstance().getDominantColor() + archerMarkScore);
         }
         if (bardEffectScore != null) {
-            scores.add("&fBard Effect&7: &c" + bardEffectScore);
+            scores.add("&fBard Effect&7: " + PotPvPND.getInstance().getDominantColor() + bardEffectScore);
         }
         if (bardEnergyScore != null) {
-            scores.add("&fBard Energy&7: &c" + bardEnergyScore);
+            scores.add("&fBard Energy&7: " + PotPvPND.getInstance().getDominantColor() + bardEnergyScore);
         }
         return false;
     }
 
     private void render1v1MatchLines(final List<String> scores, final MatchTeam otherTeam) {
-        scores.add("&fOpponent: &b" + PotPvPSI.getInstance().getUuidCache().name(otherTeam.getFirstMember()));
+        scores.add("&fOpponent: " + PotPvPND.getInstance().getDominantColor() + PotPvPND.getInstance().getUuidCache().name(otherTeam.getFirstMember()));
     }
 
     private void render2v2MatchLines(final List<String> scores, final MatchTeam ourTeam, final MatchTeam otherTeam, final Player player, final HealingMethod healingMethod) {
@@ -160,13 +160,13 @@ final class MatchScoreGetter implements BiConsumer<Player, LinkedList<String>> {
                 healthStr="&4RIP";
                 healsStr="";
             }
-            scores.add(namePrefix + PotPvPSI.getInstance().getUuidCache().name(partnerUuid));
+            scores.add(namePrefix + PotPvPND.getInstance().getUuidCache().name(partnerUuid));
             scores.add(healthStr + healsStr);
             scores.add("&c");
         }
         scores.add("&c&lOpponents");
         scores.addAll(this.renderTeamMemberOverviewLines(otherTeam));
-        if (PotPvPSI.getInstance().getMatchHandler().getMatchPlaying(player).getState() == MatchState.IN_PROGRESS) {
+        if (PotPvPND.getInstance().getMatchHandler().getMatchPlaying(player).getState() == MatchState.IN_PROGRESS) {
             scores.add("&b");
         }
     }
@@ -177,7 +177,7 @@ final class MatchScoreGetter implements BiConsumer<Player, LinkedList<String>> {
         scores.add("&b");
         scores.add("&cOpponents &c(" + otherTeam.getAliveMembers().size() + "/" + otherTeam.getAllMembers().size() + ")");
         scores.addAll(this.renderTeamMemberOverviewLines(otherTeam));
-        if (PotPvPSI.getInstance().getMatchHandler().getMatchPlaying(Bukkit.getPlayer(ourTeam.getFirstAliveMember())).getState() == MatchState.IN_PROGRESS) {
+        if (PotPvPND.getInstance().getMatchHandler().getMatchPlaying(Bukkit.getPlayer(ourTeam.getFirstAliveMember())).getState() == MatchState.IN_PROGRESS) {
             scores.add("&c");
         }
     }
@@ -196,15 +196,15 @@ final class MatchScoreGetter implements BiConsumer<Player, LinkedList<String>> {
 
     private void renderSpectatorLines(final List<String> scores, final Match match, final MatchTeam oldTeam) {
         final String rankedStr=match.isRanked() ? " (R)" : "";
-        scores.add("&eKit: &a" + match.getKitType().getDisplayName() + rankedStr);
+        scores.add("&eKit: &a" + match.getKitType().getName() + rankedStr);
         final List<MatchTeam> teams=match.getTeams();
         if (teams.size() == 2) {
             final MatchTeam teamOne=teams.get(0);
             final MatchTeam teamTwo=teams.get(1);
             if (teamOne.getAllMembers().size() != 1 && teamTwo.getAllMembers().size() != 1) {
                 if (oldTeam == null) {
-                    scores.add("&fTeam One: &b" + teamOne.getAliveMembers().size() + "/" + teamOne.getAllMembers().size());
-                    scores.add("&fTeam Two: &b" + teamTwo.getAliveMembers().size() + "/" + teamTwo.getAllMembers().size());
+                    scores.add("&fTeam One: " + PotPvPND.getInstance().getDominantColor() + teamOne.getAliveMembers().size() + "/" + teamOne.getAllMembers().size());
+                    scores.add("&fTeam Two: " + PotPvPND.getInstance().getDominantColor() + teamTwo.getAliveMembers().size() + "/" + teamTwo.getAllMembers().size());
                 } else {
                     final MatchTeam otherTeam=(oldTeam == teamOne) ? teamTwo : teamOne;
                     scores.add("&fTeam: &a" + oldTeam.getAliveMembers().size() + "/" + oldTeam.getAllMembers().size());
@@ -221,7 +221,7 @@ final class MatchScoreGetter implements BiConsumer<Player, LinkedList<String>> {
             return;
         }
         final String formattedDuration=TimeUtils.formatLongIntoMMSS(ChronoUnit.SECONDS.between(startedAt.toInstant(), (endedAt == null) ? Instant.now() : endedAt.toInstant()));
-        scores.add(PotPvPSI.getInstance().getDominantColor() + "&fDuration: &b" + formattedDuration);
+        scores.add(PotPvPND.getInstance().getDominantColor() + "&fDuration: " + PotPvPND.getInstance().getDominantColor() + formattedDuration);
     }
 
     private void renderPingLines(final List<String> scores, final Match match, final Player ourPlayer) {
@@ -247,32 +247,32 @@ final class MatchScoreGetter implements BiConsumer<Player, LinkedList<String>> {
     }
 
     private List<String> renderTeamMemberOverviewLinesWithHearts(final MatchTeam team) {
-        final List<String> aliveLines=new ArrayList<String>();
-        final List<String> deadLines=new ArrayList<String>();
+        final List<String> aliveLines=new ArrayList<>();
+        final List<String> deadLines=new ArrayList<>();
         for ( final UUID teamMember : team.getAllMembers() ) {
             if (team.isAlive(teamMember)) {
-                aliveLines.add(" &f" + PotPvPSI.getInstance().getUuidCache().name(teamMember) + " " + this.getHeartString(team, teamMember));
+                aliveLines.add(" &f" + PotPvPND.getInstance().getUuidCache().name(teamMember) + " " + this.getHeartString(team, teamMember));
             } else {
-                deadLines.add(" &7&m" + PotPvPSI.getInstance().getUuidCache().name(teamMember));
+                deadLines.add(" &7&m" + PotPvPND.getInstance().getUuidCache().name(teamMember));
             }
         }
-        final List<String> result=new ArrayList<String>();
+        final List<String> result=new ArrayList<>();
         result.addAll(aliveLines);
         result.addAll(deadLines);
         return result;
     }
 
     private List<String> renderTeamMemberOverviewLines(final MatchTeam team) {
-        final List<String> aliveLines=new ArrayList<String>();
-        final List<String> deadLines=new ArrayList<String>();
+        final List<String> aliveLines=new ArrayList<>();
+        final List<String> deadLines=new ArrayList<>();
         for ( final UUID teamMember : team.getAllMembers() ) {
             if (team.isAlive(teamMember)) {
-                aliveLines.add(" &f" + PotPvPSI.getInstance().getUuidCache().name(teamMember));
+                aliveLines.add(" &f" + PotPvPND.getInstance().getUuidCache().name(teamMember));
             } else {
-                deadLines.add(" &7&m" + PotPvPSI.getInstance().getUuidCache().name(teamMember));
+                deadLines.add(" &7&m" + PotPvPND.getInstance().getUuidCache().name(teamMember));
             }
         }
-        final List<String> result=new ArrayList<String>();
+        final List<String> result=new ArrayList<>();
         result.addAll(aliveLines);
         result.addAll(deadLines);
         return result;

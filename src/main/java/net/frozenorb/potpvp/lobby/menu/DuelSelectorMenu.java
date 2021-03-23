@@ -52,7 +52,7 @@ public class DuelSelectorMenu extends PaginatedMenu {
             Player sender = Bukkit.getPlayer(duelInvite.getSender());
             return new ItemBuilder(Material.SKULL_ITEM)
                 .name("&aDuel From " + sender.getDisplayName())
-                .addToLore("&aLadder: &c" + duelInvite.getKitType().getDisplayName())
+                .addToLore("&aLadder: &c" + duelInvite.getKitType().getName())
                 .addToLore("&aMap:&c " + (duelInvite.getArena() == null ? "" : duelInvite.getArena().getName()))
                 .data((short) 3)
                 .build();

@@ -1,6 +1,6 @@
 package net.frozenorb.potpvp.kt.tab
 
-import net.frozenorb.potpvp.PotPvPSI
+import net.frozenorb.potpvp.PotPvPND
 import net.minecraft.util.com.google.gson.JsonElement
 import net.minecraft.util.com.google.gson.JsonParser
 import net.minecraft.util.com.mojang.authlib.GameProfile
@@ -24,7 +24,7 @@ class TabEngine {
     fun load() {
         getDefaultPropertyMap()
         TabThread().start()
-        PotPvPSI.getInstance().server.pluginManager.registerEvents(TabListeners(), PotPvPSI.getInstance())
+        PotPvPND.getInstance().server.pluginManager.registerEvents(TabListeners(), PotPvPND.getInstance())
     }
 
     internal fun addPlayer(player: Player) {
@@ -42,7 +42,7 @@ class TabEngine {
     }
 
     private fun fetchSkin(): PropertyMap? {
-        val propertyMap = PotPvPSI.getInstance().redis.runBackboneRedisCommand { redis ->
+        val propertyMap = PotPvPND.getInstance().redis.runBackboneRedisCommand { redis ->
             redis.get("stark:skinPropertyMap")
         }
 
@@ -58,7 +58,7 @@ class TabEngine {
         val profile2 = sessionService.fillProfileProperties(profile, true)
         val localPropertyMap = profile2.properties
 
-        PotPvPSI.getInstance().redis.runBackboneRedisCommand { redis ->
+        PotPvPND.getInstance().redis.runBackboneRedisCommand { redis ->
             Bukkit.getLogger().info("Caching PropertyMap for skin...")
             redis.setex(
                 "stark:skinPropertyMap",

@@ -1,7 +1,7 @@
 package net.frozenorb.potpvp.lobby.menu;
 
 import com.google.common.base.Preconditions;
-import net.frozenorb.potpvp.PotPvPSI;
+import net.frozenorb.potpvp.PotPvPND;
 import net.frozenorb.potpvp.kt.menu.Button;
 import net.frozenorb.potpvp.match.Match;
 import net.frozenorb.potpvp.match.MatchTeam;
@@ -43,7 +43,7 @@ final class SpectateButton extends Button {
         }
 
         description.add("");
-        description.add(ChatColor.YELLOW + "Kit: " + ChatColor.WHITE + match.getKitType().getDisplayName());
+        description.add(ChatColor.YELLOW + "Kit: " + ChatColor.WHITE + match.getKitType().getName());
         description.add(ChatColor.YELLOW + "Arena: " + ChatColor.WHITE + match.getArena().getSchematic());
 
         List<UUID> spectators = new ArrayList<>(match.getSpectators());
@@ -56,13 +56,13 @@ final class SpectateButton extends Button {
             description.add("");
 
             for (UUID member : teamA.getAliveMembers()) {
-                description.add(ChatColor.GREEN + PotPvPSI.getInstance().getUuidCache().name(member));
+                description.add(ChatColor.GREEN + PotPvPND.getInstance().getUuidCache().name(member));
             }
 
             description.add(ChatColor.YELLOW + "   vs.");
 
             for (UUID member : teamB.getAliveMembers()) {
-                description.add(ChatColor.GREEN + PotPvPSI.getInstance().getUuidCache().name(member));
+                description.add(ChatColor.GREEN + PotPvPND.getInstance().getUuidCache().name(member));
             }
         }
 
@@ -83,7 +83,7 @@ final class SpectateButton extends Button {
             return;
         }
 
-        Match currentlySpectating = PotPvPSI.getInstance().getMatchHandler().getMatchSpectating(player);
+        Match currentlySpectating = PotPvPND.getInstance().getMatchHandler().getMatchSpectating(player);
 
         if (currentlySpectating != null) {
             currentlySpectating.removeSpectator(player, false);

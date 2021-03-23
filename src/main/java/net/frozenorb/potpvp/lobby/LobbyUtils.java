@@ -1,12 +1,12 @@
 package net.frozenorb.potpvp.lobby;
 
 import lombok.experimental.UtilityClass;
-import net.frozenorb.potpvp.PotPvPSI;
+import net.frozenorb.potpvp.PotPvPND;
 import net.frozenorb.potpvp.duel.DuelHandler;
 import net.frozenorb.potpvp.duel.PlayerDuelInvite;
+import net.frozenorb.potpvp.elo.EloHandler;
 import net.frozenorb.potpvp.follow.FollowHandler;
 import net.frozenorb.potpvp.kit.KitItems;
-import net.frozenorb.potpvp.kit.listener.KitEditorListener;
 import net.frozenorb.potpvp.kit.menu.editkit.EditKitMenu;
 import net.frozenorb.potpvp.kt.menu.Menu;
 import net.frozenorb.potpvp.kt.util.ItemUtils;
@@ -19,14 +19,13 @@ import net.frozenorb.potpvp.queue.QueueItems;
 import net.frozenorb.potpvp.rematch.RematchData;
 import net.frozenorb.potpvp.rematch.RematchHandler;
 import net.frozenorb.potpvp.rematch.RematchItems;
+import net.frozenorb.potpvp.util.CC;
 import net.frozenorb.potpvp.validation.PotPvPValidation;
 import org.bukkit.Bukkit;
 import org.bukkit.GameMode;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.PlayerInventory;
-import org.bukkit.potion.PotionEffect;
-import org.bukkit.potion.PotionEffectType;
 
 import java.util.List;
 
@@ -44,9 +43,9 @@ public final class LobbyUtils {
         }
 
         // Stop if player is in a match
-        if (PotPvPSI.getInstance().getMatchHandler().isPlayingOrSpectatingMatch(player)) return;
+        if (PotPvPND.getInstance().getMatchHandler().isPlayingOrSpectatingMatch(player)) return;
 
-        PartyHandler partyHandler = PotPvPSI.getInstance().getPartyHandler();
+        PartyHandler partyHandler = PotPvPND.getInstance().getPartyHandler();
         PlayerInventory inventory = player.getInventory();
 
         inventory.clear();
@@ -59,28 +58,96 @@ public final class LobbyUtils {
             renderSoloItems(player, inventory);
         }
 
-        Bukkit.getScheduler().runTaskLater(PotPvPSI.getInstance(), player::updateInventory, 1L);
+        Bukkit.getScheduler().runTaskLater(PotPvPND.getInstance(), player::updateInventory, 1L);
     }
 
-    public static void denyMovement(Player player) {
-        player.setWalkSpeed(0.0F);
-        player.setFlySpeed(0.0F);
-        player.setFoodLevel(0);
-        player.setSprinting(false);
-        player.addPotionEffect(new PotionEffect(PotionEffectType.JUMP, Integer.MAX_VALUE, 200));
+    public static String getDivision(final Player player) {
+        EloHandler eloHandler = PotPvPND.getInstance().getEloHandler();
+        int globalElo = eloHandler.getGlobalElo(player.getUniqueId());
+        String division = "";
+        if (globalElo <= 1000) {
+            division = CC.GRAY + "Silver V";
+        }
+        if (globalElo >= 1000) {
+            division = CC.GRAY + "Silver IV";
+        }
+        if (globalElo >= 1050) {
+            division = CC.GRAY + "Silver III";
+        }
+        if (globalElo >= 1075) {
+            division = CC.GRAY + "Silver II";
+        }
+        if (globalElo >= 1100) {
+            division = CC.GRAY + "Silver I";
+        }
+        if (globalElo >= 1150) {
+            division = CC.YELLOW + "Gold V";
+        }
+        if (globalElo >= 1300) {
+            division = CC.YELLOW + "Gold IV";
+        }
+        if (globalElo >= 1350) {
+            division = CC.YELLOW + "Gold III";
+        }
+        if (globalElo >= 1400) {
+            division = CC.YELLOW + "Gold II";
+        }
+        if (globalElo >= 1450) {
+            division = CC.YELLOW + "Gold I";
+        }
+        if (globalElo >= 1500) {
+            division = CC.AQUA + "Platinum V";
+        }
+        if (globalElo >= 1600) {
+            division = CC.AQUA + "Platinum IV";
+        }
+        if (globalElo >= 1700) {
+            division = CC.AQUA + "Platinum III";
+        }
+        if (globalElo >= 1800) {
+            division = CC.AQUA + "Platinum II";
+        }
+        if (globalElo >= 1900) {
+            division = CC.AQUA + "Platinum I";
+        }
+        if (globalElo >= 2000) {
+            division = CC.GREEN + "Emerald V";
+        }
+        if (globalElo >= 2100) {
+            division = CC.GREEN + "Emerald IV";
+        }
+        if (globalElo >= 2200) {
+            division = CC.GREEN + "Emerald III";
+        }
+        if (globalElo >= 2300) {
+            division = CC.GREEN + "Emerald II";
+        }
+        if (globalElo >= 2400) {
+            division = CC.GREEN + "Emerald I";
+        }
+        if (globalElo >= 2500) {
+            division = CC.BLUE + "Sapphire V";
+        }
+        if (globalElo >= 2600) {
+            division = CC.BLUE + "Sapphire IV";
+        }
+        if (globalElo >= 2700) {
+            division = CC.BLUE + "Sapphire III";
+        }
+        if (globalElo >= 2800) {
+            division = CC.BLUE + "Sapphire II";
+        }
+        if (globalElo >= 2900) {
+            division = CC.BLUE + "Sapphire I";
+        }
+        if (globalElo >= 3000) {
+            division = CC.AQUA + "Champion";
+        }
+        return division;
     }
-
-    public static void allowMovement(Player player) {
-        player.setWalkSpeed(0.2F);
-        player.setFlySpeed(0.1F);
-        player.setFoodLevel(20);
-        player.setSprinting(true);
-        player.removePotionEffect(PotionEffectType.JUMP);
-    }
-
 
     private void renderPartyItems(Player player, PlayerInventory inventory, Party party) {
-        QueueHandler queueHandler = PotPvPSI.getInstance().getQueueHandler();
+        QueueHandler queueHandler = PotPvPND.getInstance().getQueueHandler();
 
         if (party.isLeader(player.getUniqueId())) {
             int partySize = party.getMembers().size();
@@ -101,8 +168,7 @@ public final class LobbyUtils {
                 }
             } else if (partySize > 2 && !queueHandler.isQueued(party)) {
                 inventory.setItem(1, PartyItems.ASSIGN_CLASSES);
-                inventory.setItem(2, PartyItems.START_TEAM_SPLIT_ITEM);
-                inventory.setItem(3, PartyItems.START_FFA_ITEM);
+                inventory.setItem(2, PartyItems.START_TEAM_EVENTS);
             }
 
         } else {
@@ -119,11 +185,11 @@ public final class LobbyUtils {
     }
 
     private void renderSoloItems(Player player, PlayerInventory inventory) {
-        RematchHandler rematchHandler = PotPvPSI.getInstance().getRematchHandler();
-        QueueHandler queueHandler = PotPvPSI.getInstance().getQueueHandler();
-        DuelHandler duelHandler = PotPvPSI.getInstance().getDuelHandler();
-        FollowHandler followHandler = PotPvPSI.getInstance().getFollowHandler();
-        LobbyHandler lobbyHandler = PotPvPSI.getInstance().getLobbyHandler();
+        RematchHandler rematchHandler = PotPvPND.getInstance().getRematchHandler();
+        QueueHandler queueHandler = PotPvPND.getInstance().getQueueHandler();
+        DuelHandler duelHandler = PotPvPND.getInstance().getDuelHandler();
+        FollowHandler followHandler = PotPvPND.getInstance().getFollowHandler();
+        LobbyHandler lobbyHandler = PotPvPND.getInstance().getLobbyHandler();
 
         boolean specMode = lobbyHandler.isInSpectatorMode(player);
         boolean followingSomeone = followHandler.getFollowing(player).isPresent();
@@ -177,10 +243,8 @@ public final class LobbyUtils {
                 }
             }
 
-            if (queueHandler.isQueuedRanked(player.getUniqueId())) {
-                inventory.setItem(0, QueueItems.LEAVE_SOLO_RANKED_QUEUE_ITEM);
-            } else if (queueHandler.isQueuedUnranked(player.getUniqueId())) {
-                inventory.setItem(0, QueueItems.LEAVE_SOLO_UNRANKED_QUEUE_ITEM);
+            if (queueHandler.isQueuedRanked(player.getUniqueId()) || queueHandler.isQueuedUnranked(player.getUniqueId())) {
+                inventory.setItem(0, QueueItems.LEAVE_SOLO_QUEUE_ITEM);
             } else {
                 inventory.setItem(0, QueueItems.JOIN_SOLO_UNRANKED_QUEUE_ITEM);
                 inventory.setItem(1, QueueItems.JOIN_SOLO_RANKED_QUEUE_ITEM);

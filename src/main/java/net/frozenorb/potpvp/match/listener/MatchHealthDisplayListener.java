@@ -1,6 +1,6 @@
 package net.frozenorb.potpvp.match.listener;
 
-import net.frozenorb.potpvp.PotPvPSI;
+import net.frozenorb.potpvp.PotPvPND;
 import net.frozenorb.potpvp.match.Match;
 import net.frozenorb.potpvp.match.MatchHandler;
 import net.frozenorb.potpvp.match.MatchTeam;
@@ -42,7 +42,7 @@ public final class MatchHealthDisplayListener implements Listener {
             return;
         }
 
-        Bukkit.getScheduler().runTaskLater(PotPvPSI.getInstance(), () -> {
+        Bukkit.getScheduler().runTaskLater(PotPvPND.getInstance(), () -> {
             // initialize the objective for all of the recipients (players + spectators)
             for (Player player : getRecipients(match)) {
                 initialize(player);
@@ -72,7 +72,7 @@ public final class MatchHealthDisplayListener implements Listener {
     @EventHandler(priority = EventPriority.LOW)
     public void onPlayerDeath(PlayerDeathEvent event) {
         Player player = event.getEntity();
-        MatchHandler matchHandler = PotPvPSI.getInstance().getMatchHandler();
+        MatchHandler matchHandler = PotPvPND.getInstance().getMatchHandler();
 
         if (!matchHandler.isPlayingMatch(player)) {
             return;
@@ -114,7 +114,7 @@ public final class MatchHealthDisplayListener implements Listener {
     @EventHandler
     public void onHealthChange(PlayerHealthChangeEvent event) {
         Player player = event.getPlayer();
-        MatchHandler matchHandler = PotPvPSI.getInstance().getMatchHandler();
+        MatchHandler matchHandler = PotPvPND.getInstance().getMatchHandler();
 
         if (!matchHandler.isPlayingMatch(player)) {
             return;

@@ -3,7 +3,7 @@ package net.frozenorb.potpvp.kt.protocol
 import com.comphenix.protocol.PacketType
 import com.comphenix.protocol.events.PacketAdapter
 import com.comphenix.protocol.events.PacketEvent
-import net.frozenorb.potpvp.PotPvPSI
+import net.frozenorb.potpvp.PotPvPND
 import net.minecraft.server.v1_7_R4.MinecraftServer
 import org.bukkit.event.EventHandler
 import org.bukkit.event.Listener
@@ -12,7 +12,7 @@ import java.util.*
 import java.util.concurrent.ConcurrentHashMap
 
 class PingAdapter :
-    PacketAdapter(PotPvPSI.getInstance(), PacketType.Play.Server.KEEP_ALIVE, PacketType.Play.Client.KEEP_ALIVE),
+    PacketAdapter(PotPvPND.getInstance(), PacketType.Play.Server.KEEP_ALIVE, PacketType.Play.Client.KEEP_ALIVE),
     Listener {
 
     override fun onPacketSending(event: PacketEvent?) {

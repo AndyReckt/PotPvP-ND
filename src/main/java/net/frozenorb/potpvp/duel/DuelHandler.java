@@ -1,7 +1,7 @@
 package net.frozenorb.potpvp.duel;
 
 import com.google.common.collect.Lists;
-import net.frozenorb.potpvp.PotPvPSI;
+import net.frozenorb.potpvp.PotPvPND;
 import net.frozenorb.potpvp.duel.listener.DuelListener;
 import net.frozenorb.potpvp.lobby.LobbyUtils;
 import net.frozenorb.potpvp.party.Party;
@@ -23,8 +23,8 @@ public final class DuelHandler {
     private Set<DuelInvite> activeInvites = Collections.newSetFromMap(new ConcurrentHashMap<>());
 
     public DuelHandler() {
-        Bukkit.getPluginManager().registerEvents(new DuelListener(), PotPvPSI.getInstance());
-        Bukkit.getScheduler().runTaskTimerAsynchronously(PotPvPSI.getInstance(), () -> {
+        Bukkit.getPluginManager().registerEvents(new DuelListener(), PotPvPND.getInstance());
+        Bukkit.getScheduler().runTaskTimerAsynchronously(PotPvPND.getInstance(), () -> {
             activeInvites.forEach(duelInvite -> {
                 if (duelInvite instanceof PlayerDuelInvite && duelInvite.isExpired()) {
                     TaskUtil.run(() -> {

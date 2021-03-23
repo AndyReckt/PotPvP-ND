@@ -1,7 +1,7 @@
 package net.frozenorb.potpvp.party.menu;
 
 import net.frozenorb.potpvp.PotPvPLang;
-import net.frozenorb.potpvp.PotPvPSI;
+import net.frozenorb.potpvp.PotPvPND;
 import net.frozenorb.potpvp.kt.menu.Menu;
 import net.frozenorb.potpvp.party.PartyEventsENUM;
 import net.frozenorb.potpvp.party.command.PartyFfaCommand;
@@ -49,28 +49,28 @@ public class PartyEventsMenu extends Menu {
         public List<String> getDescription(Player player) {
             ArrayList<String> description=new ArrayList<>();
             if (partyevents == PartyEventsENUM.PARTYUnranked) {
-                description.add(PotPvPLang.SHORT_LINE);
+                description.add(CC.MENU_BAR);
                 description.add(CC.GRAY + "Join Unranked 2v2 Queue with Party");
                 description.add(CC.GRAY + "Must have Min and Max" + CC.RED + " 2" + CC.GRAY + " Players");
-                description.add(PotPvPLang.SHORT_LINE);
+                description.add(CC.MENU_BAR);
             }
             if (partyevents == PartyEventsENUM.PartyFFA) {
-                description.add(PotPvPLang.SHORT_LINE);
+                description.add(CC.MENU_BAR);
                 description.add(CC.GRAY + "Start a Party FFA Match");
                 description.add(CC.GRAY + "Must have at least 2 Players");
-                description.add(PotPvPLang.SHORT_LINE);
+                description.add(CC.MENU_BAR);
             }
             if (partyevents == PartyEventsENUM.PartySplit) {
-                description.add(PotPvPLang.SHORT_LINE);
+                description.add(CC.MENU_BAR);
                 description.add(CC.GRAY + "Start a Party Split Match");
                 description.add(CC.GRAY + "Must have at least 2 Players");
-                description.add(PotPvPLang.SHORT_LINE);
+                description.add(CC.MENU_BAR);
             }
             if (partyevents == PartyEventsENUM.PARTYRanked) {
-                description.add(PotPvPLang.SHORT_LINE);
+                description.add(CC.MENU_BAR);
                 description.add(CC.GRAY + "Join Ranked 2v2 Queue with Party");
                 description.add(CC.GRAY + "Must have Min and Max" + CC.RED + " 2" + CC.GRAY + " Players");
-                description.add(PotPvPLang.SHORT_LINE);
+                description.add(CC.MENU_BAR);
             }
             return description;
         }
@@ -78,7 +78,7 @@ public class PartyEventsMenu extends Menu {
 
         @Override
         public void clicked(Player player, int slot, ClickType clickType, InventoryView view) {
-            if (PotPvPSI.getInstance().getPartyHandler().getParty(player).getMembers().size() < 2) {
+            if (PotPvPND.getInstance().getPartyHandler().getParty(player).getMembers().size() < 2) {
                 player.sendMessage(CC.RED + "You need to have at least 2 players in your party!");
                 player.closeInventory();
                 return;

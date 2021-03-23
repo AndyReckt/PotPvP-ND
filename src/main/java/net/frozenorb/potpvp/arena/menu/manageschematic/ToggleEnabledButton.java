@@ -2,7 +2,7 @@ package net.frozenorb.potpvp.arena.menu.manageschematic;
 
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
-import net.frozenorb.potpvp.PotPvPSI;
+import net.frozenorb.potpvp.PotPvPND;
 import net.frozenorb.potpvp.arena.ArenaSchematic;
 import net.frozenorb.potpvp.kt.menu.Button;
 import org.bukkit.ChatColor;
@@ -61,7 +61,7 @@ final class ToggleEnabledButton extends Button {
         schematic.setEnabled(!schematic.isEnabled());
 
         try {
-            PotPvPSI.getInstance().getArenaHandler().saveSchematics();
+            PotPvPND.getInstance().getArenaHandler().saveSchematics();
         } catch (IOException ex) {
             player.sendMessage(ChatColor.RED + "Failed to save " + schematic.getName() + ": " + ex.getMessage());
             ex.printStackTrace();

@@ -1,7 +1,7 @@
 package net.frozenorb.potpvp.command;
 
 import com.google.common.base.Objects;
-import net.frozenorb.potpvp.PotPvPSI;
+import net.frozenorb.potpvp.PotPvPND;
 import net.frozenorb.potpvp.kt.command.Command;
 import net.frozenorb.potpvp.kt.command.data.parameter.Param;
 import net.frozenorb.potpvp.kt.menu.menus.ConfirmMenu;
@@ -17,7 +17,7 @@ public class StatsResetCommands {
 
     @Command(names = {"statsreset addtoken"}, permission = "op", async = true)
     public static void addToken(CommandSender sender, @Param(name = "player") String playerName, @Param(name = "amount") int amount) {
-        UUID uuid = PotPvPSI.getInstance().uuidCache.uuid(playerName);
+        UUID uuid = PotPvPND.getInstance().uuidCache.uuid(playerName);
 
         if (uuid == null) {
             sender.sendMessage(ChatColor.RED + "Unable to locate '" + playerName + "'.");
@@ -25,7 +25,7 @@ public class StatsResetCommands {
         }
 
         addTokens(uuid, amount);
-        sender.sendMessage(ChatColor.GREEN + "Added " + amount + " token" + (amount == 1 ? "" : "s") + " to " + PotPvPSI.getInstance().getUuidCache().name(uuid) + ".");
+        sender.sendMessage(ChatColor.GREEN + "Added " + amount + " token" + (amount == 1 ? "" : "s") + " to " + PotPvPND.getInstance().getUuidCache().name(uuid) + ".");
     }
 
     @Command(names = {"statsreset"}, permission = "", async = true)
@@ -36,15 +36,15 @@ public class StatsResetCommands {
             return;
         }
 
-        Bukkit.getScheduler().runTask(PotPvPSI.getInstance(), () -> {
+        Bukkit.getScheduler().runTask(PotPvPND.getInstance(), () -> {
             new ConfirmMenu("Stats reset", (reset) -> {
                 if (!reset) {
                     sender.sendMessage(ChatColor.RED + "Stats reset aborted.");
                     return null;
                 }
 
-                Bukkit.getScheduler().runTaskAsynchronously(PotPvPSI.getInstance(), () -> {
-                    PotPvPSI.getInstance().getEloHandler().resetElo(sender.getUniqueId());
+                Bukkit.getScheduler().runTaskAsynchronously(PotPvPND.getInstance(), () -> {
+                    PotPvPND.getInstance().getEloHandler().resetElo(sender.getUniqueId());
                     removeTokens(sender.getUniqueId(), 1);
                     sender.sendMessage(ChatColor.GREEN + "Reset your stats! Used one token. " + tokens + " token" + (tokens == 1 ? "" : "s") + " left.");
                 });
@@ -55,20 +55,20 @@ public class StatsResetCommands {
     }
 
     private static int getTokens(UUID player) {
-        return PotPvPSI.getInstance().redis.runBackboneRedisCommand((redis) -> {
+        return PotPvPND.getInstance().redis.runBackboneRedisCommand((redis) -> {
             return Integer.valueOf(Objects.firstNonNull(redis.get(REDIS_PREFIX + player.toString()), "0"));
         });
     }
 
     private static void addTokens(UUID player, int amountBy) {
-        PotPvPSI.getInstance().redis.runBackboneRedisCommand((redis) -> {
+        PotPvPND.getInstance().redis.runBackboneRedisCommand((redis) -> {
             redis.incrBy(REDIS_PREFIX + player.toString(), amountBy);
             return null;
         });
     }
 
     public static void removeTokens(UUID player, int amountBy) {
-        PotPvPSI.getInstance().redis.runBackboneRedisCommand((redis) -> {
+        PotPvPND.getInstance().redis.runBackboneRedisCommand((redis) -> {
             redis.decrBy(REDIS_PREFIX + player.toString(), amountBy);
             return null;
         });

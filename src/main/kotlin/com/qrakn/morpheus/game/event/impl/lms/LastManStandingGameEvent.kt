@@ -9,6 +9,7 @@ import com.qrakn.morpheus.game.event.impl.skywars.SkywarsGameEventLogic
 import com.qrakn.morpheus.game.util.team.GameTeamSizeParameter
 import com.qrakn.morpheus.game.parameter.GameParameter
 import net.frozenorb.potpvp.PotPvPLang
+import net.frozenorb.potpvp.PotPvPND
 import org.bukkit.ChatColor
 import org.bukkit.Material
 import org.bukkit.entity.Player
@@ -58,13 +59,8 @@ object LastManStandingGameEvent : GameEvent {
             name = "2v2 $name"
         }
 
-        toReturn.add("&cEvent &7($name)")
-        // todo fix max players for when game started xd
-        toReturn.add("&6 ${PotPvPLang.LEFT_ARROW_NAKED} &fPlayers: &7${logic.getPlayersLeft()}/${game.getMaxPlayers()}")
-
-        if (game.state == GameState.RUNNING) {
-            //toReturn.add("&6 ${PotPvPLang.LEFT_ARROW_NAKED} &fKills: &7${player.getStatistic(Statistic.PLAYER_KILLS)}")
-        }
+        toReturn.add(PotPvPND.getInstance().dominantColor.toString() + "&lEvent &7($name)")
+        toReturn.add(PotPvPND.getInstance().dominantColor.toString() + "${PotPvPLang.LEFT_ARROW_NAKED} &fPlayers: " + PotPvPND.getInstance().dominantColor.toString() + "${logic.getPlayersLeft()}/${game.getMaxPlayers()}")
 
         return toReturn
     }
@@ -84,4 +80,9 @@ object LastManStandingGameEvent : GameEvent {
     override fun getMaxInstances(): Int {
         return 5
     }
+
+    override fun getLobbyItems(): List<ItemStack> {
+        return listOf()
+    }
+
 }

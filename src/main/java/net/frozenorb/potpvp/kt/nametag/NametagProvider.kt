@@ -1,6 +1,6 @@
 package net.frozenorb.potpvp.kt.nametag
 
-import net.frozenorb.potpvp.PotPvPSI
+import net.frozenorb.potpvp.PotPvPND
 import org.bukkit.entity.Player
 
 abstract class NametagProvider
@@ -17,7 +17,7 @@ constructor(val name: String, val weight: Int) {
     companion object {
         @JvmStatic
         fun createNametag(prefix: String, suffix: String): NametagInfo {
-            return PotPvPSI.getInstance().nametagEngine.getOrCreate(prefix, suffix)
+            return PotPvPND.getInstance().nametagEngine.getOrCreate(prefix, suffix)
         }
     }
 

@@ -2,7 +2,7 @@ package net.frozenorb.potpvp.kit.menu.editkit;
 
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
-import net.frozenorb.potpvp.PotPvPSI;
+import net.frozenorb.potpvp.PotPvPND;
 import net.frozenorb.potpvp.kittype.KitType;
 import net.frozenorb.potpvp.kt.menu.Button;
 import org.bukkit.Bukkit;
@@ -56,7 +56,7 @@ final class LoadDefaultKitButton extends Button {
 
         player.getInventory().setContents(kitType.getDefaultInventory());
 
-        Bukkit.getScheduler().runTaskLater(PotPvPSI.getInstance(), player::updateInventory, 1L);
+        Bukkit.getScheduler().runTaskLater(PotPvPND.getInstance(), player::updateInventory, 1L);
     }
 
 }

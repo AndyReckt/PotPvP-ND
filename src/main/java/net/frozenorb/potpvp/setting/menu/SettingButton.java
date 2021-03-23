@@ -1,7 +1,7 @@
 package net.frozenorb.potpvp.setting.menu;
 
 import com.google.common.base.Preconditions;
-import net.frozenorb.potpvp.PotPvPSI;
+import net.frozenorb.potpvp.PotPvPND;
 import net.frozenorb.potpvp.kt.menu.Button;
 import net.frozenorb.potpvp.setting.Setting;
 import net.frozenorb.potpvp.setting.SettingHandler;
@@ -20,7 +20,7 @@ import java.util.List;
 /**
  * Button used by {@link net.frozenorb.potpvp.setting.menu.SettingsMenu} to render a {@link Setting}
  */
-final class SettingButton extends Button {
+public final class SettingButton extends Button {
 
     private static final String ENABLED_ARROW = CC.BLUE + StringEscapeUtils.unescapeJava(" » ");
     private static final String DISABLED_SPACER = "    ";
@@ -44,7 +44,7 @@ final class SettingButton extends Button {
         description.addAll(setting.getDescription());
         description.add("");
 
-        if (PotPvPSI.getInstance().getSettingHandler().getSetting(player, setting)) {
+        if (PotPvPND.getInstance().getSettingHandler().getSetting(player, setting)) {
             description.add(ENABLED_ARROW + setting.getEnabledText());
             description.add(DISABLED_SPACER + setting.getDisabledText());
         } else {
@@ -72,7 +72,7 @@ final class SettingButton extends Button {
             return;
         }
 
-        SettingHandler settingHandler = PotPvPSI.getInstance().getSettingHandler();
+        SettingHandler settingHandler = PotPvPND.getInstance().getSettingHandler();
 
         boolean enabled = !settingHandler.getSetting(player, setting);
         settingHandler.updateSetting(player, setting, enabled);

@@ -1,6 +1,6 @@
 package net.frozenorb.potpvp.tab;
 
-import net.frozenorb.potpvp.PotPvPSI;
+import net.frozenorb.potpvp.PotPvPND;
 import net.frozenorb.potpvp.kt.tab.TabLayout;
 import net.frozenorb.potpvp.match.Match;
 import net.frozenorb.potpvp.match.MatchTeam;
@@ -13,7 +13,7 @@ import java.util.function.BiConsumer;
 final class MatchSpectatorLayoutProvider implements BiConsumer<Player, TabLayout> {
     @Override
     public void accept(final Player player, final TabLayout tabLayout) {
-        final Match match=PotPvPSI.getInstance().getMatchHandler().getMatchSpectating(player);
+        final Match match=PotPvPND.getInstance().getMatchHandler().getMatchSpectating(player);
         final MatchTeam oldTeam=match.getTeam(player.getUniqueId());
         final List<MatchTeam> teams=match.getTeams();
         if (teams.size() == 2) {
@@ -63,9 +63,9 @@ final class MatchSpectatorLayoutProvider implements BiConsumer<Player, TabLayout
                     }
                     for ( final UUID enemy : otherTeam2.getAllMembers() ) {
                         if (otherTeam2.isAlive(enemy)) {
-                            entries.put(ChatColor.RED + PotPvPSI.getInstance().getUuidCache().name(enemy), PotPvPLayoutProvider.getPingOrDefault(enemy));
+                            entries.put(ChatColor.RED + PotPvPND.getInstance().getUuidCache().name(enemy), PotPvPLayoutProvider.getPingOrDefault(enemy));
                         } else {
-                            deadLines.put("&7&m" + PotPvPSI.getInstance().getUuidCache().name(enemy), PotPvPLayoutProvider.getPingOrDefault(enemy));
+                            deadLines.put("&7&m" + PotPvPND.getInstance().getUuidCache().name(enemy), PotPvPLayoutProvider.getPingOrDefault(enemy));
                         }
                     }
                 }
@@ -75,9 +75,9 @@ final class MatchSpectatorLayoutProvider implements BiConsumer<Player, TabLayout
                 for ( final MatchTeam team : match.getTeams() ) {
                     for ( final UUID enemy : team.getAllMembers() ) {
                         if (team.isAlive(enemy)) {
-                            entries.put("&c" + PotPvPSI.getInstance().getUuidCache().name(enemy), PotPvPLayoutProvider.getPingOrDefault(enemy));
+                            entries.put("&c" + PotPvPND.getInstance().getUuidCache().name(enemy), PotPvPLayoutProvider.getPingOrDefault(enemy));
                         } else {
-                            deadLines.put("&7&m" + PotPvPSI.getInstance().getUuidCache().name(enemy), PotPvPLayoutProvider.getPingOrDefault(enemy));
+                            deadLines.put("&7&m" + PotPvPND.getInstance().getUuidCache().name(enemy), PotPvPLayoutProvider.getPingOrDefault(enemy));
                         }
                     }
                 }
@@ -153,9 +153,9 @@ final class MatchSpectatorLayoutProvider implements BiConsumer<Player, TabLayout
         for ( final UUID member : team.getAllMembers() ) {
             final int ping=PotPvPLayoutProvider.getPingOrDefault(member);
             if (team.isAlive(member)) {
-                aliveLines.put(aliveColor + PotPvPSI.getInstance().getUuidCache().name(member), ping);
+                aliveLines.put(aliveColor + PotPvPND.getInstance().getUuidCache().name(member), ping);
             } else {
-                deadLines.put("&7&m" + PotPvPSI.getInstance().getUuidCache().name(member), ping);
+                deadLines.put("&7&m" + PotPvPND.getInstance().getUuidCache().name(member), ping);
             }
         }
         final Map<String, Integer> result=new LinkedHashMap<>();

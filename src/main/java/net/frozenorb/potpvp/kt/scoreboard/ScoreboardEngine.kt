@@ -1,6 +1,6 @@
 package net.frozenorb.potpvp.kt.scoreboard
 
-import net.frozenorb.potpvp.PotPvPSI
+import net.frozenorb.potpvp.PotPvPND
 import org.bukkit.entity.Player
 
 class ScoreboardEngine {
@@ -10,7 +10,7 @@ class ScoreboardEngine {
 
     fun load() {
         ScoreboardThread().start()
-        PotPvPSI.getInstance().server.pluginManager.registerEvents(ScoreboardListeners(), PotPvPSI.getInstance())
+        PotPvPND.getInstance().server.pluginManager.registerEvents(ScoreboardListeners(), PotPvPND.getInstance())
     }
 
     internal fun create(player: Player) {

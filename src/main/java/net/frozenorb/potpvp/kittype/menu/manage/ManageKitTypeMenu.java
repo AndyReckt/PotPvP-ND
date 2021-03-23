@@ -22,7 +22,7 @@ public class ManageKitTypeMenu
     private final KitType type;
 
     public ManageKitTypeMenu(KitType type) {
-        super("Editing " + type.getDisplayName());
+        super("Editing " + type.getName());
         this.setNoncancellingInventory(true);
         this.setUpdateAfterClick(false);
         this.type=type;
@@ -54,7 +54,7 @@ public class ManageKitTypeMenu
 
             @Override
             public List<String> getDescription(Player player) {
-                return ImmutableList.of("", ChatColor.RED + "Removes all saved " + ManageKitTypeMenu.this.type.getDisplayName() + " kits", ChatColor.RED + "(includes online and offline players)", "", ChatColor.RED + "For safety reasons this button is disabled,", ChatColor.RED + "use /kit wipekits type " + ManageKitTypeMenu.this.type.getId().toLowerCase());
+                return ImmutableList.of("", ChatColor.RED + "Removes all saved " + ManageKitTypeMenu.this.type.getName() + " kits", ChatColor.RED + "(includes online and offline players)", "", ChatColor.RED + "For safety reasons this button is disabled,", ChatColor.RED + "use /kit wipekits type " + ManageKitTypeMenu.this.type.getId().toLowerCase());
             }
 
             @Override

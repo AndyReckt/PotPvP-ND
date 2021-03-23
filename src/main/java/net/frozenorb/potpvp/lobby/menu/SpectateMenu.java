@@ -1,6 +1,6 @@
 package net.frozenorb.potpvp.lobby.menu;
 
-import net.frozenorb.potpvp.PotPvPSI;
+import net.frozenorb.potpvp.PotPvPND;
 import net.frozenorb.potpvp.kt.menu.Button;
 import net.frozenorb.potpvp.kt.menu.pagination.PaginatedMenu;
 import net.frozenorb.potpvp.match.Match;
@@ -29,11 +29,11 @@ public final class SpectateMenu extends PaginatedMenu {
 
     @Override
     public Map<Integer, Button> getAllPagesButtons(Player player) {
-        SettingHandler settingHandler = PotPvPSI.getInstance().getSettingHandler();
+        SettingHandler settingHandler = PotPvPND.getInstance().getSettingHandler();
         Map<Integer, Button> buttons = new HashMap<>();
         int i = 0;
 
-        for (Match match : PotPvPSI.getInstance().getMatchHandler().getHostedMatches()) {
+        for (Match match : PotPvPND.getInstance().getMatchHandler().getHostedMatches()) {
             // players can view this menu while spectating
             if (match.isSpectator(player.getUniqueId())) {
                 continue;
@@ -43,7 +43,7 @@ public final class SpectateMenu extends PaginatedMenu {
                 continue;
             }
 
-            if (!PotPvPSI.getInstance().getTournamentHandler().isInTournament(match)) {
+            if (!PotPvPND.getInstance().getTournamentHandler().isInTournament(match)) {
                 int numTotalPlayers = 0;
                 int numSpecDisabled = 0;
 

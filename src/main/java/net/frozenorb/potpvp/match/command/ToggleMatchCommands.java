@@ -1,6 +1,6 @@
 package net.frozenorb.potpvp.match.command;
 
-import net.frozenorb.potpvp.PotPvPSI;
+import net.frozenorb.potpvp.PotPvPND;
 import net.frozenorb.potpvp.kt.command.Command;
 import net.frozenorb.potpvp.match.MatchHandler;
 import org.bukkit.ChatColor;
@@ -10,7 +10,7 @@ public final class ToggleMatchCommands {
 
     @Command(names = {"toggleMatches unranked"}, permission = "op")
     public static void toggleMatchesUnranked(Player sender) {
-        MatchHandler matchHandler = PotPvPSI.getInstance().getMatchHandler();
+        MatchHandler matchHandler = PotPvPND.getInstance().getMatchHandler();
 
         boolean newState = !matchHandler.isUnrankedMatchesDisabled();
         matchHandler.setUnrankedMatchesDisabled(newState);
@@ -20,7 +20,7 @@ public final class ToggleMatchCommands {
 
     @Command(names = {"toggleMatches ranked"}, permission = "op")
     public static void toggleMatchesRanked(Player sender) {
-        MatchHandler matchHandler = PotPvPSI.getInstance().getMatchHandler();
+        MatchHandler matchHandler = PotPvPND.getInstance().getMatchHandler();
 
         boolean newState = !matchHandler.isRankedMatchesDisabled();
         matchHandler.setRankedMatchesDisabled(newState);

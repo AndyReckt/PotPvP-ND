@@ -12,7 +12,7 @@
 package net.frozenorb.potpvp.party.menu.otherparties;
 
 import com.google.common.base.Preconditions;
-import net.frozenorb.potpvp.PotPvPSI;
+import net.frozenorb.potpvp.PotPvPND;
 import net.frozenorb.potpvp.duel.command.DuelCommand;
 import net.frozenorb.potpvp.kt.menu.Button;
 import net.frozenorb.potpvp.party.Party;
@@ -37,7 +37,7 @@ final class OtherPartyButton
 
     @Override
     public String getName(Player player) {
-        return ChatColor.DARK_PURPLE + PotPvPSI.getInstance().getUuidCache().name(this.party.getLeader());
+        return ChatColor.DARK_PURPLE + PotPvPND.getInstance().getUuidCache().name(this.party.getLeader());
     }
 
     @Override
@@ -46,7 +46,7 @@ final class OtherPartyButton
         description.add("");
         for ( UUID member : this.party.getMembers() ) {
             ChatColor color=this.party.isLeader(member) ? ChatColor.DARK_PURPLE : ChatColor.YELLOW;
-            description.add(color + PotPvPSI.getInstance().getUuidCache().name(member));
+            description.add(color + PotPvPND.getInstance().getUuidCache().name(member));
         }
         description.add("");
         description.add(ChatColor.GREEN + "\u00bb Click to duel \u00ab");
@@ -70,7 +70,7 @@ final class OtherPartyButton
 
     @Override
     public void clicked(Player player, int slot, ClickType clickType, InventoryView view) {
-        Party senderParty=PotPvPSI.getInstance().getPartyHandler().getParty(player);
+        Party senderParty=PotPvPND.getInstance().getPartyHandler().getParty(player);
         if (senderParty == null) {
             return;
         }

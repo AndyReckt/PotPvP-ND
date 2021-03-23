@@ -13,7 +13,7 @@
  */
 package net.frozenorb.potpvp.party;
 
-import net.frozenorb.potpvp.PotPvPSI;
+import net.frozenorb.potpvp.PotPvPND;
 import net.md_5.bungee.api.ChatColor;
 import net.md_5.bungee.api.chat.*;
 
@@ -29,7 +29,7 @@ public final class PartyLang {
 
     public static TextComponent inviteAcceptPrompt(Party party) {
         ClickEvent.Action runCommand=ClickEvent.Action.RUN_COMMAND;
-        String partyLeader=PotPvPSI.getInstance().getUuidCache().name(party.getLeader());
+        String partyLeader=PotPvPND.getInstance().getUuidCache().name(party.getLeader());
         TextComponent acceptButton=new TextComponent(ACCEPT_BUTTON);
         TextComponent infoButton=new TextComponent(INFO_BUTTON);
         acceptButton.setClickEvent(new ClickEvent(runCommand, "/p join " + partyLeader));
@@ -47,7 +47,7 @@ public final class PartyLang {
 
     public static TextComponent hoverablePartyName(Party party) {
         TextComponent previewComponent=new TextComponent();
-        String leaderName=PotPvPSI.getInstance().getUuidCache().name(party.getLeader());
+        String leaderName=PotPvPND.getInstance().getUuidCache().name(party.getLeader());
         if (party.getMembers().size() > 1) {
             HoverEvent hoverEvent=PartyLang.hoverablePreviewTooltip(party);
             previewComponent.setText("[" + leaderName + "'s Party]");
@@ -79,7 +79,7 @@ public final class PartyLang {
         for ( int i=0; i < Math.min(partySize, 6); ++i ) {
             UUID member=members.remove(0);
             String suffix=party.isLeader(member) ? "*" : "";
-            displayNames.add(ChatColor.YELLOW + PotPvPSI.getInstance().getUuidCache().name(member) + suffix);
+            displayNames.add(ChatColor.YELLOW + PotPvPND.getInstance().getUuidCache().name(member) + suffix);
         }
         if (!members.isEmpty()) {
             displayNames.add(ChatColor.GRAY + "+ " + members.size() + " more");

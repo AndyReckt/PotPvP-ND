@@ -1,6 +1,6 @@
 package net.frozenorb.potpvp.rematch.listener;
 
-import net.frozenorb.potpvp.PotPvPSI;
+import net.frozenorb.potpvp.PotPvPND;
 import net.frozenorb.potpvp.duel.DuelHandler;
 import net.frozenorb.potpvp.duel.DuelInvite;
 import net.frozenorb.potpvp.duel.command.AcceptCommand;
@@ -48,12 +48,12 @@ public final class RematchItemListener extends ItemListener {
         });
 
         addHandler(RematchItems.DUEL_SELECTOR, player -> {
-            DuelHandler duelHandler = PotPvPSI.getInstance().getDuelHandler();
+            DuelHandler duelHandler = PotPvPND.getInstance().getDuelHandler();
             new DuelSelectorMenu(duelHandler.getInvitesTo(player)).openMenu(player);
         });
 
         addHandler(RematchItems.ACCEPT_DUEL_ITEM, player -> {
-            DuelHandler duelHandler = PotPvPSI.getInstance().getDuelHandler();
+            DuelHandler duelHandler = PotPvPND.getInstance().getDuelHandler();
             DuelInvite duelInvite = duelHandler.getInvitesTo(player).get(0);
             Player sender = Bukkit.getPlayer((UUID) duelInvite.getSender());
             player.performCommand("accept " + sender.getName());

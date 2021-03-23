@@ -7,7 +7,7 @@
  */
 package net.frozenorb.potpvp.party.command;
 
-import net.frozenorb.potpvp.PotPvPSI;
+import net.frozenorb.potpvp.PotPvPND;
 import net.frozenorb.potpvp.kt.command.Command;
 import net.frozenorb.potpvp.kt.command.data.parameter.Param;
 import net.frozenorb.potpvp.party.Party;
@@ -21,7 +21,7 @@ public final class PartyJoinCommand {
 
     @Command(names={"party join", "p join", "t join", "team join", "f join"}, permission="")
     public static void partyJoin(Player sender, @Param(name="player") Player target, @Param(name="password", defaultValue="skasjkdasdjhksahjd") String providedPassword) {
-        PartyHandler partyHandler=PotPvPSI.getInstance().getPartyHandler();
+        PartyHandler partyHandler=PotPvPND.getInstance().getPartyHandler();
         Party targetParty=partyHandler.getParty(target);
         if (partyHandler.hasParty(sender)) {
             sender.sendMessage(ChatColor.RED + "You are already in a party. You must leave your current party first.");

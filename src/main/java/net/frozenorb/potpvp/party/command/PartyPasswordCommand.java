@@ -8,7 +8,7 @@
 package net.frozenorb.potpvp.party.command;
 
 import net.frozenorb.potpvp.PotPvPLang;
-import net.frozenorb.potpvp.PotPvPSI;
+import net.frozenorb.potpvp.PotPvPND;
 import net.frozenorb.potpvp.kt.command.Command;
 import net.frozenorb.potpvp.kt.command.data.parameter.Param;
 import net.frozenorb.potpvp.party.Party;
@@ -19,7 +19,7 @@ import org.bukkit.entity.Player;
 public final class PartyPasswordCommand {
     @Command(names={"party password", "p password", "t password", "team password", "party pass", "p pass", "t pass", "team pass", "f password", "f pass"}, permission="practice.donator")
     public static void partyPassword(Player sender, @Param(name="password") String password) {
-        Party party=PotPvPSI.getInstance().getPartyHandler().getParty(sender);
+        Party party=PotPvPND.getInstance().getPartyHandler().getParty(sender);
         if (party == null) {
             sender.sendMessage(PotPvPLang.NOT_IN_PARTY);
         } else if (!party.isLeader(sender.getUniqueId())) {

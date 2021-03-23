@@ -1,7 +1,7 @@
 package net.frozenorb.potpvp.match;
 
 import lombok.experimental.UtilityClass;
-import net.frozenorb.potpvp.PotPvPSI;
+import net.frozenorb.potpvp.PotPvPND;
 import net.frozenorb.potpvp.follow.FollowHandler;
 import net.frozenorb.potpvp.lobby.LobbyItems;
 import net.frozenorb.potpvp.party.PartyHandler;
@@ -15,10 +15,10 @@ import org.bukkit.inventory.PlayerInventory;
 public final class MatchUtils {
 
     public static void resetInventory(Player player) {
-        SettingHandler settingHandler = PotPvPSI.getInstance().getSettingHandler();
-        FollowHandler followHandler = PotPvPSI.getInstance().getFollowHandler();
-        PartyHandler partyHandler = PotPvPSI.getInstance().getPartyHandler();
-        MatchHandler matchHandler = PotPvPSI.getInstance().getMatchHandler();
+        SettingHandler settingHandler = PotPvPND.getInstance().getSettingHandler();
+        FollowHandler followHandler = PotPvPND.getInstance().getFollowHandler();
+        PartyHandler partyHandler = PotPvPND.getInstance().getPartyHandler();
+        MatchHandler matchHandler = PotPvPND.getInstance().getMatchHandler();
 
         Match match = matchHandler.getMatchSpectating(player);
 
@@ -36,7 +36,7 @@ public final class MatchUtils {
         // don't give players who die (and cause the match to end)
         // a fire item, they'll be sent back to the lobby in a few seconds anyway
         if (match.getState() == MatchState.ENDING) {
-            Bukkit.getScheduler().runTaskLater(PotPvPSI.getInstance(), player::updateInventory, 1L);
+            Bukkit.getScheduler().runTaskLater(PotPvPND.getInstance(), player::updateInventory, 1L);
             return;
         }
         // if they've been on any team or are staff they'll be able to
@@ -67,7 +67,7 @@ public final class MatchUtils {
             inventory.setItem(2, LobbyItems.SPECTATE_MENU_ITEM);
         }
 
-        Bukkit.getScheduler().runTaskLater(PotPvPSI.getInstance(), player::updateInventory, 1L);
+        Bukkit.getScheduler().runTaskLater(PotPvPND.getInstance(), player::updateInventory, 1L);
     }
 
 }

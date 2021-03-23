@@ -7,7 +7,7 @@
  */
 package net.frozenorb.potpvp.party.menu.otherparties;
 
-import net.frozenorb.potpvp.PotPvPSI;
+import net.frozenorb.potpvp.PotPvPND;
 import net.frozenorb.potpvp.kt.menu.Button;
 import net.frozenorb.potpvp.kt.menu.pagination.PaginatedMenu;
 import net.frozenorb.potpvp.lobby.LobbyHandler;
@@ -34,9 +34,9 @@ public final class OtherPartiesMenu
 
     @Override
     public Map<Integer, Button> getAllPagesButtons(Player player) {
-        SettingHandler settingHandler=PotPvPSI.getInstance().getSettingHandler();
-        PartyHandler partyHandler=PotPvPSI.getInstance().getPartyHandler();
-        LobbyHandler lobbyHandler=PotPvPSI.getInstance().getLobbyHandler();
+        SettingHandler settingHandler=PotPvPND.getInstance().getSettingHandler();
+        PartyHandler partyHandler=PotPvPND.getInstance().getPartyHandler();
+        LobbyHandler lobbyHandler=PotPvPND.getInstance().getLobbyHandler();
         HashMap<Integer, Button> buttons=new HashMap<Integer, Button>();
         ArrayList<Party> parties=new ArrayList<Party>(partyHandler.getParties());
         int index=0;

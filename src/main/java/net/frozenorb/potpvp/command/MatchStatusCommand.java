@@ -1,6 +1,6 @@
 package net.frozenorb.potpvp.command;
 
-import net.frozenorb.potpvp.PotPvPSI;
+import net.frozenorb.potpvp.PotPvPND;
 import net.frozenorb.potpvp.kt.command.Command;
 import net.frozenorb.potpvp.kt.command.data.parameter.Param;
 import net.frozenorb.potpvp.match.Match;
@@ -13,7 +13,7 @@ public final class MatchStatusCommand {
 
     @Command(names = {"match status"}, permission = "")
     public static void matchStatus(CommandSender sender, @Param(name = "target") Player target) {
-        MatchHandler matchHandler = PotPvPSI.getInstance().getMatchHandler();
+        MatchHandler matchHandler = PotPvPND.getInstance().getMatchHandler();
         Match match = matchHandler.getMatchPlayingOrSpectating(target);
 
         if (match == null) {
@@ -21,7 +21,7 @@ public final class MatchStatusCommand {
             return;
         }
 
-        for (String line : PotPvPSI.getGson().toJson(match).split("\n")) {
+        for (String line : PotPvPND.getGson().toJson(match).split("\n")) {
             sender.sendMessage("  " + ChatColor.GRAY + line);
         }
     }

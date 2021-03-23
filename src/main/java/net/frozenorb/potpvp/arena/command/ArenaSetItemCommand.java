@@ -1,6 +1,6 @@
 package net.frozenorb.potpvp.arena.command;
 
-import net.frozenorb.potpvp.PotPvPSI;
+import net.frozenorb.potpvp.PotPvPND;
 import net.frozenorb.potpvp.arena.ArenaHandler;
 import net.frozenorb.potpvp.kt.command.Command;
 import net.frozenorb.potpvp.kt.command.data.parameter.Param;
@@ -13,7 +13,7 @@ import java.io.IOException;
 public class ArenaSetItemCommand {
     @Command(names = {"arena setitem"}, permission = "op")
     public static void setArenaItem(Player sender, @Param(name = "schematic") String schematicName, @Param(name = "item") int itemId) {
-        ArenaHandler arenaHandler = PotPvPSI.getInstance().getArenaHandler();
+        ArenaHandler arenaHandler = PotPvPND.getInstance().getArenaHandler();
 
         if (arenaHandler.getSchematic(schematicName) == null) {
             sender.sendMessage(ChatColor.RED + "Schematic " + schematicName + " doesn't exist!");

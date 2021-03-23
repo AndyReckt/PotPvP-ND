@@ -1,6 +1,6 @@
 package net.frozenorb.potpvp.lobby.listener;
 
-import net.frozenorb.potpvp.PotPvPSI;
+import net.frozenorb.potpvp.PotPvPND;
 import net.frozenorb.potpvp.command.ManageCommand;
 import net.frozenorb.potpvp.follow.command.UnfollowCommand;
 import net.frozenorb.potpvp.lobby.LobbyHandler;
@@ -27,9 +27,6 @@ public final class LobbyItemListener extends ItemListener {
 
     public LobbyItemListener(LobbyHandler lobbyHandler) {
         addHandler(LobbyItems.MANAGE_ITEM, p -> {
-            // even though we don't shouldn't need to do this
-            // we do anyway because of the sensitivity of the manage
-            // menu.
             if (p.hasPermission("potpvp.admin")) {
                 ManageCommand.manage(p);
             }
@@ -73,7 +70,7 @@ public final class LobbyItemListener extends ItemListener {
 
 
     private void getRandomMatch(Player player, boolean ranked) {
-        MatchHandler matchHandler = PotPvPSI.getInstance().getMatchHandler();
+        MatchHandler matchHandler = PotPvPND.getInstance().getMatchHandler();
 
         if (!PotPvPValidation.canUseSpectateItemIgnoreMatchSpectating(player)) {
             return;

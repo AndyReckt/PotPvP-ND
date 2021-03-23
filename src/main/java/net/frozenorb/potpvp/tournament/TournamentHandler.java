@@ -4,7 +4,7 @@ package net.frozenorb.potpvp.tournament;
 import lombok.Getter;
 import lombok.Setter;
 import net.frozenorb.potpvp.PotPvPLang;
-import net.frozenorb.potpvp.PotPvPSI;
+import net.frozenorb.potpvp.PotPvPND;
 import net.frozenorb.potpvp.kit.listener.KitEditorListener;
 import net.frozenorb.potpvp.kittype.KitType;
 import net.frozenorb.potpvp.kt.command.Command;
@@ -16,7 +16,6 @@ import net.frozenorb.potpvp.match.MatchTeam;
 import net.frozenorb.potpvp.party.Party;
 import net.frozenorb.potpvp.queue.QueueHandler;
 import net.frozenorb.potpvp.util.event.HalfHourEvent;
-import net.frozenorb.potpvp.validation.PotPvPValidation;
 import net.minecraft.util.com.google.common.collect.ImmutableList;
 import net.minecraft.util.com.google.common.collect.Lists;
 import org.bukkit.Bukkit;
@@ -28,7 +27,6 @@ import org.bukkit.event.Listener;
 import org.bukkit.scheduler.BukkitRunnable;
 import java.util.List;
 import java.util.Objects;
-import java.util.UUID;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.stream.Collectors;
 
@@ -41,9 +39,9 @@ public class TournamentHandler implements Listener {
 
     public TournamentHandler() {
         instance = this;
-        PotPvPSI.getInstance().commandHandler.registerClass(this.getClass());
-        Bukkit.getPluginManager().registerEvents(this, PotPvPSI.getInstance());
-        Bukkit.getScheduler().scheduleSyncRepeatingTask(PotPvPSI.getInstance(), () -> {
+        PotPvPND.getInstance().commandHandler.registerClass(this.getClass());
+        Bukkit.getPluginManager().registerEvents(this, PotPvPND.getInstance());
+        Bukkit.getScheduler().scheduleSyncRepeatingTask(PotPvPND.getInstance(), () -> {
             if (tournament != null) tournament.check();
         }, 20L, 20L);
 
@@ -96,7 +94,7 @@ public class TournamentHandler implements Listener {
                     cancel();
                 }
             }
-        }.runTaskTimer(PotPvPSI.getInstance(), 60 * 20, 60 * 20);
+        }.runTaskTimer(PotPvPND.getInstance(), 60 * 20, 60 * 20);
     }
 
     @Command(names = {"tournament join", "join", "jointournament"}, permission = "")
@@ -119,18 +117,18 @@ public class TournamentHandler implements Listener {
             return;
         }
 
-        Party senderParty = PotPvPSI.getInstance().getPartyHandler().getParty(sender);
+        Party senderParty = PotPvPND.getInstance().getPartyHandler().getParty(sender);
         if (senderParty == null) {
             if (tournamentTeamSize == 1) {
-                senderParty = PotPvPSI.getInstance().getPartyHandler().getOrCreateParty(sender); // Will auto put them in a party
+                senderParty = PotPvPND.getInstance().getPartyHandler().getOrCreateParty(sender); // Will auto put them in a party
             } else {
                 sender.sendMessage(ChatColor.RED + "You don't have a team to join the tournament with!");
                 return;
             }
         }
 
-        LobbyHandler lobbyHandler = PotPvPSI.getInstance().getLobbyHandler();
-        QueueHandler queueHandler = PotPvPSI.getInstance().getQueueHandler();
+        LobbyHandler lobbyHandler = PotPvPND.getInstance().getLobbyHandler();
+        QueueHandler queueHandler = PotPvPND.getInstance().getQueueHandler();
 
         int notInLobby = (int) senderParty.getMembers()
             .stream()
@@ -170,7 +168,7 @@ public class TournamentHandler implements Listener {
             return;
         }
 
-        if (PotPvPSI.getInstance().getQueueHandler().getQueueEntry(senderParty) != null) {
+        if (PotPvPND.getInstance().getQueueHandler().getQueueEntry(senderParty) != null) {
             sender.sendMessage(ChatColor.RED + "You can't join the tournament if your party is currently queued.");
             return;
         }
@@ -196,9 +194,9 @@ public class TournamentHandler implements Listener {
             MatchTeam secondTeam = match.getTeams().get(1);
 
             if (firstTeam.getAllMembers().size() == 1) {
-                sender.sendMessage("  " + ChatColor.GRAY + "» " + ChatColor.AQUA + PotPvPSI.getInstance().uuidCache.name(firstTeam.getFirstMember()) + ChatColor.GRAY + " vs " + ChatColor.AQUA + PotPvPSI.getInstance().uuidCache.name(secondTeam.getFirstMember()));
+                sender.sendMessage("  " + ChatColor.GRAY + "» " + ChatColor.AQUA + PotPvPND.getInstance().uuidCache.name(firstTeam.getFirstMember()) + ChatColor.GRAY + " vs " + ChatColor.AQUA + PotPvPND.getInstance().uuidCache.name(secondTeam.getFirstMember()));
             } else {
-                sender.sendMessage("  " + ChatColor.GRAY + "» " + ChatColor.AQUA + PotPvPSI.getInstance().uuidCache.name(firstTeam.getFirstMember()) + ChatColor.GRAY + "'s team vs " + ChatColor.AQUA + PotPvPSI.getInstance().uuidCache.name(secondTeam.getFirstMember()) + ChatColor.GRAY + "'s team");
+                sender.sendMessage("  " + ChatColor.GRAY + "» " + ChatColor.AQUA + PotPvPND.getInstance().uuidCache.name(firstTeam.getFirstMember()) + ChatColor.GRAY + "'s team vs " + ChatColor.AQUA + PotPvPND.getInstance().uuidCache.name(secondTeam.getFirstMember()) + ChatColor.GRAY + "'s team");
             }
         }
         sender.sendMessage(PotPvPLang.LONG_LINE);
@@ -254,7 +252,7 @@ public class TournamentHandler implements Listener {
         Tournament tournament;
         instance.setTournament(tournament = new Tournament(kitType, teamSize, teamCount));
 
-        Bukkit.getScheduler().runTaskLater(PotPvPSI.getInstance(), () -> {
+        Bukkit.getScheduler().runTaskLater(PotPvPND.getInstance(), () -> {
             if (tournament == instance.getTournament() && instance.getTournament() != null && instance.getTournament().getCurrentRound() == -1) {
                 instance.getTournament().start();
             }
@@ -269,7 +267,7 @@ public class TournamentHandler implements Listener {
                     cancel();
                 }
             }
-        }.runTaskTimer(PotPvPSI.getInstance(), 60 * 20, 60 * 20);
+        }.runTaskTimer(PotPvPND.getInstance(), 60 * 20, 60 * 20);
     }
 
     @Getter

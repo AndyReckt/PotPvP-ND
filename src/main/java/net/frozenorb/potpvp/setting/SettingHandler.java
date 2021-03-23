@@ -1,7 +1,7 @@
 package net.frozenorb.potpvp.setting;
 
 import com.google.common.collect.ImmutableMap;
-import net.frozenorb.potpvp.PotPvPSI;
+import net.frozenorb.potpvp.PotPvPND;
 import net.frozenorb.potpvp.setting.event.SettingUpdateEvent;
 import net.frozenorb.potpvp.setting.listener.SettingLoadListener;
 import net.frozenorb.potpvp.setting.repository.MongoSettingRepository;
@@ -25,7 +25,7 @@ public final class SettingHandler {
     private final SettingRepository settingRepository;
 
     public SettingHandler() {
-        Bukkit.getPluginManager().registerEvents(new SettingLoadListener(), PotPvPSI.getInstance());
+        Bukkit.getPluginManager().registerEvents(new SettingLoadListener(), PotPvPND.getInstance());
 
         settingRepository = new MongoSettingRepository();
     }
@@ -56,7 +56,7 @@ public final class SettingHandler {
         Map<Setting, Boolean> playerSettings = settingsData.computeIfAbsent(player.getUniqueId(), i -> new HashMap<>());
         playerSettings.put(setting, enabled);
 
-        Bukkit.getScheduler().runTaskAsynchronously(PotPvPSI.getInstance(), () -> {
+        Bukkit.getScheduler().runTaskAsynchronously(PotPvPND.getInstance(), () -> {
             try {
                 settingRepository.saveSettings(player.getUniqueId(), playerSettings);
             } catch (IOException ex) {

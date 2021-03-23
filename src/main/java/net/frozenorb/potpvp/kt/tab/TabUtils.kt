@@ -1,6 +1,6 @@
 package net.frozenorb.potpvp.kt.tab
 
-import net.frozenorb.potpvp.PotPvPSI
+import net.frozenorb.potpvp.PotPvPND
 import net.minecraft.util.com.mojang.authlib.GameProfile
 import org.bukkit.craftbukkit.v1_7_R4.entity.CraftPlayer
 import org.bukkit.entity.Player
@@ -21,7 +21,7 @@ object TabUtils {
         var player: GameProfile? = cache[name]
         if (player == null) {
             player = GameProfile(id, name)
-            player.properties.putAll(PotPvPSI.getInstance().tabEngine.getDefaultPropertyMap())
+            player.properties.putAll(PotPvPND.getInstance().tabEngine.getDefaultPropertyMap())
             cache[name] = player
         }
         return player

@@ -1,6 +1,6 @@
 package net.frozenorb.potpvp.party.menu;
 
-import net.frozenorb.potpvp.PotPvPSI;
+import net.frozenorb.potpvp.PotPvPND;
 import net.frozenorb.potpvp.kt.menu.Menu;
 import net.frozenorb.potpvp.party.PartyHandler;
 import net.frozenorb.potpvp.util.CC;
@@ -18,16 +18,16 @@ import java.util.Map;
 public class PartyListMenu extends Menu {
     @Override
     public String getTitle(final Player player) {
-        return "&bSelect a Member to Manage";
+        return "Select a Member to Manage";
     }
 
     @Override
     public Map<Integer, net.frozenorb.potpvp.kt.menu.Button> getButtons(final Player player) {
         final Map<Integer, net.frozenorb.potpvp.kt.menu.Button> buttons=new HashMap<>();
-        final PartyHandler partyHandler=PotPvPSI.getInstance().getPartyHandler();
+        final PartyHandler partyHandler=PotPvPND.getInstance().getPartyHandler();
         final Map<Integer, PartyDisplayButton> map;
         final PartyDisplayButton partyDisplayButton;
-        partyHandler.getParty(player).getMembers().forEach(pplayer -> buttons.put(buttons.size(), new PartyDisplayButton(PotPvPSI.getInstance().getServer().getPlayer(pplayer))));
+        partyHandler.getParty(player).getMembers().forEach(pplayer -> buttons.put(buttons.size(), new PartyDisplayButton(PotPvPND.getInstance().getServer().getPlayer(pplayer))));
         return buttons;
     }
 
@@ -41,7 +41,7 @@ public class PartyListMenu extends Menu {
 
         @Override
         public List<String> getDescription(Player player) {
-            final PartyHandler partyHandler=PotPvPSI.getInstance().getPartyHandler();
+            final PartyHandler partyHandler=PotPvPND.getInstance().getPartyHandler();
             final String lore=partyHandler.getParty(player).isLeader(player.getUniqueId()) ? "&fClick to manage" : "";
             ArrayList<String> description=new ArrayList<>();
             description.add(lore);
@@ -67,7 +67,7 @@ public class PartyListMenu extends Menu {
         @Override
         public void clicked(Player player, int slot, ClickType clickType, InventoryView view) {
             Menu.getCurrentlyOpenedMenus().get(player.getName()).setManualClose(false);
-            final PartyHandler partyHandler=PotPvPSI.getInstance().getPartyHandler();
+            final PartyHandler partyHandler=PotPvPND.getInstance().getPartyHandler();
             if (!player.getUniqueId().equals(partyHandler.getParty(player).getLeader())) {
                 player.sendMessage(CC.RED + "You can only manage players as a leader.");
                 return;

@@ -1,7 +1,8 @@
 package net.frozenorb.potpvp.party.menu;
 
+import lombok.AllArgsConstructor;
 import net.frozenorb.potpvp.PotPvPLang;
-import net.frozenorb.potpvp.PotPvPSI;
+import net.frozenorb.potpvp.PotPvPND;
 import net.frozenorb.potpvp.kt.menu.Button;
 import net.frozenorb.potpvp.kt.menu.Menu;
 import net.frozenorb.potpvp.party.PartyAccessRestriction;
@@ -37,16 +38,18 @@ public class PartySettingsMenu extends Menu {
         return buttons;
     }
 
+    @AllArgsConstructor
     private static class SelectManageButton extends Button {
+
         private final PartyManage partyManage;
 
         @Override
         public String getName(final Player player) {
 
             if (partyManage == PartyManage.MEMBER_MANAGE) {
-                return "&b" + this.partyManage.getName();
+                return PotPvPND.getInstance().getDominantColor() + this.partyManage.getName();
             } else if (partyManage == PartyManage.PUBLIC) {
-                return "&b" + this.partyManage.getName();
+                return PotPvPND.getInstance().getDominantColor() + this.partyManage.getName();
             }
             return "Shouldn't appear";
         }
@@ -54,20 +57,20 @@ public class PartySettingsMenu extends Menu {
         @Override
         public List<String> getDescription(Player player) {
             ArrayList<String> description=new ArrayList<>();
-            PartyHandler partyHandler=PotPvPSI.getInstance().getPartyHandler();
+            PartyHandler partyHandler=PotPvPND.getInstance().getPartyHandler();
             if (partyManage == PartyManage.MEMBER_MANAGE) {
-                description.add(PotPvPLang.SHORT_LINE);
+                description.add(CC.MENU_BAR);
                 description.add("&7Click to select a");
                 description.add("&7Member to manage");
-                description.add(PotPvPLang.SHORT_LINE);
+                description.add(CC.MENU_BAR);
             }
             if (partyManage == PartyManage.PUBLIC) {
-                description.add(PotPvPLang.SHORT_LINE);
-                description.add("&fState: &b" + partyHandler.getParty(player).getAccessRestriction());
+                description.add(CC.MENU_BAR);
+                description.add("&fState: " + PotPvPND.getInstance().getDominantColor() + partyHandler.getParty(player).getAccessRestriction());
                 description.add("");
                 description.add("&7Click to change state");
                 description.add("&7of the party");
-                description.add(PotPvPLang.SHORT_LINE);
+                description.add(CC.MENU_BAR);
             }
             return description;
         }
@@ -94,7 +97,7 @@ public class PartySettingsMenu extends Menu {
 
         @Override
         public void clicked(Player player, int slot, ClickType clickType, InventoryView view) {
-            PartyHandler partyHandler=PotPvPSI.getInstance().getPartyHandler();
+            PartyHandler partyHandler=PotPvPND.getInstance().getPartyHandler();
             if (partyHandler.getParty(player) == null) {
                 player.sendMessage(CC.RED + "You are not in a party.");
                 Menu.getCurrentlyOpenedMenus().get(player.getName()).setManualClose(false);
@@ -124,11 +127,6 @@ public class PartySettingsMenu extends Menu {
                     PartyLockCommand.partyLock(player);
                 }
             }
-        }
-
-        @ConstructorProperties({"partyManage"})
-        public SelectManageButton(final PartyManage partyManage) {
-            this.partyManage=partyManage;
         }
     }
 }

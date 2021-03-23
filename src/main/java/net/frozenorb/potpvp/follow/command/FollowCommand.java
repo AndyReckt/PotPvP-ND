@@ -2,7 +2,7 @@ package net.frozenorb.potpvp.follow.command;
 
 import com.qrakn.morpheus.game.Game;
 import com.qrakn.morpheus.game.GameQueue;
-import net.frozenorb.potpvp.PotPvPSI;
+import net.frozenorb.potpvp.PotPvPND;
 import net.frozenorb.potpvp.follow.FollowHandler;
 import net.frozenorb.potpvp.kt.command.Command;
 import net.frozenorb.potpvp.kt.command.data.parameter.Param;
@@ -21,9 +21,9 @@ public final class FollowCommand {
             return;
         }
 
-        FollowHandler followHandler = PotPvPSI.getInstance().getFollowHandler();
-        SettingHandler settingHandler = PotPvPSI.getInstance().getSettingHandler();
-        MatchHandler matchHandler = PotPvPSI.getInstance().getMatchHandler();
+        FollowHandler followHandler = PotPvPND.getInstance().getFollowHandler();
+        SettingHandler settingHandler = PotPvPND.getInstance().getSettingHandler();
+        MatchHandler matchHandler = PotPvPND.getInstance().getMatchHandler();
 
         if (sender == target) {
             sender.sendMessage(ChatColor.RED + "You can't follow yourself!");

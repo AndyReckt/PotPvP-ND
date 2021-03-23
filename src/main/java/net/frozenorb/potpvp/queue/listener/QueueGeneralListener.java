@@ -1,6 +1,6 @@
 package net.frozenorb.potpvp.queue.listener;
 
-import net.frozenorb.potpvp.PotPvPSI;
+import net.frozenorb.potpvp.PotPvPND;
 import net.frozenorb.potpvp.match.MatchTeam;
 import net.frozenorb.potpvp.match.event.MatchCountdownStartEvent;
 import net.frozenorb.potpvp.match.event.MatchSpectatorJoinEvent;
@@ -71,7 +71,7 @@ public final class QueueGeneralListener
 
     @EventHandler
     public void onMatchCountdownStart(MatchCountdownStartEvent event) {
-        PartyHandler partyHandler=PotPvPSI.getInstance().getPartyHandler();
+        PartyHandler partyHandler=PotPvPND.getInstance().getPartyHandler();
         for ( MatchTeam team : event.getMatch().getTeams() ) {
             for ( UUID member : team.getAllMembers() ) {
                 Player memberBukkit=Bukkit.getPlayer(member);

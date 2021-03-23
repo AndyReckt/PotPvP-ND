@@ -4,7 +4,7 @@ import com.google.common.collect.ImmutableSet;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;
-import net.frozenorb.potpvp.PotPvPSI;
+import net.frozenorb.potpvp.PotPvPND;
 import net.frozenorb.potpvp.arena.Arena;
 import net.frozenorb.potpvp.arena.ArenaHandler;
 import net.frozenorb.potpvp.arena.ArenaSchematic;
@@ -35,26 +35,26 @@ public final class MatchHandler {
     @Getter(AccessLevel.PACKAGE) private final Map<UUID, Match> spectatingMatchCache = new ConcurrentHashMap<>();
 
     public MatchHandler() {
-        Bukkit.getPluginManager().registerEvents(new GoldenHeadListener(), PotPvPSI.getInstance());
-        Bukkit.getPluginManager().registerEvents(new KitSelectionListener(), PotPvPSI.getInstance());
-        Bukkit.getPluginManager().registerEvents(new MatchBlockPickupListener(), PotPvPSI.getInstance());
-        Bukkit.getPluginManager().registerEvents(new MatchBuildListener(), PotPvPSI.getInstance());
-        Bukkit.getPluginManager().registerEvents(new MatchComboListener(), PotPvPSI.getInstance());
-        Bukkit.getPluginManager().registerEvents(new MatchCountdownListener(), PotPvPSI.getInstance());
-        Bukkit.getPluginManager().registerEvents(new MatchDeathMessageListener(), PotPvPSI.getInstance());
-        Bukkit.getPluginManager().registerEvents(new MatchDurationLimitListener(), PotPvPSI.getInstance());
-        Bukkit.getPluginManager().registerEvents(new MatchEnderPearlDamageListener(), PotPvPSI.getInstance());
-        Bukkit.getPluginManager().registerEvents(new MatchFreezeListener(), PotPvPSI.getInstance());
-        Bukkit.getPluginManager().registerEvents(new MatchGeneralListener(), PotPvPSI.getInstance());
-        Bukkit.getPluginManager().registerEvents(new MatchHardcoreHealingListener(), PotPvPSI.getInstance());
-        Bukkit.getPluginManager().registerEvents(new MatchHealthDisplayListener(), PotPvPSI.getInstance());
-        Bukkit.getPluginManager().registerEvents(new MatchPartySpectateListener(), PotPvPSI.getInstance());
-        Bukkit.getPluginManager().registerEvents(new MatchRodListener(), PotPvPSI.getInstance());
-        Bukkit.getPluginManager().registerEvents(new MatchSoupListener(), PotPvPSI.getInstance());
-        Bukkit.getPluginManager().registerEvents(new MatchStatsListener(), PotPvPSI.getInstance());
-        Bukkit.getPluginManager().registerEvents(new MatchWizardListener(), PotPvPSI.getInstance());
-        Bukkit.getPluginManager().registerEvents(new SpectatorItemListener(this), PotPvPSI.getInstance());
-        Bukkit.getPluginManager().registerEvents(new SpectatorPreventionListener(), PotPvPSI.getInstance());
+        Bukkit.getPluginManager().registerEvents(new GoldenHeadListener(), PotPvPND.getInstance());
+        Bukkit.getPluginManager().registerEvents(new KitSelectionListener(), PotPvPND.getInstance());
+        Bukkit.getPluginManager().registerEvents(new MatchBlockPickupListener(), PotPvPND.getInstance());
+        Bukkit.getPluginManager().registerEvents(new MatchBuildListener(), PotPvPND.getInstance());
+        Bukkit.getPluginManager().registerEvents(new MatchComboListener(), PotPvPND.getInstance());
+        Bukkit.getPluginManager().registerEvents(new MatchCountdownListener(), PotPvPND.getInstance());
+        Bukkit.getPluginManager().registerEvents(new MatchDeathMessageListener(), PotPvPND.getInstance());
+        Bukkit.getPluginManager().registerEvents(new MatchDurationLimitListener(), PotPvPND.getInstance());
+        Bukkit.getPluginManager().registerEvents(new MatchEnderPearlDamageListener(), PotPvPND.getInstance());
+        Bukkit.getPluginManager().registerEvents(new MatchFreezeListener(), PotPvPND.getInstance());
+        Bukkit.getPluginManager().registerEvents(new MatchGeneralListener(), PotPvPND.getInstance());
+        Bukkit.getPluginManager().registerEvents(new MatchHardcoreHealingListener(), PotPvPND.getInstance());
+        Bukkit.getPluginManager().registerEvents(new MatchHealthDisplayListener(), PotPvPND.getInstance());
+        Bukkit.getPluginManager().registerEvents(new MatchPartySpectateListener(), PotPvPND.getInstance());
+        Bukkit.getPluginManager().registerEvents(new MatchRodListener(), PotPvPND.getInstance());
+        Bukkit.getPluginManager().registerEvents(new MatchSoupListener(), PotPvPND.getInstance());
+        Bukkit.getPluginManager().registerEvents(new MatchStatsListener(), PotPvPND.getInstance());
+        Bukkit.getPluginManager().registerEvents(new MatchWizardListener(), PotPvPND.getInstance());
+        Bukkit.getPluginManager().registerEvents(new SpectatorItemListener(this), PotPvPND.getInstance());
+        Bukkit.getPluginManager().registerEvents(new SpectatorPreventionListener(), PotPvPND.getInstance());
     }
 
     public Match startMatch(List<MatchTeam> teams, KitType kitType, boolean ranked, boolean allowRematches) {
@@ -69,7 +69,7 @@ public final class MatchHandler {
                 }
 
                 if (isPlayingOrSpectatingMatch(memberPlayer)) {
-                    throw new IllegalArgumentException(PotPvPSI.getInstance().getUuidCache().name(member) + " is already in a match!");
+                    throw new IllegalArgumentException(PotPvPND.getInstance().getUuidCache().name(member) + " is already in a match!");
                 }
             }
         }
@@ -82,7 +82,7 @@ public final class MatchHandler {
             }
         }
 
-        ArenaHandler arenaHandler = PotPvPSI.getInstance().getArenaHandler();
+        ArenaHandler arenaHandler = PotPvPND.getInstance().getArenaHandler();
         long matchSize = teams.stream()
             .mapToInt(t -> t.getAllMembers().size())
             .sum();
@@ -120,7 +120,7 @@ public final class MatchHandler {
         }
 
         if (!openArenaOpt.isPresent()) {
-            PotPvPSI.getInstance().getLogger().warning("Failed to start match: No open arenas found");
+            PotPvPND.getInstance().getLogger().warning("Failed to start match: No open arenas found");
             return null;
         }
 
@@ -144,7 +144,7 @@ public final class MatchHandler {
                 }
 
                 if (isPlayingOrSpectatingMatch(memberPlayer)) {
-                    throw new IllegalArgumentException(PotPvPSI.getInstance().getUuidCache().name(member) + " is already fighting other player!");
+                    throw new IllegalArgumentException(PotPvPND.getInstance().getUuidCache().name(member) + " is already fighting other player!");
                 }
             }
         }
@@ -157,7 +157,7 @@ public final class MatchHandler {
             }
         }
 
-        ArenaHandler arenaHandler = PotPvPSI.getInstance().getArenaHandler();
+        ArenaHandler arenaHandler = PotPvPND.getInstance().getArenaHandler();
 
         Optional<Arena> openArenaOpt = arenaHandler.allocateUnusedArena(schematic ->
             schematic.isEnabled() &&
@@ -166,7 +166,7 @@ public final class MatchHandler {
         );
 
         if (!openArenaOpt.isPresent()) {
-            PotPvPSI.getInstance().getLogger().warning("Failed to start match: No open arenas found");
+            PotPvPND.getInstance().getLogger().warning("Failed to start match: No open arenas found");
             return null;
         }
 

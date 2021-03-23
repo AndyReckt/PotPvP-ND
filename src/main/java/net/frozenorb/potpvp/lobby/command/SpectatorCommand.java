@@ -1,6 +1,6 @@
 package net.frozenorb.potpvp.lobby.command;
 
-import net.frozenorb.potpvp.PotPvPSI;
+import net.frozenorb.potpvp.PotPvPND;
 import net.frozenorb.potpvp.kt.command.Command;
 import net.frozenorb.potpvp.lobby.LobbyHandler;
 import net.frozenorb.potpvp.validation.PotPvPValidation;
@@ -13,7 +13,7 @@ public final class SpectatorCommand {
     public static void toggleSpectatorMode(Player sender) {
         if (PotPvPValidation.isInGame(sender)) return;
 
-        LobbyHandler lobbyHandler = PotPvPSI.getInstance().getLobbyHandler();
+        LobbyHandler lobbyHandler = PotPvPND.getInstance().getLobbyHandler();
         if (lobbyHandler.isInLobby(sender)) {
             Boolean isInSpectatorMode = lobbyHandler.isInSpectatorMode(sender);
             lobbyHandler.setSpectatorMode(sender, !isInSpectatorMode);

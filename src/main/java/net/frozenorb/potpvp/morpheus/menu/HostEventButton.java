@@ -3,6 +3,9 @@ package net.frozenorb.potpvp.morpheus.menu;
 import com.qrakn.morpheus.game.Game;
 import com.qrakn.morpheus.game.GameQueue;
 import com.qrakn.morpheus.game.event.GameEvent;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import net.frozenorb.potpvp.kt.menu.Button;
 import net.frozenorb.potpvp.morpheus.menu.parameter.HostParametersMenu;
 import org.bukkit.ChatColor;
@@ -11,23 +14,19 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.ClickType;
 import org.bukkit.inventory.InventoryView;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-
 public class HostEventButton
-        extends Button {
+extends Button {
     private final GameEvent event;
 
     HostEventButton(GameEvent event) {
-        this.event=event;
+        this.event = event;
     }
 
     @Override
     public void clicked(Player player, int slot, ClickType clickType, InventoryView view) {
         if (player.hasPermission(this.event.getPermission())) {
             if (this.event.getParameters().isEmpty()) {
-                for ( Game game : GameQueue.INSTANCE.getGames() ) {
+                for (Game game : GameQueue.INSTANCE.getGames()) {
                     if (!game.getHost().equals(player)) continue;
                     player.sendMessage(ChatColor.RED + "You've already queued an event!");
                     player.closeInventory();
@@ -66,7 +65,7 @@ public class HostEventButton
 
     @Override
     public byte getDamageValue(Player player) {
-        return (byte) this.event.getIcon().getDurability();
+        return (byte)this.event.getIcon().getDurability();
     }
 }
 

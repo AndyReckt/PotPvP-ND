@@ -2,7 +2,7 @@ package net.frozenorb.potpvp.duel.command;
 
 import com.google.common.collect.ImmutableList;
 import net.frozenorb.potpvp.PotPvPLang;
-import net.frozenorb.potpvp.PotPvPSI;
+import net.frozenorb.potpvp.PotPvPND;
 import net.frozenorb.potpvp.duel.DuelHandler;
 import net.frozenorb.potpvp.duel.DuelInvite;
 import net.frozenorb.potpvp.duel.PartyDuelInvite;
@@ -27,8 +27,8 @@ public final class AcceptCommand {
             return;
         }
 
-        PartyHandler partyHandler = PotPvPSI.getInstance().getPartyHandler();
-        DuelHandler duelHandler = PotPvPSI.getInstance().getDuelHandler();
+        PartyHandler partyHandler = PotPvPND.getInstance().getPartyHandler();
+        DuelHandler duelHandler = PotPvPND.getInstance().getDuelHandler();
 
         Party senderParty = partyHandler.getParty(sender);
         Party targetParty = partyHandler.getParty(target);
@@ -41,7 +41,7 @@ public final class AcceptCommand {
                 acceptParty(sender, senderParty, targetParty, invite);
             } else {
                 // we grab the leader's name as the member targeted might not be the leader
-                String leaderName = PotPvPSI.getInstance().getUuidCache().name(targetParty.getLeader());
+                String leaderName = PotPvPND.getInstance().getUuidCache().name(targetParty.getLeader());
                 sender.sendMessage(ChatColor.RED + "Your party doesn't have a duel invite from " + leaderName + "'s party.");
             }
         } else if (senderParty == null && targetParty == null) {
@@ -63,8 +63,8 @@ public final class AcceptCommand {
     }
 
     private static void acceptParty(Player sender, Party senderParty, Party targetParty, DuelInvite invite) {
-        MatchHandler matchHandler = PotPvPSI.getInstance().getMatchHandler();
-        DuelHandler duelHandler = PotPvPSI.getInstance().getDuelHandler();
+        MatchHandler matchHandler = PotPvPND.getInstance().getMatchHandler();
+        DuelHandler duelHandler = PotPvPND.getInstance().getDuelHandler();
 
         if (!senderParty.isLeader(sender.getUniqueId())) {
             sender.sendMessage(PotPvPLang.NOT_LEADER_OF_PARTY);
@@ -92,8 +92,8 @@ public final class AcceptCommand {
     }
 
     private static void acceptPlayer(Player sender, Player target, DuelInvite invite) {
-        MatchHandler matchHandler = PotPvPSI.getInstance().getMatchHandler();
-        DuelHandler duelHandler = PotPvPSI.getInstance().getDuelHandler();
+        MatchHandler matchHandler = PotPvPND.getInstance().getMatchHandler();
+        DuelHandler duelHandler = PotPvPND.getInstance().getDuelHandler();
 
         if (!PotPvPValidation.canAcceptDuel(sender, target)) {
             return;

@@ -1,6 +1,6 @@
 package net.frozenorb.potpvp.party.menu;
 
-import net.frozenorb.potpvp.PotPvPSI;
+import net.frozenorb.potpvp.PotPvPND;
 import net.frozenorb.potpvp.kt.menu.Button;
 import net.frozenorb.potpvp.kt.menu.Menu;
 import net.frozenorb.potpvp.party.PartyHandler;
@@ -81,7 +81,7 @@ public class PartyManageMembers extends Menu {
 
         @Override
         public void clicked(Player player, int slot, ClickType clickType, InventoryView view) {
-            PartyHandler partyHandler=PotPvPSI.getInstance().getPartyHandler();
+            PartyHandler partyHandler=PotPvPND.getInstance().getPartyHandler();
             if (partyHandler.getParty(player) == null) {
                 player.sendMessage(CC.RED + "You are not in a party.");
                 Menu.getCurrentlyOpenedMenus().get(player.getName()).setManualClose(false);

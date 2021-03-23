@@ -34,7 +34,7 @@ final class KitTypeButton
 
     @Override
     public String getName(Player player) {
-        return ChatColor.GREEN + ChatColor.BOLD.toString() + this.kitType.getDisplayName();
+        return ChatColor.GREEN + ChatColor.BOLD.toString() + this.kitType.getName();
     }
 
     @Override

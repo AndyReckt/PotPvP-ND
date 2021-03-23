@@ -3,7 +3,7 @@ package net.frozenorb.potpvp.tournament;
 
 import lombok.Getter;
 import mkremins.fanciful.FancyMessage;
-import net.frozenorb.potpvp.PotPvPSI;
+import net.frozenorb.potpvp.PotPvPND;
 import net.frozenorb.potpvp.kittype.KitType;
 import net.frozenorb.potpvp.kt.command.Command;
 import net.frozenorb.potpvp.match.Match;
@@ -78,13 +78,13 @@ public class Tournament {
         if (activeParties.isEmpty()) {
             if (lost.isEmpty()) {
                 stage = TournamentStage.FINISHED;
-                PotPvPSI.getInstance().getTournamentHandler().setTournament(null);
+                PotPvPND.getInstance().getTournamentHandler().setTournament(null);
                 return;
             }
 
             // shouldn't happen, meant that the two last parties disconnected at the last second
             Bukkit.broadcastMessage(ChatColor.translateAlternateColorCodes('&', "&b[Tournament] &7The tournament's last two teams forfeited, &aWinner &7by default: &b" + PatchedPlayerUtils.getFormattedName(this.lost.get(this.lost.size() - 1).getLeader()) + "'s &7team!"));
-            PotPvPSI.getInstance().getTournamentHandler().setTournament(null); // Removes references to this tournament, will get cleaned up by GC
+            PotPvPND.getInstance().getTournamentHandler().setTournament(null); // Removes references to this tournament, will get cleaned up by GC
             stage = TournamentStage.FINISHED;
             return;
         }
@@ -102,7 +102,7 @@ public class Tournament {
             }
 
             activeParties.clear();
-            PotPvPSI.getInstance().getTournamentHandler().setTournament(null);
+            PotPvPND.getInstance().getTournamentHandler().setTournament(null);
             stage = TournamentStage.FINISHED;
             return;
         }
@@ -136,7 +136,7 @@ public class Tournament {
     }
 
     private void checkActiveParties() {
-        Set<UUID> realParties = PotPvPSI.getInstance().getPartyHandler().getParties().stream().map(p -> p.getPartyId()).collect(Collectors.toSet());
+        Set<UUID> realParties = PotPvPND.getInstance().getPartyHandler().getParties().stream().map(p -> p.getPartyId()).collect(Collectors.toSet());
         Iterator<Party> activePartyIterator = activeParties.iterator();
         while (activePartyIterator.hasNext()) {
             Party activeParty = activePartyIterator.next();
@@ -163,7 +163,7 @@ public class Tournament {
                     cancel();
                 }
             }
-        }.runTaskTimer(PotPvPSI.getInstance(), 0, interval * 20);
+        }.runTaskTimer(PotPvPND.getInstance(), 0, interval * 20);
     }
 
     public void checkStart() {
@@ -204,7 +204,7 @@ public class Tournament {
             Party firstParty = oldPartyList.remove(0);
             Party secondParty = oldPartyList.remove(0);
 
-            matches.add(PotPvPSI.getInstance().getMatchHandler().startMatch(ImmutableList.of(new MatchTeam(firstParty.getMembers()), new MatchTeam(secondParty.getMembers())), type, false, false));
+            matches.add(PotPvPND.getInstance().getMatchHandler().startMatch(ImmutableList.of(new MatchTeam(firstParty.getMembers()), new MatchTeam(secondParty.getMembers())), type, false, false));
         }
 
         if (oldPartyList.size() == 1) {
@@ -283,7 +283,7 @@ public class Tournament {
         message.command("/djm");
         message.tooltip(ChatColor.translateAlternateColorCodes('&', "&c&lCLICK &eto hide this message."));
 
-        SettingHandler settingHandler = PotPvPSI.getInstance().getSettingHandler();
+        SettingHandler settingHandler = PotPvPND.getInstance().getSettingHandler();
 
         for (Player player : Bukkit.getOnlinePlayers()) {
             if (joiningParty.isMember(player.getUniqueId()) || settingHandler.getSetting(player, Setting.SEE_TOURNAMENT_JOIN_MESSAGE)) {
@@ -306,7 +306,7 @@ public class Tournament {
 
         message.command("/dem");
         message.tooltip(ChatColor.translateAlternateColorCodes('&', "&c&lCLICK &eto hide this message."));
-        SettingHandler settingHandler = PotPvPSI.getInstance().getSettingHandler();
+        SettingHandler settingHandler = PotPvPND.getInstance().getSettingHandler();
 
 
         for (Player player : Bukkit.getOnlinePlayers()) {
@@ -318,25 +318,25 @@ public class Tournament {
 
     @Command(names = {"djm"}, permission = "")
     public static void joinMessages(Player sender) {
-        boolean oldValue = PotPvPSI.getInstance().getSettingHandler().getSetting(sender, Setting.SEE_TOURNAMENT_JOIN_MESSAGE);
+        boolean oldValue = PotPvPND.getInstance().getSettingHandler().getSetting(sender, Setting.SEE_TOURNAMENT_JOIN_MESSAGE);
         if (!oldValue) {
             sender.sendMessage(ChatColor.RED + "You have already disabled tournament join messages.");
             return;
         }
 
-        PotPvPSI.getInstance().getSettingHandler().updateSetting(sender, Setting.SEE_TOURNAMENT_JOIN_MESSAGE, false);
+        PotPvPND.getInstance().getSettingHandler().updateSetting(sender, Setting.SEE_TOURNAMENT_JOIN_MESSAGE, false);
         sender.sendMessage(ChatColor.GREEN + "Disabled tournament join messages.");
     }
 
     @Command(names = {"dem"}, permission = "")
     public static void eliminationMessages(Player sender) {
-        boolean oldValue = PotPvPSI.getInstance().getSettingHandler().getSetting(sender, Setting.SEE_TOURNAMENT_ELIMINATION_MESSAGES);
+        boolean oldValue = PotPvPND.getInstance().getSettingHandler().getSetting(sender, Setting.SEE_TOURNAMENT_ELIMINATION_MESSAGES);
         if (!oldValue) {
             sender.sendMessage(ChatColor.RED + "You have already disabled tournament elimination messages.");
             return;
         }
 
-        PotPvPSI.getInstance().getSettingHandler().updateSetting(sender, Setting.SEE_TOURNAMENT_ELIMINATION_MESSAGES, false);
+        PotPvPND.getInstance().getSettingHandler().updateSetting(sender, Setting.SEE_TOURNAMENT_ELIMINATION_MESSAGES, false);
         sender.sendMessage(ChatColor.GREEN + "Disabled tournament elimination messages.");
     }
 

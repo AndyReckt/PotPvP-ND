@@ -1,9 +1,10 @@
 package net.frozenorb.potpvp.lobby.menu.statistics;
 
 import com.google.common.collect.Lists;
-import net.frozenorb.potpvp.PotPvPSI;
+import net.frozenorb.potpvp.PotPvPND;
 import net.frozenorb.potpvp.kittype.KitType;
 import net.frozenorb.potpvp.kt.menu.Button;
+import net.frozenorb.potpvp.util.CC;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
@@ -21,7 +22,7 @@ public class KitButton extends Button {
 
     @Override
     public String getName(Player player) {
-        return ChatColor.GREEN + kitType.getDisplayName() + ChatColor.GRAY.toString() + ChatColor.BOLD + " | " + ChatColor.WHITE + "Top 10";
+        return ChatColor.GREEN + kitType.getName() + ChatColor.GRAY.toString() + ChatColor.BOLD + " | " + ChatColor.WHITE + "Top 10";
     }
 
     @Override
@@ -32,9 +33,8 @@ public class KitButton extends Button {
 
         int counter = 1;
 
-        for (Entry<String, Integer> entry : PotPvPSI.getInstance().getEloHandler().topElo(kitType).entrySet()) {
-            String color = (counter <= 3 ? ChatColor.GREEN : ChatColor.GRAY).toString();
-            description.add(color + counter + ChatColor.GRAY.toString() + ChatColor.BOLD + " | " + entry.getKey() + ChatColor.GRAY + ": " + ChatColor.WHITE + entry.getValue());
+        for (Entry<String, Integer> entry : PotPvPND.getInstance().getEloHandler().topElo(kitType).entrySet()) {
+            description.add(PotPvPND.getInstance().getDominantColor().toString() + counter + "# " + CC.WHITE + entry.getKey() + ChatColor.GRAY.toString() + ": " + CC.WHITE + entry.getValue());
 
             counter++;
         }

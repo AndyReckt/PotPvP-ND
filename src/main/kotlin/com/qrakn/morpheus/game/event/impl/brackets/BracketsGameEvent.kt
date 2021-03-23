@@ -8,6 +8,7 @@ import com.qrakn.morpheus.game.event.impl.sumo.SumoGameEventLogic
 import com.qrakn.morpheus.game.util.team.GameTeamSizeParameter
 import com.qrakn.morpheus.game.parameter.GameParameter
 import net.frozenorb.potpvp.PotPvPLang
+import net.frozenorb.potpvp.PotPvPND
 import org.bukkit.ChatColor
 import org.bukkit.Material
 import org.bukkit.entity.Player
@@ -57,18 +58,18 @@ object BracketsGameEvent : GameEvent {
             name = "2v2 $name"
         }
 
-        toReturn.add("&bEvent &7($name)")
-        toReturn.add("&8 ${PotPvPLang.LEFT_ARROW_NAKED} &fPlayers: &b${logic.getPlayersLeft()}/${game.players.size}")
+        toReturn.add(PotPvPND.getInstance().dominantColor.toString() + "&lEvent &7($name)")
+        toReturn.add("&7 ${PotPvPLang.LEFT_ARROW_NAKED} &fPlayers: " + PotPvPND.getInstance().dominantColor.toString() + "${logic.getPlayersLeft()}/${game.players.size}")
 
         if (game.state == GameState.RUNNING) {
-            toReturn.add("&8 ${PotPvPLang.LEFT_ARROW_NAKED} &fRound: &b${logic.getRound()}")
+            toReturn.add(PotPvPND.getInstance().dominantColor.toString() + "${PotPvPLang.LEFT_ARROW_NAKED} &fRound: " + PotPvPND.getInstance().dominantColor.toString() + "${logic.getRound()}")
             if (game.getParameter(GameTeamSizeParameter.Duos.javaClass) == null) {
                 val fighter = logic.getNextParticipant(null)
                 val opponent = logic.getNextParticipant(fighter)
 
                 if (opponent != null && fighter != null) {
-                    toReturn.add("&7&m--------------------")
-                    toReturn.add("${fighter.getName()}&7 vs ${opponent.getName()}")
+                    toReturn.add("&a&r&7&m--------------------")
+                    toReturn.add(PotPvPND.getInstance().dominantColor.toString() + "${fighter.getName()}&7 vs " + PotPvPND.getInstance().dominantColor.toString() + opponent.getName())
                 }
             }
         }
@@ -101,6 +102,10 @@ object BracketsGameEvent : GameEvent {
 
     override fun getParameters(): List<GameParameter> {
         return listOf(GameTeamSizeParameter, BracketsGameKitParameter)
+    }
+
+    override fun getLobbyItems(): List<ItemStack> {
+        return listOf()
     }
 
 }

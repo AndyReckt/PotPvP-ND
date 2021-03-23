@@ -1,6 +1,6 @@
 package net.frozenorb.potpvp.rematch;
 
-import net.frozenorb.potpvp.PotPvPSI;
+import net.frozenorb.potpvp.PotPvPND;
 import net.frozenorb.potpvp.kittype.KitType;
 import net.frozenorb.potpvp.match.Match;
 import net.frozenorb.potpvp.match.MatchTeam;
@@ -25,12 +25,12 @@ public final class RematchHandler {
     private final Map<UUID, RematchData> rematches = new ConcurrentHashMap<>();
 
     public RematchHandler() {
-        Bukkit.getPluginManager().registerEvents(new RematchGeneralListener(), PotPvPSI.getInstance());
-        Bukkit.getPluginManager().registerEvents(new RematchItemListener(this), PotPvPSI.getInstance());
-        Bukkit.getPluginManager().registerEvents(new RematchUnloadListener(), PotPvPSI.getInstance());
+        Bukkit.getPluginManager().registerEvents(new RematchGeneralListener(), PotPvPND.getInstance());
+        Bukkit.getPluginManager().registerEvents(new RematchItemListener(this), PotPvPND.getInstance());
+        Bukkit.getPluginManager().registerEvents(new RematchUnloadListener(), PotPvPND.getInstance());
 
         // remove expired entries
-        Bukkit.getScheduler().runTaskTimer(PotPvPSI.getInstance(), () -> {
+        Bukkit.getScheduler().runTaskTimer(PotPvPND.getInstance(), () -> {
             Iterator<RematchData> iterator = rematches.values().iterator();
 
             while (iterator.hasNext()) {

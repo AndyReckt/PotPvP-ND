@@ -1,7 +1,7 @@
 package net.frozenorb.potpvp.party;
 
 import com.google.common.collect.ImmutableList;
-import net.frozenorb.potpvp.PotPvPSI;
+import net.frozenorb.potpvp.PotPvPND;
 import net.frozenorb.potpvp.kittype.KitType;
 import net.frozenorb.potpvp.kittype.menu.select.SelectKitTypeMenu;
 import net.frozenorb.potpvp.match.Match;
@@ -58,7 +58,7 @@ public final class PartyUtils {
                 team1.add(members.remove(0));
             }
         }
-        if ((match=PotPvPSI.getInstance().getMatchHandler().startMatch(ImmutableList.of(new MatchTeam(team1), new MatchTeam(team2)), kitType, false, false)) == null) {
+        if ((match=PotPvPND.getInstance().getMatchHandler().startMatch(ImmutableList.of(new MatchTeam(team1), new MatchTeam(team2)), kitType, false, false)) == null) {
             initiator.sendMessage(ChatColor.RED + "Failed to start team split.");
             return;
         }

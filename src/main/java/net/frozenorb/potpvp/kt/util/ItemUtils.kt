@@ -1,6 +1,6 @@
 package net.frozenorb.potpvp.kt.util
 
-import net.frozenorb.potpvp.PotPvPSI
+import net.frozenorb.potpvp.PotPvPND
 import org.apache.commons.io.IOUtils
 import org.apache.commons.lang.WordUtils
 import org.bukkit.ChatColor
@@ -14,18 +14,6 @@ object ItemUtils {
 
     private val craftItemStack = Reflections.getCBClass("inventory.CraftItemStack")!!
     private val asNmsCopyMethod = Reflections.getMethod(craftItemStack, "asNMSCopy", ItemStack::class.java)
-    private val nameMap: MutableMap<String, ItemData> = HashMap()
-
-    init {
-        nameMap.clear()
-
-        val lines = readLines()
-        for (line in lines!!) {
-            val parts = line.split(",".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
-            nameMap[parts[0]] =
-                ItemData(Material.getMaterial(Integer.parseInt(parts[1])), java.lang.Short.parseShort(parts[2]))
-        }
-    }
 
     @JvmStatic
     fun setDisplayName(itemStack: ItemStack, name: String) {
@@ -40,65 +28,6 @@ object ItemUtils {
     }
 
     @JvmStatic
-    operator fun get(input: String, amount: Int): ItemStack? {
-        val item = get(input)
-
-        if (item != null) {
-            item.amount = amount
-        }
-
-        return item
-    }
-
-    @JvmStatic
-    operator fun get(input: String): ItemStack? {
-        var input = input
-        input = input.toLowerCase().replace(" ", "")
-
-        if (NumberUtils.isInteger(input)) {
-            return ItemStack(Material.getMaterial(Integer.parseInt(input)))
-        }
-
-        if (input.contains(":")) {
-            if (!NumberUtils.isShort(input.split(":".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()[1])) {
-                return null
-            }
-
-            if (NumberUtils.isInteger(input.split(":".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()[0])) {
-                return ItemStack(
-                    Material.getMaterial(
-                        Integer.parseInt(
-                            input.split(":".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()[0]
-                        )
-                    ),
-                    1,
-                    java.lang.Short.parseShort(input.split(":".toRegex()).dropLastWhile { it.isEmpty() }
-                        .toTypedArray()[1])
-                )
-            }
-
-            if (!nameMap.containsKey(input.split(":".toRegex()).dropLastWhile { it.isEmpty() }
-                    .toTypedArray()[0].toLowerCase())) {
-                return null
-            }
-
-            val data =
-                nameMap[input.split(":".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()[0].toLowerCase()]
-
-            return if (data != null) {
-                ItemStack(
-                    data.material,
-                    1,
-                    java.lang.Short.parseShort(input.split(":".toRegex()).dropLastWhile { it.isEmpty() }
-                        .toTypedArray()[1])
-                )
-            } else null
-        } else {
-            return nameMap[input]?.toItemStack()
-        }
-    }
-
-    @JvmStatic
     fun getName(item: ItemStack): String {
         var name = Reflections.callMethod(asNmsCopyMethod!!.invoke(null, item), "getName") as String
 
@@ -107,29 +36,6 @@ object ItemUtils {
         }
 
         return name
-    }
-
-    private fun readLines(): List<String>? {
-        return try {
-            IOUtils.readLines(PotPvPSI::class.java.classLoader.getResourceAsStream("items.csv"))
-        } catch (e: IOException) {
-            e.printStackTrace()
-            null
-        }
-    }
-
-    class ItemData(val material: Material, val data: Short) {
-        fun getName(): String {
-            return getName(this.toItemStack())
-        }
-
-        fun matches(item: ItemStack?): Boolean {
-            return item != null && item.type === this.material && item.durability == data
-        }
-
-        fun toItemStack(): ItemStack {
-            return ItemStack(this.material, 1, this.data)
-        }
     }
 
     class ItemBuilder constructor(private var type: Material?) {

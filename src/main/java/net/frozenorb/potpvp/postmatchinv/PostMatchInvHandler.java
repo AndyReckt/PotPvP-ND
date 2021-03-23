@@ -2,7 +2,7 @@ package net.frozenorb.potpvp.postmatchinv;
 
 import com.google.common.base.Joiner;
 import com.google.common.collect.ImmutableMap;
-import net.frozenorb.potpvp.PotPvPSI;
+import net.frozenorb.potpvp.PotPvPND;
 import net.frozenorb.potpvp.match.Match;
 import net.frozenorb.potpvp.match.MatchEndReason;
 import net.frozenorb.potpvp.match.MatchTeam;
@@ -26,7 +26,7 @@ public final class PostMatchInvHandler {
     private final Map<UUID, Map<UUID, PostMatchPlayer>> playerData = new ConcurrentHashMap<>();
 
     public PostMatchInvHandler() {
-        Bukkit.getPluginManager().registerEvents(new PostMatchInvGeneralListener(), PotPvPSI.getInstance());
+        Bukkit.getPluginManager().registerEvents(new PostMatchInvGeneralListener(), PotPvPND.getInstance());
     }
 
     public void recordMatch(Match match) {

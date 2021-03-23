@@ -2,7 +2,7 @@ package net.frozenorb.potpvp.kit.listener;
 
 import com.google.common.collect.Maps;
 import lombok.Getter;
-import net.frozenorb.potpvp.PotPvPSI;
+import net.frozenorb.potpvp.PotPvPND;
 import net.frozenorb.potpvp.kit.menu.editkit.EditKitMenu;
 import net.frozenorb.potpvp.kit.menu.kits.KitsMenu;
 import net.frozenorb.potpvp.kittype.KitType;
@@ -61,7 +61,7 @@ public final class KitEditorListener implements Listener {
                 }
                 if (ChatColor.stripColor(line).toLowerCase().contains("spawn")) {
                     playerEditKit.remove(player.getUniqueId());
-                    PotPvPSI.getInstance().getLobbyHandler().returnToLobby(player);
+                    PotPvPND.getInstance().getLobbyHandler().returnToLobby(player);
                     break;
                 }
                 if (ChatColor.stripColor(line).toLowerCase().contains("load")) {

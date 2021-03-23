@@ -1,6 +1,6 @@
 package net.frozenorb.potpvp.command;
 
-import net.frozenorb.potpvp.PotPvPSI;
+import net.frozenorb.potpvp.PotPvPND;
 import net.frozenorb.potpvp.kt.command.Command;
 import net.frozenorb.potpvp.kt.command.data.parameter.Param;
 import net.frozenorb.potpvp.kt.util.PlayerUtils;
@@ -21,7 +21,7 @@ public class PingCommand {
         sender.sendMessage(target.getDisplayName() + ChatColor.YELLOW + "'s Ping: " + ChatColor.GREEN + ping + "ms");
 
         if (sender.getName().equalsIgnoreCase(target.getName())) {
-            Match match = PotPvPSI.getInstance().getMatchHandler().getMatchPlaying(sender);
+            Match match = PotPvPND.getInstance().getMatchHandler().getMatchPlaying(sender);
             if (match != null) {
                 for (MatchTeam team : match.getTeams()) {
                     for (UUID other : team.getAllMembers()) {

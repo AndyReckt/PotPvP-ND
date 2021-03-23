@@ -1,7 +1,7 @@
 package net.frozenorb.potpvp.kt.nametag
 
 import com.google.common.primitives.Ints
-import net.frozenorb.potpvp.PotPvPSI
+import net.frozenorb.potpvp.PotPvPND
 import net.frozenorb.potpvp.kt.scoreboard.ScoreboardTeamPacketMod
 import org.bukkit.craftbukkit.v1_7_R4.entity.CraftPlayer
 import org.bukkit.entity.Player
@@ -21,18 +21,18 @@ class NametagEngine {
     var updateInterval: Int = 2
 
     fun load() {
-        if (PotPvPSI.getInstance().config.getBoolean("disableNametags", false)) {
-            PotPvPSI.getInstance().logger.info("Nametags are disabled by config")
+        if (PotPvPND.getInstance().config.getBoolean("disableNametags", false)) {
+            PotPvPND.getInstance().logger.info("Nametags are disabled by config")
             return
         }
 
         isNametagRestrictionEnabled =
-            PotPvPSI.getInstance().config.getBoolean("NametagPacketRestriction.Enabled", false)
+            PotPvPND.getInstance().config.getBoolean("NametagPacketRestriction.Enabled", false)
         nametagRestrictBypass =
-            PotPvPSI.getInstance().config.getString("NametagPacketRestriction.BypassPrefix", "").replace("&", "§")
+            PotPvPND.getInstance().config.getString("NametagPacketRestriction.BypassPrefix", "").replace("&", "§")
 
         NametagThread().start()
-        PotPvPSI.getInstance().server.pluginManager.registerEvents(NametagListener(), PotPvPSI.getInstance())
+        PotPvPND.getInstance().server.pluginManager.registerEvents(NametagListener(), PotPvPND.getInstance())
         registerProvider(NametagProvider.DefaultNametagProvider())
     }
 
@@ -52,7 +52,7 @@ class NametagEngine {
     }
 
     fun reloadOthersFor(refreshFor: Player) {
-        for (toRefresh in PotPvPSI.getInstance().server.onlinePlayers) {
+        for (toRefresh in PotPvPND.getInstance().server.onlinePlayers) {
             if (refreshFor === toRefresh) {
                 continue
             }
@@ -71,14 +71,14 @@ class NametagEngine {
     }
 
     internal fun applyUpdate(nametagUpdate: NametagUpdate) {
-        val toRefreshPlayer = PotPvPSI.getInstance().server.getPlayerExact(nametagUpdate.toRefresh) ?: return
+        val toRefreshPlayer = PotPvPND.getInstance().server.getPlayerExact(nametagUpdate.toRefresh) ?: return
 
         if (nametagUpdate.refreshFor == null) {
-            for (refreshFor in PotPvPSI.getInstance().server.onlinePlayers) {
+            for (refreshFor in PotPvPND.getInstance().server.onlinePlayers) {
                 reloadPlayerInternal(toRefreshPlayer, refreshFor)
             }
         } else {
-            val refreshForPlayer = PotPvPSI.getInstance().server.getPlayerExact(nametagUpdate.refreshFor)
+            val refreshForPlayer = PotPvPND.getInstance().server.getPlayerExact(nametagUpdate.refreshFor)
             if (refreshForPlayer != null) {
                 reloadPlayerInternal(toRefreshPlayer, refreshForPlayer)
             }
@@ -131,7 +131,7 @@ class NametagEngine {
         registeredTeams.add(newTeam)
 
         val addPacket = newTeam.teamAddPacket
-        for (player in PotPvPSI.getInstance().server.onlinePlayers) {
+        for (player in PotPvPND.getInstance().server.onlinePlayers) {
             addPacket.sendToPlayer(player)
         }
 

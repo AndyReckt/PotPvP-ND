@@ -1,6 +1,6 @@
 package net.frozenorb.potpvp.util;
 
-import net.frozenorb.potpvp.PotPvPSI;
+import net.frozenorb.potpvp.PotPvPND;
 import org.bukkit.GameMode;
 import org.bukkit.entity.Player;
 import org.bukkit.potion.PotionEffect;
@@ -51,10 +51,10 @@ public class PatchedPlayerUtils {
     }
 
     public static List<String> mapToNames(Collection<UUID> uuids) {
-        return uuids.stream().map(PotPvPSI.getInstance().uuidCache::name).collect(Collectors.toList());
+        return uuids.stream().map(PotPvPND.getInstance().uuidCache::name).collect(Collectors.toList());
     }
 
     public static String getFormattedName(UUID uuid) {
-        return PotPvPSI.getInstance().getUuidCache().name(uuid);
+        return PotPvPND.getInstance().getUuidCache().name(uuid);
     }
 }

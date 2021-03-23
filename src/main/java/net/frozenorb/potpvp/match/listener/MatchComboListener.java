@@ -16,15 +16,14 @@ import java.util.UUID;
 
 public class MatchComboListener implements Listener {
 
-    @EventHandler(priority = EventPriority.MONITOR, ignoreCancelled = true)
+    @EventHandler(priority=EventPriority.MONITOR, ignoreCancelled=true)
     public void onStart(MatchStartEvent event) {
         Match match = event.getMatch();
-        final KnockbackProfile ComboProfile = SpigotConfig.getKbProfileByName("Combo");
-        int noDamageTicks = match.getKitType().getId().contains("COMBO") ? 3 : 20;
+        int noDamageTicks = match.getKitType().getId().contains("Combo") ? 2 : 20;
+        match.getTeams().forEach(team -> team.getAliveMembers().stream().map(Bukkit::getPlayer).filter(Objects::nonNull).forEach(p -> p.setMaximumNoDamageTicks(noDamageTicks)));
         for ( UUID uuid : match.getAllPlayers() ) {
             Player player = Bukkit.getPlayer(uuid);
-            ((CraftPlayer)player).getHandle().setKbProfile(ComboProfile);
+            ((CraftPlayer)player).getHandle().setKbProfile(SpigotConfig.getKbProfileByName("Combo"));
         }
-        match.getTeams().forEach(team -> team.getAliveMembers().stream().map(Bukkit::getPlayer).filter(Objects::nonNull).forEach(p -> p.setMaximumNoDamageTicks(noDamageTicks)));
     }
 }

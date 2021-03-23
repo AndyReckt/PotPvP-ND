@@ -4,7 +4,7 @@ import com.qrakn.morpheus.game.GameQueue
 import com.qrakn.morpheus.game.GameState
 import com.qrakn.morpheus.game.bukkit.event.PlayerGameInteractionEvent
 import com.qrakn.morpheus.game.bukkit.event.PlayerQuitGameEvent
-import net.frozenorb.potpvp.PotPvPSI
+import net.frozenorb.potpvp.PotPvPND
 import org.bukkit.Bukkit
 import org.bukkit.ChatColor
 import org.bukkit.Material
@@ -192,7 +192,7 @@ class LastManStandingGameEventListeners : Listener {
                 Bukkit.getPluginManager().callEvent(PlayerGameInteractionEvent(event.entity, game))
                 logic.check()
             }
-        }.runTaskLater(PotPvPSI.getInstance(), 2L)
+        }.runTaskLater(PotPvPND.getInstance(), 2L)
     }
 
 }

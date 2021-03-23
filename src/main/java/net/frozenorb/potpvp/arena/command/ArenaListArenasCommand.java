@@ -1,6 +1,6 @@
 package net.frozenorb.potpvp.arena.command;
 
-import net.frozenorb.potpvp.PotPvPSI;
+import net.frozenorb.potpvp.PotPvPND;
 import net.frozenorb.potpvp.arena.Arena;
 import net.frozenorb.potpvp.arena.ArenaHandler;
 import net.frozenorb.potpvp.arena.ArenaSchematic;
@@ -14,7 +14,7 @@ public final class ArenaListArenasCommand {
 
     @Command(names = {"arena listArenas"}, permission = "op")
     public static void arenaListArenas(Player sender, @Param(name = "schematic") String schematicName) {
-        ArenaHandler arenaHandler = PotPvPSI.getInstance().getArenaHandler();
+        ArenaHandler arenaHandler = PotPvPND.getInstance().getArenaHandler();
         ArenaSchematic schematic = arenaHandler.getSchematic(schematicName);
 
         if (schematic == null) {

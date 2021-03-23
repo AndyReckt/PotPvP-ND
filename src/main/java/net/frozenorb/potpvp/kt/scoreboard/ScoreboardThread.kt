@@ -1,6 +1,6 @@
 package net.frozenorb.potpvp.kt.scoreboard
 
-import net.frozenorb.potpvp.PotPvPSI
+import net.frozenorb.potpvp.PotPvPND
 
 class ScoreboardThread : Thread("stark - Scoreboard Thread") {
 
@@ -10,9 +10,9 @@ class ScoreboardThread : Thread("stark - Scoreboard Thread") {
 
     override fun run() {
         while (true) {
-            for (online in PotPvPSI.getInstance().server.onlinePlayers) {
+            for (online in PotPvPND.getInstance().server.onlinePlayers) {
                 try {
-                    PotPvPSI.getInstance().scoreboardEngine.updateScoreboard(online)
+                    PotPvPND.getInstance().scoreboardEngine.updateScoreboard(online)
                 } catch (e: Exception) {
                     e.printStackTrace()
                 }
@@ -20,7 +20,7 @@ class ScoreboardThread : Thread("stark - Scoreboard Thread") {
             }
 
             try {
-                sleep(PotPvPSI.getInstance().scoreboardEngine.updateInterval * 50L)
+                sleep(PotPvPND.getInstance().scoreboardEngine.updateInterval * 50L)
             } catch (e2: InterruptedException) {
                 e2.printStackTrace()
             }

@@ -8,8 +8,347 @@
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="2bc1f08b-3a85-4ee4-89c3-a72e9b59e95a" name="Default Changelist" comment="" />
+    <list default="true" id="2bc1f08b-3a85-4ee4-89c3-a72e9b59e95a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_gmail_filoghost_holographicdisplays_holographicdisplays_api_2_4_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/PlaceholderAPI.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/command/DivisionsReloadCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/command/HologramCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/divisions/DivisionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/divisions/DivisionMeta.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/hologram/HologramHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/util/SkullCreator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/util/config/AbstractConfigurationFile.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/util/config/BasicConfigurationFile.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/util/config/LanguageConfigurationFile.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/util/config/LanguageConfigurationFileLocale.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/divisions.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/potpvp-nd.iml" beforeDir="false" afterPath="$PROJECT_DIR$/potpvp-nd.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/PotPvPCache.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/PotPvPCache.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/PotPvPSI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/PotPvPND.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/arena/Arena.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/arena/Arena.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/arena/ArenaGrid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/arena/ArenaGrid.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/arena/ArenaHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/arena/ArenaHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/arena/WorldEditUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/arena/WorldEditUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/arena/command/ArenaCreateSchematicCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/arena/command/ArenaCreateSchematicCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/arena/command/ArenaFreeCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/arena/command/ArenaFreeCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/arena/command/ArenaListArenasCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/arena/command/ArenaListArenasCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/arena/command/ArenaRepasteSchematicCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/arena/command/ArenaRepasteSchematicCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/arena/command/ArenaScaleCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/arena/command/ArenaScaleCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/arena/command/ArenaSetItemCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/arena/command/ArenaSetItemCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/arena/menu/manageschematic/CreateCopiesButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/arena/menu/manageschematic/CreateCopiesButton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/arena/menu/manageschematic/ManageSchematicMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/arena/menu/manageschematic/ManageSchematicMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/arena/menu/manageschematic/RemoveCopiesButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/arena/menu/manageschematic/RemoveCopiesButton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/arena/menu/manageschematic/SchematicStatusButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/arena/menu/manageschematic/SchematicStatusButton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/arena/menu/manageschematic/TeleportToModelButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/arena/menu/manageschematic/TeleportToModelButton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/arena/menu/manageschematic/ToggleEnabledButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/arena/menu/manageschematic/ToggleEnabledButton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/arena/menu/manageschematics/ManageSchematicButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/arena/menu/manageschematics/ManageSchematicButton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/arena/menu/manageschematics/ManageSchematicsMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/arena/menu/manageschematics/ManageSchematicsMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/arena/menu/select/ArenaButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/arena/menu/select/ArenaButton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/arena/menu/select/SelectArenaMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/arena/menu/select/SelectArenaMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/command/BuildCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/command/BuildCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/command/EloConvertCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/command/EloConvertCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/command/HelpCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/command/HelpCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/command/MatchListCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/command/MatchListCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/command/MatchStatusCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/command/MatchStatusCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/command/PStatusCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/command/PStatusCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/command/PingCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/command/PingCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/command/SilentCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/command/SilentCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/command/StatsResetCommands.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/command/StatsResetCommands.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/command/VDebugCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/command/VDebugCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/duel/DuelHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/duel/DuelHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/duel/command/AcceptCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/duel/command/AcceptCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/duel/command/DuelCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/duel/command/DuelCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/duel/listener/DuelListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/duel/listener/DuelListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/elo/EloHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/elo/EloHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/elo/command/EloSetCommands.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/elo/command/EloSetCommands.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/elo/listener/EloLoadListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/elo/listener/EloLoadListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/elo/listener/EloUpdateListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/elo/listener/EloUpdateListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/elo/repository/MongoEloRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/elo/repository/MongoEloRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/follow/FollowHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/follow/FollowHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/follow/command/FollowCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/follow/command/FollowCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/follow/command/SilentFollowCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/follow/command/SilentFollowCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/follow/command/UnfollowCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/follow/command/UnfollowCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/kit/Kit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/kit/Kit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/kit/KitHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/kit/KitHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/kit/listener/KitEditorListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/kit/listener/KitEditorListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/kit/listener/KitItemListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/kit/listener/KitItemListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/kit/listener/KitLoadListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/kit/listener/KitLoadListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/kit/menu/editkit/ClearInventoryButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/kit/menu/editkit/ClearInventoryButton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/kit/menu/editkit/EditKitMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/kit/menu/editkit/EditKitMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/kit/menu/editkit/LoadDefaultKitButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/kit/menu/editkit/LoadDefaultKitButton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/kit/menu/editkit/SaveButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/kit/menu/editkit/SaveButton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/kit/menu/editkit/TakeItemButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/kit/menu/editkit/TakeItemButton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/kit/menu/kits/KitDeleteButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/kit/menu/kits/KitDeleteButton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/kit/menu/kits/KitEditButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/kit/menu/kits/KitEditButton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/kit/menu/kits/KitIconButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/kit/menu/kits/KitIconButton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/kit/menu/kits/KitRenameButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/kit/menu/kits/KitRenameButton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/kit/menu/kits/KitsMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/kit/menu/kits/KitsMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/kittype/KitType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/kittype/KitType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/kittype/KitTypeParameterType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/kittype/KitTypeParameterType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/kittype/command/KitCreateCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/kittype/command/KitCreateCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/kittype/command/KitDeleteCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/kittype/command/KitDeleteCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/kittype/command/KitLoadDefaultCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/kittype/command/KitLoadDefaultCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/kittype/command/KitSaveDefaultCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/kittype/command/KitSaveDefaultCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/kittype/command/KitSetDisplayNameCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/kittype/command/KitSetDisplayNameCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/kittype/command/KitSetSortCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/kittype/command/KitSetSortCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/kittype/command/KitTypeImportExportCommands.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/kittype/command/KitTypeImportExportCommands.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/kittype/command/KitWipeKitsCommands.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/kittype/command/KitWipeKitsCommands.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/kittype/menu/manage/ManageKitTypeMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/kittype/menu/manage/ManageKitTypeMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/kittype/menu/select/KitTypeButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/kittype/menu/select/KitTypeButton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/kittype/menu/select/SelectKitTypeMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/kittype/menu/select/SelectKitTypeMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/kt/command/CommandNode.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/kt/command/CommandNode.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/kt/command/bukkit/ExtendedCommand.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/kt/command/bukkit/ExtendedCommand.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/kt/command/data/method/MethodProcessor.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/kt/command/data/method/MethodProcessor.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/kt/command/data/parameter/impl/UUIDParameterType.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/kt/command/data/parameter/impl/UUIDParameterType.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/kt/menu/ButtonListeners.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/kt/menu/ButtonListeners.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/kt/menu/Menu.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/kt/menu/Menu.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/kt/menu/protocol/InventoryAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/kt/menu/protocol/InventoryAdapter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/kt/nametag/NametagEngine.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/kt/nametag/NametagEngine.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/kt/nametag/NametagListener.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/kt/nametag/NametagListener.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/kt/nametag/NametagProvider.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/kt/nametag/NametagProvider.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/kt/nametag/NametagThread.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/kt/nametag/NametagThread.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/kt/protocol/InventoryAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/kt/protocol/InventoryAdapter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/kt/protocol/PingAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/kt/protocol/PingAdapter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/kt/redis/Redis.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/kt/redis/Redis.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/kt/redis/RedisCredentials.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/kt/redis/RedisCredentials.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/kt/scoreboard/Scoreboard.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/kt/scoreboard/Scoreboard.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/kt/scoreboard/ScoreboardEngine.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/kt/scoreboard/ScoreboardEngine.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/kt/scoreboard/ScoreboardListeners.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/kt/scoreboard/ScoreboardListeners.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/kt/scoreboard/ScoreboardThread.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/kt/scoreboard/ScoreboardThread.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/kt/tab/Tab.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/kt/tab/Tab.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/kt/tab/TabAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/kt/tab/TabAdapter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/kt/tab/TabEngine.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/kt/tab/TabEngine.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/kt/tab/TabListeners.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/kt/tab/TabListeners.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/kt/tab/TabThread.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/kt/tab/TabThread.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/kt/tab/TabUtils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/kt/tab/TabUtils.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/kt/util/Cuboid.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/kt/util/Cuboid.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/kt/util/ItemUtils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/kt/util/ItemUtils.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/kt/util/PlayerUtils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/kt/util/PlayerUtils.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/kt/util/serialization/LocationAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/kt/util/serialization/LocationAdapter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/kt/util/serialization/LocationSerializer.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/kt/util/serialization/LocationSerializer.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/kt/util/serialization/PlayerInventorySerializer.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/kt/util/serialization/PlayerInventorySerializer.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/kt/uuid/RedisUUIDCache.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/kt/uuid/RedisUUIDCache.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/kt/uuid/UUIDCache.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/kt/uuid/UUIDCache.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/kt/visibility/VisibilityEngine.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/kt/visibility/VisibilityEngine.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/kt/visibility/VisibilityListener.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/kt/visibility/VisibilityListener.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/listener/BasicPreventionListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/listener/BasicPreventionListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/listener/BowHealthListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/listener/BowHealthListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/listener/ChatToggleListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/listener/ChatToggleListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/listener/NightModeListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/listener/NightModeListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/listener/PearlCooldownListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/listener/PearlCooldownListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/listener/RankedMatchQualificationListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/listener/RankedMatchQualificationListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/lobby/LobbyHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/lobby/LobbyHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/lobby/LobbyUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/lobby/LobbyUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/lobby/command/SpectatorCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/lobby/command/SpectatorCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/lobby/listener/LobbyGeneralListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/lobby/listener/LobbyGeneralListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/lobby/listener/LobbyItemListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/lobby/listener/LobbyItemListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/lobby/listener/LobbySpecModeListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/lobby/listener/LobbySpecModeListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/lobby/menu/DuelSelectorMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/lobby/menu/DuelSelectorMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/lobby/menu/SpectateButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/lobby/menu/SpectateButton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/lobby/menu/SpectateMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/lobby/menu/SpectateMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/lobby/menu/statistics/GlobalEloButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/lobby/menu/statistics/GlobalEloButton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/lobby/menu/statistics/KitButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/lobby/menu/statistics/KitButton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/lobby/menu/statistics/PlayerButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/lobby/menu/statistics/PlayerButton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/match/Match.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/match/Match.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/match/MatchHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/match/MatchHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/match/MatchUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/match/MatchUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/match/command/LeaveCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/match/command/LeaveCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/match/command/MapCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/match/command/MapCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/match/command/SpectateCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/match/command/SpectateCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/match/command/ToggleMatchCommands.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/match/command/ToggleMatchCommands.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/match/listener/KitSelectionListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/match/listener/KitSelectionListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/match/listener/MatchBlockPickupListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/match/listener/MatchBlockPickupListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/match/listener/MatchBuildListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/match/listener/MatchBuildListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/match/listener/MatchComboListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/match/listener/MatchComboListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/match/listener/MatchCountdownListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/match/listener/MatchCountdownListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/match/listener/MatchDeathMessageListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/match/listener/MatchDeathMessageListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/match/listener/MatchDurationLimitListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/match/listener/MatchDurationLimitListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/match/listener/MatchEnderPearlDamageListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/match/listener/MatchEnderPearlDamageListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/match/listener/MatchFreezeListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/match/listener/MatchFreezeListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/match/listener/MatchGeneralListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/match/listener/MatchGeneralListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/match/listener/MatchHardcoreHealingListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/match/listener/MatchHardcoreHealingListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/match/listener/MatchHealthDisplayListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/match/listener/MatchHealthDisplayListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/match/listener/MatchPartySpectateListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/match/listener/MatchPartySpectateListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/match/listener/MatchSoupListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/match/listener/MatchSoupListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/match/listener/MatchStatsListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/match/listener/MatchStatsListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/match/listener/MatchWizardListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/match/listener/MatchWizardListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/match/listener/SpectatorItemListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/match/listener/SpectatorItemListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/match/listener/SpectatorPreventionListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/match/listener/SpectatorPreventionListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/morpheus/EventItems.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/morpheus/EventItems.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/morpheus/EventListeners.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/morpheus/EventListeners.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/morpheus/EventTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/morpheus/EventTask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/morpheus/command/EventsCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/morpheus/command/EventsCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/morpheus/command/ForceEndCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/morpheus/command/ForceEndCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/morpheus/command/HostCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/morpheus/command/HostCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/morpheus/command/PlayCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/morpheus/command/PlayCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/morpheus/menu/EventsMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/morpheus/menu/EventsMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/morpheus/menu/HostEventButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/morpheus/menu/HostEventButton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/morpheus/menu/HostMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/morpheus/menu/HostMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/morpheus/menu/parameter/HostParameterButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/morpheus/menu/parameter/HostParameterButton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/morpheus/menu/parameter/HostParametersMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/morpheus/menu/parameter/HostParametersMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/nametag/PotPvPNametagProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/nametag/PotPvPNametagProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/party/Party.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/party/Party.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/party/PartyAccessRestriction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/party/PartyAccessRestriction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/party/PartyHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/party/PartyHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/party/PartyLang.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/party/PartyLang.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/party/PartyUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/party/PartyUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/party/command/PartyAnnounceCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/party/command/PartyAnnounceCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/party/command/PartyCreateCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/party/command/PartyCreateCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/party/command/PartyDisbandCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/party/command/PartyDisbandCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/party/command/PartyFfaCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/party/command/PartyFfaCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/party/command/PartyInfoCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/party/command/PartyInfoCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/party/command/PartyInviteCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/party/command/PartyInviteCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/party/command/PartyJoinCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/party/command/PartyJoinCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/party/command/PartyKickCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/party/command/PartyKickCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/party/command/PartyLeaderCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/party/command/PartyLeaderCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/party/command/PartyLeaveCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/party/command/PartyLeaveCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/party/command/PartyLockCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/party/command/PartyLockCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/party/command/PartyOpenCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/party/command/PartyOpenCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/party/command/PartyPasswordCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/party/command/PartyPasswordCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/party/command/PartySettingsCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/party/command/PartySettingsCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/party/command/PartyTeamSplitCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/party/command/PartyTeamSplitCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/party/listener/PartyChatListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/party/listener/PartyChatListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/party/listener/PartyItemListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/party/listener/PartyItemListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/party/listener/PartyLeaveListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/party/listener/PartyLeaveListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/party/menu/PartyEventsMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/party/menu/PartyEventsMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/party/menu/PartyListMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/party/menu/PartyListMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/party/menu/PartyManageMembers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/party/menu/PartyManageMembers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/party/menu/PartySettingsMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/party/menu/PartySettingsMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/party/menu/RosterMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/party/menu/RosterMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/party/menu/otherparties/OtherPartiesMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/party/menu/otherparties/OtherPartiesMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/party/menu/otherparties/OtherPartyButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/party/menu/otherparties/OtherPartyButton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/postmatchinv/PostMatchInvHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/postmatchinv/PostMatchInvHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/postmatchinv/PostMatchInvLang.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/postmatchinv/PostMatchInvLang.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/postmatchinv/command/CheckPostMatchInvCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/postmatchinv/command/CheckPostMatchInvCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/postmatchinv/listener/PostMatchInvGeneralListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/postmatchinv/listener/PostMatchInvGeneralListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/postmatchinv/menu/PostMatchMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/postmatchinv/menu/PostMatchMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/postmatchinv/menu/PostMatchSwapTargetButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/postmatchinv/menu/PostMatchSwapTargetButton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/pvpclasses/PvPClassHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/pvpclasses/PvPClassHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/pvpclasses/pvpclasses/ArcherClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/pvpclasses/pvpclasses/ArcherClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/pvpclasses/pvpclasses/BardClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/pvpclasses/pvpclasses/BardClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/queue/MatchQueue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/queue/MatchQueue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/queue/QueueHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/queue/QueueHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/queue/listener/QueueGeneralListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/queue/listener/QueueGeneralListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/queue/listener/QueueItemListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/queue/listener/QueueItemListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/queue/listener/QueueLeaveListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/queue/listener/QueueLeaveListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/rematch/RematchHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/rematch/RematchHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/rematch/listener/RematchGeneralListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/rematch/listener/RematchGeneralListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/rematch/listener/RematchItemListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/rematch/listener/RematchItemListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/rematch/listener/RematchUnloadListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/rematch/listener/RematchUnloadListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/scoreboard/LobbyScoreGetter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/scoreboard/LobbyScoreGetter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/scoreboard/MatchScoreGetter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/scoreboard/MatchScoreGetter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/scoreboard/MultiplexingScoreGetter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/scoreboard/MultiplexingScoreGetter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/scoreboard/PotPvPScoreboardConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/scoreboard/PotPvPScoreboardConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/setting/Setting.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/setting/Setting.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/setting/SettingHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/setting/SettingHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/setting/command/ToggleDuelCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/setting/command/ToggleDuelCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/setting/listener/SettingLoadListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/setting/listener/SettingLoadListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/setting/menu/SettingButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/setting/menu/SettingButton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/setting/repository/MongoSettingRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/setting/repository/MongoSettingRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/statistics/StatisticsHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/statistics/StatisticsHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/tab/HeaderLayoutProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/tab/HeaderLayoutProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/tab/LobbyLayoutProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/tab/LobbyLayoutProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/tab/MatchParticipantLayoutProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/tab/MatchParticipantLayoutProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/tab/MatchSpectatorLayoutProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/tab/MatchSpectatorLayoutProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/tab/PotPvPLayoutProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/tab/PotPvPLayoutProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/tournament/Tournament.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/tournament/Tournament.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/tournament/TournamentHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/tournament/TournamentHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/util/FancyPlayerInventory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/util/FancyPlayerInventory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/util/InventoryUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/util/InventoryUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/util/MongoUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/util/MongoUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/util/PatchedPlayerUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/util/PatchedPlayerUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/util/TaskUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/util/TaskUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/util/VisibilityUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/util/VisibilityUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/validation/PotPvPValidation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/validation/PotPvPValidation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/qrakn/morpheus/Morpheus.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/qrakn/morpheus/Morpheus.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/qrakn/morpheus/game/Game.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/qrakn/morpheus/game/Game.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/qrakn/morpheus/game/bukkit/event/PlayerQuitGameEvent.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/qrakn/morpheus/game/bukkit/event/PlayerQuitGameEvent.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/qrakn/morpheus/game/event/GameEvent.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/qrakn/morpheus/game/event/GameEvent.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/qrakn/morpheus/game/event/impl/brackets/BracketsGameEvent.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/qrakn/morpheus/game/event/impl/brackets/BracketsGameEvent.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/qrakn/morpheus/game/event/impl/brackets/BracketsGameEventListeners.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/qrakn/morpheus/game/event/impl/brackets/BracketsGameEventListeners.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/qrakn/morpheus/game/event/impl/brackets/BracketsGameEventLogic.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/qrakn/morpheus/game/event/impl/brackets/BracketsGameEventLogic.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/qrakn/morpheus/game/event/impl/lms/LastManStandingGameEvent.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/qrakn/morpheus/game/event/impl/lms/LastManStandingGameEvent.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/qrakn/morpheus/game/event/impl/lms/LastManStandingGameEventListeners.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/qrakn/morpheus/game/event/impl/lms/LastManStandingGameEventListeners.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/qrakn/morpheus/game/event/impl/lms/LastManStandingGameEventLogic.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/qrakn/morpheus/game/event/impl/lms/LastManStandingGameEventLogic.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/qrakn/morpheus/game/event/impl/skywars/SkywarsGameEvent.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/qrakn/morpheus/game/event/impl/skywars/SkywarsGameEvent.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/qrakn/morpheus/game/event/impl/skywars/SkywarsGameEventListeners.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/qrakn/morpheus/game/event/impl/skywars/SkywarsGameEventListeners.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/qrakn/morpheus/game/event/impl/sumo/SumoGameEvent.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/qrakn/morpheus/game/event/impl/sumo/SumoGameEvent.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/qrakn/morpheus/game/event/impl/sumo/SumoGameEventListeners.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/qrakn/morpheus/game/event/impl/sumo/SumoGameEventListeners.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/qrakn/morpheus/game/event/impl/t4g/T4gGameEvent.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/qrakn/morpheus/game/event/impl/t4g/T4gGameEventListeners.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/qrakn/morpheus/game/event/impl/t4g/T4gGameEventLogic.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/qrakn/morpheus/game/task/GameStartTask.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/qrakn/morpheus/game/task/GameStartTask.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/qrakn/morpheus/game/util/GameEventCountdown.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/qrakn/morpheus/game/util/GameEventCountdown.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/config.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/items.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/plugin.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/PotPvP-ND.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/PotPvP-ND.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/config.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/items.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/frozenorb/potpvp/arena/ArenaHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/net/frozenorb/potpvp/arena/ArenaHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/frozenorb/potpvp/kit/Kit.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/net/frozenorb/potpvp/kit/Kit.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/frozenorb/potpvp/kit/KitHandler$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/net/frozenorb/potpvp/kit/KitHandler$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/frozenorb/potpvp/kit/KitHandler$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/frozenorb/potpvp/kit/KitHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/net/frozenorb/potpvp/kit/KitHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/frozenorb/potpvp/kit/listener/KitLoadListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/net/frozenorb/potpvp/kit/listener/KitLoadListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/frozenorb/potpvp/kittype/KitType.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/net/frozenorb/potpvp/kittype/KitType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/frozenorb/potpvp/listener/BasicPreventionListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/net/frozenorb/potpvp/listener/BasicPreventionListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/frozenorb/potpvp/listener/ChatToggleListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/net/frozenorb/potpvp/listener/ChatToggleListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/frozenorb/potpvp/listener/PearlCooldownListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/net/frozenorb/potpvp/listener/PearlCooldownListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/frozenorb/potpvp/lobby/listener/LobbyItemListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/net/frozenorb/potpvp/lobby/listener/LobbyItemListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/frozenorb/potpvp/match/listener/MatchComboListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/net/frozenorb/potpvp/match/listener/MatchComboListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/frozenorb/potpvp/match/listener/MatchCountdownListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/net/frozenorb/potpvp/match/listener/MatchCountdownListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/frozenorb/potpvp/match/listener/MatchDeathMessageListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/net/frozenorb/potpvp/match/listener/MatchDeathMessageListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/frozenorb/potpvp/match/listener/MatchEnderPearlDamageListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/net/frozenorb/potpvp/match/listener/MatchEnderPearlDamageListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/frozenorb/potpvp/match/listener/MatchFreezeListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/net/frozenorb/potpvp/match/listener/MatchFreezeListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/frozenorb/potpvp/match/listener/MatchHardcoreHealingListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/net/frozenorb/potpvp/match/listener/MatchHardcoreHealingListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/frozenorb/potpvp/match/listener/MatchHealthDisplayListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/net/frozenorb/potpvp/match/listener/MatchHealthDisplayListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/frozenorb/potpvp/match/listener/MatchStatsListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/net/frozenorb/potpvp/match/listener/MatchStatsListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/frozenorb/potpvp/match/listener/MatchWizardListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/net/frozenorb/potpvp/match/listener/MatchWizardListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/frozenorb/potpvp/match/listener/SpectatorItemListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/net/frozenorb/potpvp/match/listener/SpectatorItemListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/frozenorb/potpvp/match/listener/SpectatorPreventionListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/net/frozenorb/potpvp/match/listener/SpectatorPreventionListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/frozenorb/potpvp/postmatchinv/PostMatchInvHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/net/frozenorb/potpvp/postmatchinv/PostMatchInvHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/frozenorb/potpvp/postmatchinv/listener/PostMatchInvGeneralListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/net/frozenorb/potpvp/postmatchinv/listener/PostMatchInvGeneralListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/frozenorb/potpvp/pvpclasses/PvPClassHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/net/frozenorb/potpvp/pvpclasses/PvPClassHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/frozenorb/potpvp/pvpclasses/pvpclasses/BardClass$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/net/frozenorb/potpvp/pvpclasses/pvpclasses/BardClass$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/frozenorb/potpvp/pvpclasses/pvpclasses/BardClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/net/frozenorb/potpvp/pvpclasses/pvpclasses/BardClass.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/frozenorb/potpvp/rematch/RematchHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/net/frozenorb/potpvp/rematch/RematchHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/frozenorb/potpvp/rematch/listener/RematchGeneralListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/net/frozenorb/potpvp/rematch/listener/RematchGeneralListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/frozenorb/potpvp/rematch/listener/RematchItemListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/net/frozenorb/potpvp/rematch/listener/RematchItemListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/frozenorb/potpvp/rematch/listener/RematchUnloadListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/net/frozenorb/potpvp/rematch/listener/RematchUnloadListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/frozenorb/potpvp/setting/Setting.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/net/frozenorb/potpvp/setting/Setting.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/frozenorb/potpvp/setting/SettingHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/net/frozenorb/potpvp/setting/SettingHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/frozenorb/potpvp/setting/listener/SettingLoadListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/net/frozenorb/potpvp/setting/listener/SettingLoadListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/frozenorb/potpvp/setting/repository/MongoSettingRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/net/frozenorb/potpvp/setting/repository/MongoSettingRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/frozenorb/potpvp/util/FancyPlayerInventory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/net/frozenorb/potpvp/util/FancyPlayerInventory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/frozenorb/potpvp/util/InventoryUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/net/frozenorb/potpvp/util/InventoryUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/frozenorb/potpvp/util/MongoUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/net/frozenorb/potpvp/util/MongoUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/net/frozenorb/potpvp/util/TaskUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/net/frozenorb/potpvp/util/TaskUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/plugin.yml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -28,6 +367,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/main/java/net/frozenorb/potpvp/divisions/DivisionHandler.java" root0="SKIP_INSPECTION" />
+  </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
@@ -39,30 +381,33 @@
     <option name="version" value="1" />
   </component>
   <component name="ProjectId" id="1Ucb9XSHXWgs6H97xMys5bTF9Gv" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1572486003413" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/kotlin/com/qrakn/morpheus/game/task" />
-    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.1150748" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="project.structure.side.proportion" value="0.45632184" />
+    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.annotationProcessors" />
   </component>
   <component name="RecentsManager">
     <key name="CopyKotlinDeclarationDialog.RECENTS_KEY">
       <recent name="net.frozenorb.potpvp" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="J:\Minecraft Servers\Source Codes\My Projects\By Drizzy\PotPvP\lib" />
+      <recent name="J:\Minecraft Servers\Source Codes\My Projects\By Drizzy\PotPvP\src\main\java\net\frozenorb\potpvp\util" />
       <recent name="J:\Minecraft Servers\Source Codes\My Projects\PotPvP-ND By Drizzy\src\main\kotlin\com\qrakn\morpheus\game\task" />
       <recent name="J:\Minecraft Servers\Source Codes\My Projects\PotPvP-ND By Drizzy\src\main\kotlin\com\qrakn\morpheus" />
       <recent name="J:\Minecraft Servers\Source Codes\My Projects\PotPvP-ND By Drizzy\src\main\java\net\frozenorb\potpvp" />
-      <recent name="J:\Minecraft Servers\Source Codes\My Projects\PotPvP-ND By Drizzy\src\main\java\net\frozenorb\potpvp\kit" />
-      <recent name="J:\Minecraft Servers\Source Codes\My Projects\PotPvP-ND By Drizzy\src\main\java\net\frozenorb\potpvp\kit\menu\editkit" />
     </key>
   </component>
   <component name="RunManager">
@@ -125,6 +470,18 @@
     </task>
     <servers />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
   <component name="WindowStateProjectService">
     <state x="500" y="247" key="#BuildArtifactsBeforeRunChooser" timestamp="1614090354132">
       <screen x="0" y="0" width="1440" height="860" />
@@ -134,31 +491,30 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="174" y="0" width="1092" height="860" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1440.860@0.0.1440.860" timestamp="1614090370452" />
-    <state x="525" y="136" key="#com.intellij.ide.util.MemberChooser" timestamp="1615187754401">
+    <state x="525" y="136" key="#com.intellij.ide.util.MemberChooser" timestamp="1616497910953">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="525" y="136" key="#com.intellij.ide.util.MemberChooser/0.0.1440.860@0.0.1440.860" timestamp="1615187754401" />
-    <state x="290" y="364" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1614936687981">
+    <state x="525" y="136" key="#com.intellij.ide.util.MemberChooser/0.0.1440.860@0.0.1440.860" timestamp="1616497910953" />
+    <state x="290" y="364" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1616445656540">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="258" y="416" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1280.984@0.0.1280.984" timestamp="1606845959524" />
-    <state x="290" y="364" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1440.860@0.0.1440.860" timestamp="1614936687981" />
-    <state x="503" y="299" width="436" height="268" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1614938112060">
+    <state x="290" y="364" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1440.860@0.0.1440.860" timestamp="1616445656540" />
+    <state x="503" y="299" width="436" height="268" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1616446993332">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="503" y="299" width="436" height="268" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1440.860@0.0.1440.860" timestamp="1614938112060" />
+    <state x="503" y="299" width="436" height="268" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1440.860@0.0.1440.860" timestamp="1616446993332" />
     <state x="516" y="311" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages" timestamp="1614809387056">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="516" y="311" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages/0.0.1440.860@0.0.1440.860" timestamp="1614809387056" />
+    <state x="227" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1616448331816">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state x="227" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1440.860@0.0.1440.860" timestamp="1616448331816" />
     <state x="518" y="221" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1608705925337">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="518" y="221" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1440.860@0.0.1440.860" timestamp="1608705925337" />
-    <state x="370" y="239" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog" timestamp="1606844952692">
-      <screen x="0" y="0" width="1280" height="984" />
-    </state>
-    <state x="370" y="239" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog/0.0.1280.984@0.0.1280.984" timestamp="1606844952692" />
     <state x="567" y="189" key="#com.intellij.util.ui.classpath.ChooseLibrariesDialog" timestamp="1608547098591">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
@@ -166,49 +522,42 @@
     <state x="449" y="140" key="FileChooserDialogImpl" timestamp="1608630210214">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="561" y="252" key="FileChooserDialogImpl/0.0.1280.984@0.0.1280.984" timestamp="1606920394645" />
     <state x="449" y="140" key="FileChooserDialogImpl/0.0.1440.860@0.0.1440.860" timestamp="1608630210214" />
     <state width="1397" height="231" key="GridCell.Tab.0.bottom" timestamp="1608537448478">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state width="1220" height="271" key="GridCell.Tab.0.bottom/0.0.1280.984@0.0.1280.984" timestamp="1606951991523" />
     <state width="1397" height="231" key="GridCell.Tab.0.bottom/0.0.1440.860@0.0.1440.860" timestamp="1608537448478" />
     <state width="1397" height="231" key="GridCell.Tab.0.center" timestamp="1608537448478">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state width="1220" height="271" key="GridCell.Tab.0.center/0.0.1280.984@0.0.1280.984" timestamp="1606951991522" />
     <state width="1397" height="231" key="GridCell.Tab.0.center/0.0.1440.860@0.0.1440.860" timestamp="1608537448478" />
     <state width="1397" height="231" key="GridCell.Tab.0.left" timestamp="1608537448478">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state width="1220" height="271" key="GridCell.Tab.0.left/0.0.1280.984@0.0.1280.984" timestamp="1606951991522" />
     <state width="1397" height="231" key="GridCell.Tab.0.left/0.0.1440.860@0.0.1440.860" timestamp="1608537448478" />
     <state width="1397" height="231" key="GridCell.Tab.0.right" timestamp="1608537448478">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state width="1220" height="271" key="GridCell.Tab.0.right/0.0.1280.984@0.0.1280.984" timestamp="1606951991523" />
     <state width="1397" height="231" key="GridCell.Tab.0.right/0.0.1440.860@0.0.1440.860" timestamp="1608537448478" />
-    <state x="317" y="9" key="SettingsEditor" timestamp="1614362075109">
+    <state x="317" y="9" key="SettingsEditor" timestamp="1616446941190">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="282" y="156" key="SettingsEditor/0.0.1280.984@0.0.1280.984" timestamp="1606920429656" />
-    <state x="317" y="9" key="SettingsEditor/0.0.1440.860@0.0.1440.860" timestamp="1614362075109" />
-    <state x="748" y="244" width="628" height="616" key="find.popup" timestamp="1614991619656">
+    <state x="317" y="9" key="SettingsEditor/0.0.1440.860@0.0.1440.860" timestamp="1616446941190" />
+    <state x="324" y="40" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1616500740555">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="665" y="315" width="555" height="592" key="find.popup/0.0.1280.984@0.0.1280.984" timestamp="1606857043960" />
-    <state x="748" y="244" width="628" height="616" key="find.popup/0.0.1440.860@0.0.1440.860" timestamp="1614991619656" />
-    <state x="340" y="249" key="refactoring.ChangeSignatureDialog" timestamp="1606843509031">
-      <screen x="0" y="0" width="1280" height="984" />
+    <state x="324" y="40" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1440.860@0.0.1440.860" timestamp="1616500740555" />
+    <state x="748" y="244" width="628" height="616" key="find.popup" timestamp="1616501415894">
+      <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="340" y="249" key="refactoring.ChangeSignatureDialog/0.0.1280.984@0.0.1280.984" timestamp="1606843509031" />
+    <state x="748" y="244" width="628" height="616" key="find.popup/0.0.1440.860@0.0.1440.860" timestamp="1616501415894" />
     <state x="376" y="195" key="run.anything.popup" timestamp="1615187252863">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="376" y="195" key="run.anything.popup/0.0.1440.860@0.0.1440.860" timestamp="1615187252863" />
-    <state x="383" y="180" width="672" height="678" key="search.everywhere.popup" timestamp="1614799076233">
+    <state x="383" y="180" width="672" height="678" key="search.everywhere.popup" timestamp="1616498763087">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
-    <state x="383" y="180" width="672" height="678" key="search.everywhere.popup/0.0.1440.860@0.0.1440.860" timestamp="1614799076233" />
+    <state x="383" y="180" width="672" height="678" key="search.everywhere.popup/0.0.1440.860@0.0.1440.860" timestamp="1616498763087" />
   </component>
 </project>

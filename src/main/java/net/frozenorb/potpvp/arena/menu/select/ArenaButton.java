@@ -1,7 +1,7 @@
 package net.frozenorb.potpvp.arena.menu.select;
 
 import lombok.AllArgsConstructor;
-import net.frozenorb.potpvp.PotPvPSI;
+import net.frozenorb.potpvp.PotPvPND;
 import net.frozenorb.potpvp.arena.ArenaSchematic;
 import net.frozenorb.potpvp.kt.menu.Button;
 import net.frozenorb.potpvp.kt.util.Callback;
@@ -24,13 +24,13 @@ public class ArenaButton extends Button {
 
     @Override
     public Material getMaterial(Player player) {
-        return PotPvPSI.getInstance().getArenaHandler()
+        return PotPvPND.getInstance().getArenaHandler()
             .getSchematic(mapName).getArenaItem();
     }
 
     @Override
     public void clicked(Player player, int slot, ClickType clickType, InventoryView view) {
         player.closeInventory();
-        mapCallback.callback(PotPvPSI.getInstance().getArenaHandler().getSchematic(mapName));
+        mapCallback.callback(PotPvPND.getInstance().getArenaHandler().getSchematic(mapName));
     }
 }

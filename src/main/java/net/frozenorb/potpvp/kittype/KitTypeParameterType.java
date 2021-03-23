@@ -1,12 +1,3 @@
-/*
- * Decompiled with CFR 0.150.
- *
- * Could not load the following classes:
- *  net.minecraft.util.org.apache.commons.lang3.StringUtils
- *  org.bukkit.ChatColor
- *  org.bukkit.command.CommandSender
- *  org.bukkit.entity.Player
- */
 package net.frozenorb.potpvp.kittype;
 
 import net.frozenorb.potpvp.kt.command.data.parameter.ParameterType;

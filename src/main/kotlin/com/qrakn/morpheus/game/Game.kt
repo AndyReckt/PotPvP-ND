@@ -71,6 +71,7 @@ class Game(val event: GameEvent, val host: Player, val parameters: List<GamePara
         player.inventory.heldItemSlot = 0
         player.inventory.armorContents = null
         player.gameMode = GameMode.CREATIVE
+        player.inventory.addItem(*event.getLobbyItems().toTypedArray())
         player.health = player.maxHealth
         player.foodLevel = 20
 
@@ -96,6 +97,7 @@ class Game(val event: GameEvent, val host: Player, val parameters: List<GamePara
         player.inventory.heldItemSlot = 0
         player.inventory.armorContents = null
         player.gameMode = GameMode.SURVIVAL
+        player.inventory.addItem(*event.getLobbyItems().toTypedArray())
         player.health = player.maxHealth
         player.foodLevel = 20
 

@@ -1,6 +1,6 @@
 package net.frozenorb.potpvp.kt.redis
 
-import net.frozenorb.potpvp.PotPvPSI
+import net.frozenorb.potpvp.PotPvPND
 import redis.clients.jedis.Jedis
 import redis.clients.jedis.JedisPool
 import redis.clients.jedis.JedisPoolConfig
@@ -31,7 +31,7 @@ class Redis : Closeable {
                 localCredentials.dbId
             )
         } catch (e: Exception) {
-            PotPvPSI.getInstance().logger.warning("Couldn't connect to a Redis instance at ${localCredentials.host}:${localCredentials.port}")
+            PotPvPND.getInstance().logger.warning("Couldn't connect to a Redis instance at ${localCredentials.host}:${localCredentials.port}")
             e.printStackTrace()
         }
 
@@ -51,7 +51,7 @@ class Redis : Closeable {
                 backboneCredentials.dbId
             )
         } catch (e: Exception) {
-            PotPvPSI.getInstance().logger.warning("Couldn't connect to a Backbone Redis instance at ${backboneCredentials.host}:${backboneCredentials.port}")
+            PotPvPND.getInstance().logger.warning("Couldn't connect to a Backbone Redis instance at ${backboneCredentials.host}:${backboneCredentials.port}")
             e.printStackTrace()
         }
     }

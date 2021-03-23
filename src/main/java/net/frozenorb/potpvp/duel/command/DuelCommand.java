@@ -1,7 +1,7 @@
 package net.frozenorb.potpvp.duel.command;
 
 import net.frozenorb.potpvp.PotPvPLang;
-import net.frozenorb.potpvp.PotPvPSI;
+import net.frozenorb.potpvp.PotPvPND;
 import net.frozenorb.potpvp.arena.ArenaSchematic;
 import net.frozenorb.potpvp.arena.menu.select.SelectArenaMenu;
 import net.frozenorb.potpvp.duel.DuelHandler;
@@ -35,8 +35,8 @@ public final class DuelCommand {
             return;
         }
 
-        PartyHandler partyHandler = PotPvPSI.getInstance().getPartyHandler();
-        LobbyHandler lobbyHandler = PotPvPSI.getInstance().getLobbyHandler();
+        PartyHandler partyHandler = PotPvPND.getInstance().getPartyHandler();
+        LobbyHandler lobbyHandler = PotPvPND.getInstance().getLobbyHandler();
 
         Party senderParty = partyHandler.getParty(sender);
         Party targetParty = partyHandler.getParty(target);
@@ -74,7 +74,7 @@ public final class DuelCommand {
                 return;
             }
 
-            SettingHandler settingHandler = PotPvPSI.getInstance().getSettingHandler();
+            SettingHandler settingHandler = PotPvPND.getInstance().getSettingHandler();
             new SelectKitTypeMenu(kitType -> {
                 sender.closeInventory();
                 if (sender.hasPermission("practice.map.select")
@@ -98,7 +98,7 @@ public final class DuelCommand {
             return;
         }
 
-        DuelHandler duelHandler = PotPvPSI.getInstance().getDuelHandler();
+        DuelHandler duelHandler = PotPvPND.getInstance().getDuelHandler();
         DuelInvite autoAcceptInvite = duelHandler.findInvite(target, sender);
 
         // if two players duel each other for the same thing automatically
@@ -133,7 +133,7 @@ public final class DuelCommand {
             return;
         }
 
-        DuelHandler duelHandler = PotPvPSI.getInstance().getDuelHandler();
+        DuelHandler duelHandler = PotPvPND.getInstance().getDuelHandler();
         DuelInvite autoAcceptInvite = duelHandler.findInvite(target, sender);
 
         // if two players duel each other for the same thing automatically
@@ -169,9 +169,9 @@ public final class DuelCommand {
             return;
         }
 
-        DuelHandler duelHandler = PotPvPSI.getInstance().getDuelHandler();
+        DuelHandler duelHandler = PotPvPND.getInstance().getDuelHandler();
         DuelInvite autoAcceptInvite = duelHandler.findInvite(targetParty, senderParty);
-        String targetPartyLeader = PotPvPSI.getInstance().getUuidCache().name(targetParty.getLeader());
+        String targetPartyLeader = PotPvPND.getInstance().getUuidCache().name(targetParty.getLeader());
 
         // if two players duel each other for the same thing automatically
         // accept it to make their life a bit easier.

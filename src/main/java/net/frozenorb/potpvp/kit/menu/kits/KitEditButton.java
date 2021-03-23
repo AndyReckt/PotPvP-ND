@@ -2,7 +2,7 @@ package net.frozenorb.potpvp.kit.menu.kits;
 
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
-import net.frozenorb.potpvp.PotPvPSI;
+import net.frozenorb.potpvp.PotPvPND;
 import net.frozenorb.potpvp.kit.Kit;
 import net.frozenorb.potpvp.kit.KitHandler;
 import net.frozenorb.potpvp.kittype.KitType;
@@ -54,7 +54,7 @@ final class KitEditButton extends Button {
             return;
         }
         kitOpt.orElseGet(() -> {
-            KitHandler kitHandler = PotPvPSI.getInstance().getKitHandler();
+            KitHandler kitHandler = PotPvPND.getInstance().getKitHandler();
             return kitHandler.saveDefaultKit(player, kitType, this.slot);
         });
 

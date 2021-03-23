@@ -1,6 +1,6 @@
 package net.frozenorb.potpvp.match.listener;
 
-import net.frozenorb.potpvp.PotPvPSI;
+import net.frozenorb.potpvp.PotPvPND;
 import net.frozenorb.potpvp.kit.Kit;
 import net.frozenorb.potpvp.kit.KitHandler;
 import net.frozenorb.potpvp.kittype.KitType;
@@ -30,7 +30,7 @@ public final class KitSelectionListener implements Listener {
      */
     @EventHandler
     public void onMatchCountdownStart(MatchCountdownStartEvent event) {
-        KitHandler kitHandler = PotPvPSI.getInstance().getKitHandler();
+        KitHandler kitHandler = PotPvPND.getInstance().getKitHandler();
         Match match = event.getMatch();
         KitType kitType = match.getKitType();
 
@@ -51,7 +51,7 @@ public final class KitSelectionListener implements Listener {
                 KitType diamond = KitType.byId("DIAMOND_HCF");
                 KitType archer = KitType.byId("ARCHER_HCF");
 
-                Party party = PotPvPSI.getInstance().getPartyHandler().getParty(player);
+                Party party = PotPvPND.getInstance().getPartyHandler().getParty(player);
 
                 if (party == null) {
                     Kit.ofDefaultKit(diamond).apply(player);
@@ -93,14 +93,14 @@ public final class KitSelectionListener implements Listener {
      */
     @EventHandler(priority = EventPriority.LOWEST, ignoreCancelled = true)
     public void onPlayerDropItem(PlayerDropItemEvent event) {
-        MatchHandler matchHandler = PotPvPSI.getInstance().getMatchHandler();
+        MatchHandler matchHandler = PotPvPND.getInstance().getMatchHandler();
         Match match = matchHandler.getMatchPlaying(event.getPlayer());
 
         if (match == null) {
             return;
         }
 
-        KitHandler kitHandler = PotPvPSI.getInstance().getKitHandler();
+        KitHandler kitHandler = PotPvPND.getInstance().getKitHandler();
         ItemStack droppedItem = event.getItemDrop().getItemStack();
         KitType kitType = match.getKitType();
 
@@ -123,14 +123,14 @@ public final class KitSelectionListener implements Listener {
      */
     @EventHandler(priority = EventPriority.LOWEST)
     public void onPlayerDeath(PlayerDeathEvent event) {
-        MatchHandler matchHandler = PotPvPSI.getInstance().getMatchHandler();
+        MatchHandler matchHandler = PotPvPND.getInstance().getMatchHandler();
         Match match = matchHandler.getMatchPlaying(event.getEntity());
 
         if (match == null) {
             return;
         }
 
-        KitHandler kitHandler = PotPvPSI.getInstance().getKitHandler();
+        KitHandler kitHandler = PotPvPND.getInstance().getKitHandler();
         KitType kitType = match.getKitType();
 
         for (Kit kit : kitHandler.getKits(event.getEntity(), kitType)) {
@@ -151,14 +151,14 @@ public final class KitSelectionListener implements Listener {
             return;
         }
 
-        MatchHandler matchHandler = PotPvPSI.getInstance().getMatchHandler();
+        MatchHandler matchHandler = PotPvPND.getInstance().getMatchHandler();
         Match match = matchHandler.getMatchPlaying(event.getPlayer());
 
         if (match == null) {
             return;
         }
 
-        KitHandler kitHandler = PotPvPSI.getInstance().getKitHandler();
+        KitHandler kitHandler = PotPvPND.getInstance().getKitHandler();
         ItemStack clickedItem = event.getItem();
         KitType kitType = match.getKitType();
         Player player = event.getPlayer();
@@ -166,7 +166,7 @@ public final class KitSelectionListener implements Listener {
         for (Kit kit : kitHandler.getKits(player, kitType)) {
             if (kit.isSelectionItem(clickedItem)) {
                 kit.apply(player);
-                player.sendMessage(ChatColor.YELLOW + "You equipped your \"" + kit.getName() + "\" " + kitType.getDisplayName() + " kit.");
+                player.sendMessage(ChatColor.YELLOW + "You equipped your \"" + kit.getName() + "\" " + kitType.getName() + " kit.");
                 return;
             }
         }
@@ -175,7 +175,7 @@ public final class KitSelectionListener implements Listener {
 
         if (defaultKit.isSelectionItem(clickedItem)) {
             defaultKit.apply(player);
-            player.sendMessage(ChatColor.YELLOW + "You equipped the default kit for " + kitType.getDisplayName() + ".");
+            player.sendMessage(ChatColor.YELLOW + "You equipped the default kit for " + kitType.getName() + ".");
         }
 
     }

@@ -1,6 +1,6 @@
 package net.frozenorb.potpvp.match.command;
 
-import net.frozenorb.potpvp.PotPvPSI;
+import net.frozenorb.potpvp.PotPvPND;
 import net.frozenorb.potpvp.kt.command.Command;
 import net.frozenorb.potpvp.kt.command.data.parameter.Param;
 import net.frozenorb.potpvp.match.Match;
@@ -36,8 +36,8 @@ public final class SpectateCommand {
 
         cooldowns.put(sender.getUniqueId(), System.currentTimeMillis() + TimeUnit.SECONDS.toMillis(SPECTATE_COOLDOWN_SECONDS));
 
-        MatchHandler matchHandler = PotPvPSI.getInstance().getMatchHandler();
-        SettingHandler settingHandler = PotPvPSI.getInstance().getSettingHandler();
+        MatchHandler matchHandler = PotPvPND.getInstance().getMatchHandler();
+        SettingHandler settingHandler = PotPvPND.getInstance().getSettingHandler();
 
         Match targetMatch = matchHandler.getMatchPlayingOrSpectating(target);
 
@@ -46,7 +46,7 @@ public final class SpectateCommand {
             return;
         }
 
-        //boolean bypassesSpectating = PotPvPSI.getInstance().getTournamentHandler().isInTournament(targetMatch);
+        //boolean bypassesSpectating = PotPvPND.getInstance().getTournamentHandler().isInTournament(targetMatch);
         boolean bypassesSpectating = false;
 
         // only check the seting if the target is actually playing in the match

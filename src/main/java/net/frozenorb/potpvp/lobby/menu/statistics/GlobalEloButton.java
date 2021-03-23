@@ -1,7 +1,7 @@
 package net.frozenorb.potpvp.lobby.menu.statistics;
 
 import com.google.common.collect.Lists;
-import net.frozenorb.potpvp.PotPvPSI;
+import net.frozenorb.potpvp.PotPvPND;
 import net.frozenorb.potpvp.kt.menu.Button;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
@@ -25,7 +25,7 @@ public class GlobalEloButton extends Button {
 
         int counter = 1;
 
-        for (Entry<String, Integer> entry : PotPvPSI.getInstance().getEloHandler().topElo(null).entrySet()) {
+        for (Entry<String, Integer> entry : PotPvPND.getInstance().getEloHandler().topElo(null).entrySet()) {
             String color = (counter <= 3 ? ChatColor.GREEN : ChatColor.GRAY).toString();
             description.add(color + counter + ChatColor.GRAY.toString() + ChatColor.BOLD + " | " + entry.getKey() + ChatColor.GRAY + ": " + ChatColor.WHITE + entry.getValue());
 

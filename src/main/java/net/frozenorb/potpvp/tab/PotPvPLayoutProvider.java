@@ -1,6 +1,6 @@
 package net.frozenorb.potpvp.tab;
 
-import net.frozenorb.potpvp.PotPvPSI;
+import net.frozenorb.potpvp.PotPvPND;
 import net.frozenorb.potpvp.kt.tab.LayoutProvider;
 import net.frozenorb.potpvp.kt.tab.TabLayout;
 import net.frozenorb.potpvp.kt.util.PlayerUtils;
@@ -29,11 +29,11 @@ public final class PotPvPLayoutProvider implements LayoutProvider {
 
     @Override
     public TabLayout provide(@NotNull final Player player) {
-        if (PotPvPSI.getInstance() == null) {
+        if (PotPvPND.getInstance() == null) {
             return TabLayout.create(player);
         }
         final TabLayout tabLayout=TabLayout.create(player);
-        final Match match=PotPvPSI.getInstance().getMatchHandler().getMatchPlayingOrSpectating(player);
+        final Match match=PotPvPND.getInstance().getMatchHandler().getMatchPlayingOrSpectating(player);
         this.headerLayoutProvider.accept(player, tabLayout);
         if (match != null) {
             if (match.isSpectator(player.getUniqueId())) {

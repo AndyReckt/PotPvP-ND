@@ -2,7 +2,7 @@ package net.frozenorb.potpvp.command;
 
 import com.google.common.collect.ImmutableList;
 import net.frozenorb.potpvp.PotPvPLang;
-import net.frozenorb.potpvp.PotPvPSI;
+import net.frozenorb.potpvp.PotPvPND;
 import net.frozenorb.potpvp.kt.command.Command;
 import net.frozenorb.potpvp.match.MatchHandler;
 import org.bukkit.ChatColor;
@@ -46,16 +46,16 @@ public final class HelpCommand {
     private static final List<String> HELP_MESSAGE_FOOTER = ImmutableList.of(
         "",
         "§cServer Information:",
-        PotPvPSI.getInstance().getDominantColor() == ChatColor.LIGHT_PURPLE ? "§cOfficial Teamspeak §7- §akoru.rip" : "§cOfficial Teamspeak §7- §ats.koru.rip",
-        PotPvPSI.getInstance().getDominantColor() == ChatColor.LIGHT_PURPLE ? "§cOfficial Rules §7- §akoru.rip" : "§cOfficial Rules §7- §akoru.rip",
-        PotPvPSI.getInstance().getDominantColor() == ChatColor.LIGHT_PURPLE ? "§cStore §7- §astore.koru.rip" : "§cStore §7- §astore.koru.rip",
+        PotPvPND.getInstance().getDominantColor() == ChatColor.LIGHT_PURPLE ? "§cOfficial Teamspeak §7- §akoru.rip" : "§cOfficial Teamspeak §7- §ats.koru.rip",
+        PotPvPND.getInstance().getDominantColor() == ChatColor.LIGHT_PURPLE ? "§cOfficial Rules §7- §akoru.rip" : "§cOfficial Rules §7- §akoru.rip",
+        PotPvPND.getInstance().getDominantColor() == ChatColor.LIGHT_PURPLE ? "§cStore §7- §astore.koru.rip" : "§cStore §7- §astore.koru.rip",
         "§cPractice Leaderboards §7- §ahttps://www.koru.rip/stats/practice",
         ChatColor.DARK_PURPLE + PotPvPLang.LONG_LINE
     );
 
     @Command(names = {"help", "?", "halp", "helpme"}, permission = "")
     public static void help(Player sender) {
-        MatchHandler matchHandler = PotPvPSI.getInstance().getMatchHandler();
+        MatchHandler matchHandler = PotPvPND.getInstance().getMatchHandler();
 
         HELP_MESSAGE_HEADER.forEach(sender::sendMessage);
 

@@ -7,7 +7,7 @@
 package net.frozenorb.potpvp.party.command;
 
 import net.frozenorb.potpvp.PotPvPLang;
-import net.frozenorb.potpvp.PotPvPSI;
+import net.frozenorb.potpvp.PotPvPND;
 import net.frozenorb.potpvp.kt.command.Command;
 import net.frozenorb.potpvp.party.Party;
 import org.bukkit.entity.Player;
@@ -15,7 +15,7 @@ import org.bukkit.entity.Player;
 public final class PartyDisbandCommand {
     @Command(names={"party disband", "p disband", "t disband", "team disband", "f disband"}, permission="")
     public static void partyDisband(Player sender) {
-        Party party=PotPvPSI.getInstance().getPartyHandler().getParty(sender);
+        Party party=PotPvPND.getInstance().getPartyHandler().getParty(sender);
         if (party == null) {
             sender.sendMessage(PotPvPLang.NOT_IN_PARTY);
             return;

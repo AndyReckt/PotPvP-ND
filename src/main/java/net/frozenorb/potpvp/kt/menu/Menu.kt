@@ -1,6 +1,6 @@
 package net.frozenorb.potpvp.kt.menu
 
-import net.frozenorb.potpvp.PotPvPSI
+import net.frozenorb.potpvp.PotPvPND
 import net.frozenorb.potpvp.kt.util.Reflections
 import org.apache.commons.lang.StringUtils
 import org.bukkit.Bukkit
@@ -72,7 +72,8 @@ abstract class Menu {
 
     fun openMenu(player: Player) {
         if (async) {
-            PotPvPSI.getInstance().server.scheduler.runTaskAsynchronously(PotPvPSI.getInstance()) {
+            PotPvPND.getInstance().server.scheduler.runTaskAsynchronously(
+                PotPvPND.getInstance()) {
                 try {
                     asyncLoadResources { successfulLoad ->
                         if (successfulLoad) {
@@ -120,7 +121,8 @@ abstract class Menu {
 
             update(player)
         } else {
-            PotPvPSI.getInstance().server.scheduler.runTaskLater(PotPvPSI.getInstance(), {
+            PotPvPND.getInstance().server.scheduler.runTaskLater(
+                PotPvPND.getInstance(), {
                 if (OPEN_CUSTOM_INVENTORY_METHOD_LEGACY != null) {
                     OPEN_CUSTOM_INVENTORY_METHOD_LEGACY.invoke(player, inv, entityPlayer, 0)
                 } else {
@@ -162,7 +164,7 @@ abstract class Menu {
             }
         }
 
-        runnable.runTaskTimer(PotPvPSI.getInstance(), 6L, 6L)
+        runnable.runTaskTimer(PotPvPND.getInstance(), 6L, 6L)
 
         checkTasks[player.name] = runnable
     }

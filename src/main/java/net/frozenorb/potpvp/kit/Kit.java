@@ -1,6 +1,6 @@
 package net.frozenorb.potpvp.kit;
 
-import net.frozenorb.potpvp.PotPvPSI;
+import net.frozenorb.potpvp.PotPvPND;
 import net.frozenorb.potpvp.kittype.KitType;
 import net.frozenorb.potpvp.util.ItemUtils;
 import net.frozenorb.potpvp.util.PatchedPlayerUtils;
@@ -41,7 +41,7 @@ public final class Kit {
         PatchedPlayerUtils.resetInventory(player);
         player.getInventory().setArmorContents(this.type.getDefaultArmor());
         player.getInventory().setContents(this.inventoryContents);
-        Bukkit.getScheduler().runTaskLater(PotPvPSI.getInstance(), player::updateInventory, 1L);
+        Bukkit.getScheduler().runTaskLater(PotPvPND.getInstance(), player::updateInventory, 1L);
     }
 
     public int countHeals() {

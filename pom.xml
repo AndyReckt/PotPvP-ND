@@ -16,6 +16,10 @@
             <id>sk89q-repo</id>
             <url>https://maven.sk89q.com/repo</url>
         </repository>
+        <repository>
+            <id>codemc-repo</id>
+            <url>https://repo.codemc.io/repository/maven-public/</url>
+        </repository>
     </repositories>
 
     <build>
@@ -131,6 +135,14 @@
         </dependency>
 
         <dependency>
+            <groupId>me.clip.placeholdapi</groupId>
+            <artifactId>PlaceholderAPI</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <scope>system</scope>
+            <systemPath>${basedir}\lib\PlaceholderAPI.jar</systemPath>
+        </dependency>
+
+        <dependency>
             <groupId>org.mongodb</groupId>
             <artifactId>mongodb-driver</artifactId>
             <version>LATEST</version>
@@ -144,6 +156,12 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>1.16.16</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.gmail.filoghost.holographicdisplays</groupId>
+            <artifactId>holographicdisplays-api</artifactId>
+            <version>2.4.0</version>
             <scope>provided</scope>
         </dependency>
         <dependency>

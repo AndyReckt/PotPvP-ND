@@ -1,6 +1,6 @@
 package net.frozenorb.potpvp.arena.menu.manageschematic;
 
-import net.frozenorb.potpvp.PotPvPSI;
+import net.frozenorb.potpvp.PotPvPND;
 import net.frozenorb.potpvp.arena.ArenaSchematic;
 import net.frozenorb.potpvp.arena.menu.manageschematics.ManageSchematicsMenu;
 import net.frozenorb.potpvp.kt.menu.Button;
@@ -42,7 +42,7 @@ public final class ManageSchematicMenu extends Menu {
         buttons.put(3, new TeleportToModelButton(schematic));
         buttons.put(4, new SaveModelButton(schematic));
 
-        if (PotPvPSI.getInstance().getArenaHandler().getGrid().isBusy()) {
+        if (PotPvPND.getInstance().getArenaHandler().getGrid().isBusy()) {
             Button busyButton = Button.placeholder(Material.WOOL, DyeColor.SILVER.getWoolData(), ChatColor.GRAY.toString() + ChatColor.BOLD + "Grid is busy");
 
             buttons.put(7, busyButton);
@@ -56,7 +56,7 @@ public final class ManageSchematicMenu extends Menu {
 
         Consumer<ArenaSchematic> save = schematic -> {
             try {
-                PotPvPSI.getInstance().getArenaHandler().saveSchematics();
+                PotPvPND.getInstance().getArenaHandler().saveSchematics();
             } catch (Exception ex) {
                 ex.printStackTrace();
             }

@@ -2,7 +2,7 @@ package net.frozenorb.potpvp.arena.menu.select;
 
 import com.google.common.collect.Maps;
 import com.google.common.collect.Sets;
-import net.frozenorb.potpvp.PotPvPSI;
+import net.frozenorb.potpvp.PotPvPND;
 import net.frozenorb.potpvp.arena.ArenaSchematic;
 import net.frozenorb.potpvp.kittype.KitType;
 import net.frozenorb.potpvp.kt.menu.Button;
@@ -27,7 +27,7 @@ public class SelectArenaMenu extends Menu {
         this.kitType = kitType;
         this.mapCallback = mapCallback;
 
-        for (ArenaSchematic schematic : PotPvPSI.getInstance().getArenaHandler().getSchematics()) {
+        for (ArenaSchematic schematic : PotPvPND.getInstance().getArenaHandler().getSchematics()) {
             if (MatchHandler.canUseSchematic(this.kitType, schematic) &&
                 schematic.isEnabled() &&
                 !schematic.isGameMapOnly()) {

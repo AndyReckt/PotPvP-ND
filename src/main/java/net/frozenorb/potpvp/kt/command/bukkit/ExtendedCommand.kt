@@ -1,6 +1,6 @@
 package net.frozenorb.potpvp.kt.command.bukkit
 
-import net.frozenorb.potpvp.PotPvPSI
+import net.frozenorb.potpvp.PotPvPND
 import net.frozenorb.potpvp.kt.command.CommandCompat
 import net.frozenorb.potpvp.kt.command.CommandNode
 import net.frozenorb.potpvp.kt.command.data.argument.ArgumentProcessor
@@ -163,7 +163,7 @@ class ExtendedCommand(val node: CommandNode, private val plugin: JavaPlugin) :
                 }
 
                 val data: ParameterData = params[fixed]!!
-                val parameterType: ParameterType<*>? = PotPvPSI.getInstance().commandHandler.getParameterType(data.type)
+                val parameterType: ParameterType<*>? = PotPvPND.getInstance().commandHandler.getParameterType(data.type)
 
                 if (parameterType != null) {
                     if (currentIndex < realArgs.size && realArgs[currentIndex].equals(realNode.name, true)) {

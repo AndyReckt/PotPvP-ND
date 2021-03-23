@@ -2,7 +2,7 @@ package net.frozenorb.potpvp.nametag;
 
 import com.qrakn.morpheus.game.Game;
 import com.qrakn.morpheus.game.GameQueue;
-import net.frozenorb.potpvp.PotPvPSI;
+import net.frozenorb.potpvp.PotPvPND;
 import net.frozenorb.potpvp.follow.FollowHandler;
 import net.frozenorb.potpvp.kt.nametag.NametagInfo;
 import net.frozenorb.potpvp.kt.nametag.NametagProvider;
@@ -31,7 +31,7 @@ public final class PotPvPNametagProvider extends NametagProvider {
     }
 
     public static String getNameColor(Player toRefresh, Player refreshFor) {
-        MatchHandler handler = PotPvPSI.getInstance().getMatchHandler();
+        MatchHandler handler = PotPvPND.getInstance().getMatchHandler();
 
         if (PotPvPValidation.isInGame(toRefresh) && PotPvPValidation.isInGame(refreshFor)) {
             Game game = GameQueue.INSTANCE.getCurrentGame(toRefresh);
@@ -46,7 +46,7 @@ public final class PotPvPNametagProvider extends NametagProvider {
 
 
     private static String getNameColorMatch(Player toRefresh, Player refreshFor) {
-        MatchHandler matchHandler = PotPvPSI.getInstance().getMatchHandler();
+        MatchHandler matchHandler = PotPvPND.getInstance().getMatchHandler();
 
         Match toRefreshMatch = matchHandler.getMatchPlayingOrSpectating(toRefresh);
         MatchTeam toRefreshTeam = toRefreshMatch.getTeam(toRefresh.getUniqueId());
@@ -95,7 +95,7 @@ public final class PotPvPNametagProvider extends NametagProvider {
     }
 
     private static String getNameColorLobby(Player toRefresh, Player refreshFor) {
-        FollowHandler followHandler = PotPvPSI.getInstance().getFollowHandler();
+        FollowHandler followHandler = PotPvPND.getInstance().getFollowHandler();
 
         Optional<UUID> following = followHandler.getFollowing(refreshFor);
         boolean refreshForFollowingTarget = following.isPresent() && following.get().equals(toRefresh.getUniqueId());

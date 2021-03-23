@@ -9,7 +9,7 @@
  */
 package net.frozenorb.potpvp.kittype.command;
 
-import net.frozenorb.potpvp.PotPvPSI;
+import net.frozenorb.potpvp.PotPvPND;
 import net.frozenorb.potpvp.kittype.KitType;
 import net.frozenorb.potpvp.kt.command.Command;
 import net.frozenorb.potpvp.kt.command.data.parameter.Param;
@@ -26,13 +26,13 @@ public class KitCreateCommand {
             return;
         }
         KitType kitType=new KitType(id);
-        kitType.setDisplayName(id);
+        kitType.setName(id);
         kitType.setDisplayColor(ChatColor.AQUA);
         kitType.setIcon(new MaterialData(Material.DIAMOND_SWORD));
         kitType.setSort(50);
         kitType.saveAsync();
         KitType.getAllTypes().add(kitType);
-        PotPvPSI.getInstance().getQueueHandler().addQueues(kitType);
+        PotPvPND.getInstance().getQueueHandler().addQueues(kitType);
         player.sendMessage(ChatColor.GREEN + "You've created a new kit-type by the ID \"" + kitType.getId() + "\".");
     }
 }

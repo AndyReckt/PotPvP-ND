@@ -1,6 +1,5 @@
 package com.qrakn.morpheus
 
-import com.qrakn.morpheus.game.Game
 import com.qrakn.morpheus.game.GameQueue
 import org.bukkit.plugin.java.JavaPlugin
 

@@ -1,6 +1,6 @@
 package net.frozenorb.potpvp.arena.command;
 
-import net.frozenorb.potpvp.PotPvPSI;
+import net.frozenorb.potpvp.PotPvPND;
 import net.frozenorb.potpvp.arena.Arena;
 import net.frozenorb.potpvp.arena.ArenaHandler;
 import net.frozenorb.potpvp.arena.ArenaSchematic;
@@ -13,7 +13,7 @@ public final class ArenaScaleCommand {
 
     @Command(names = {"arena scale"}, permission = "op")
     public static void arenaScale(Player sender, @Param(name = "schematic") String schematicName, @Param(name = "count") int count) {
-        ArenaHandler arenaHandler = PotPvPSI.getInstance().getArenaHandler();
+        ArenaHandler arenaHandler = PotPvPND.getInstance().getArenaHandler();
         ArenaSchematic schematic = arenaHandler.getSchematic(schematicName);
 
         if (schematic == null) {
@@ -31,8 +31,8 @@ public final class ArenaScaleCommand {
 
     @Command(names = "arena rescaleall", permission = "op")
     public static void arenaRescaleAll(Player sender) {
-        PotPvPSI.getInstance().getArenaHandler().getSchematics().forEach(schematic -> {
-            ArenaHandler arenaHandler = PotPvPSI.getInstance().getArenaHandler();
+        PotPvPND.getInstance().getArenaHandler().getSchematics().forEach(schematic -> {
+            ArenaHandler arenaHandler = PotPvPND.getInstance().getArenaHandler();
             int totalCopies = 0;
             int inUseCopies = 0;
 

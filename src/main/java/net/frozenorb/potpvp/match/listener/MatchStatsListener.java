@@ -1,6 +1,6 @@
 package net.frozenorb.potpvp.match.listener;
 
-import net.frozenorb.potpvp.PotPvPSI;
+import net.frozenorb.potpvp.PotPvPND;
 import net.frozenorb.potpvp.match.Match;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
@@ -26,7 +26,7 @@ public class MatchStatsListener implements Listener {
         Player damager = (Player) event.getDamager();
         Player damaged = (Player) event.getEntity();
 
-        Match damagerMatch = PotPvPSI.getInstance().getMatchHandler().getMatchPlaying(damager);
+        Match damagerMatch = PotPvPND.getInstance().getMatchHandler().getMatchPlaying(damager);
         if (damagerMatch == null) return;
 
         Map<UUID, UUID> lastHitMap = damagerMatch.getLastHit();
@@ -62,7 +62,7 @@ public class MatchStatsListener implements Listener {
         if (!(projectileSource instanceof Player)) return;
 
         Player player = (Player) projectileSource;
-        Match match = PotPvPSI.getInstance().getMatchHandler().getMatchPlaying(player);
+        Match match = PotPvPND.getInstance().getMatchHandler().getMatchPlaying(player);
 
         if (match == null) return;
         match.getMissedPots().put(player.getUniqueId(), match.getMissedPots().getOrDefault(player.getUniqueId(), 0) + 1);
@@ -78,7 +78,7 @@ public class MatchStatsListener implements Listener {
         if (!(projectileSource instanceof Player)) return;
 
         Player player = (Player) projectileSource;
-        Match match = PotPvPSI.getInstance().getMatchHandler().getMatchPlaying(player);
+        Match match = PotPvPND.getInstance().getMatchHandler().getMatchPlaying(player);
 
         if (match == null) return;
 
@@ -96,9 +96,9 @@ public class MatchStatsListener implements Listener {
         Match match = event.getMatch();
         match.getTeams().forEach(team -> {
             if (match.getWinner() == team) {
-                team.getAllMembers().forEach(PotPvPSI.getInstance().getWinsMap()::incrementWins);
+                team.getAllMembers().forEach(PotPvPND.getInstance().getWinsMap()::incrementWins);
             } else {
-                team.getAllMembers().forEach(PotPvPSI.getInstance().getLossMap()::incrementLosses);
+                team.getAllMembers().forEach(PotPvPND.getInstance().getLossMap()::incrementLosses);
             }
         });
     }

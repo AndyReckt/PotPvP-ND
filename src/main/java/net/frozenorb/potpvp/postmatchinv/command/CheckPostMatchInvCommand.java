@@ -1,6 +1,6 @@
 package net.frozenorb.potpvp.postmatchinv.command;
 
-import net.frozenorb.potpvp.PotPvPSI;
+import net.frozenorb.potpvp.PotPvPND;
 import net.frozenorb.potpvp.kt.command.Command;
 import net.frozenorb.potpvp.kt.command.data.parameter.Param;
 import net.frozenorb.potpvp.postmatchinv.PostMatchInvHandler;
@@ -16,13 +16,13 @@ public final class CheckPostMatchInvCommand {
 
     @Command(names = {"checkPostMatchInv", "_"}, permission = "")
     public static void checkPostMatchInv(Player sender, @Param(name = "target") UUID target) {
-        PostMatchInvHandler postMatchInvHandler = PotPvPSI.getInstance().getPostMatchInvHandler();
+        PostMatchInvHandler postMatchInvHandler = PotPvPND.getInstance().getPostMatchInvHandler();
         Map<UUID, PostMatchPlayer> players = postMatchInvHandler.getPostMatchData(sender.getUniqueId());
 
         if (players.containsKey(target)) {
             new PostMatchMenu(players.get(target)).openMenu(sender);
         } else {
-            sender.sendMessage(ChatColor.RED + "Data for " + PotPvPSI.getInstance().getUuidCache().name(target) + " not found.");
+            sender.sendMessage(ChatColor.RED + "Data for " + PotPvPND.getInstance().getUuidCache().name(target) + " not found.");
         }
     }
 

@@ -1,6 +1,6 @@
 package net.frozenorb.potpvp.kt.visibility
 
-import net.frozenorb.potpvp.PotPvPSI
+import net.frozenorb.potpvp.PotPvPND
 import org.bukkit.Bukkit
 import org.bukkit.ChatColor
 import org.bukkit.entity.Player
@@ -12,7 +12,7 @@ class VisibilityEngine {
     private val overrideHandlers = LinkedHashMap<String, OverrideHandler>()
 
     fun load() {
-        PotPvPSI.getInstance().server.pluginManager.registerEvents(VisibilityListener(), PotPvPSI.getInstance())
+        PotPvPND.getInstance().server.pluginManager.registerEvents(VisibilityListener(), PotPvPND.getInstance())
     }
 
     fun registerHandler(identifier: String, handler: VisibilityHandler) {

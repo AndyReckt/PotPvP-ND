@@ -2,7 +2,7 @@ package net.frozenorb.potpvp.lobby;
 
 import com.qrakn.morpheus.game.Game;
 import com.qrakn.morpheus.game.GameQueue;
-import net.frozenorb.potpvp.PotPvPSI;
+import net.frozenorb.potpvp.PotPvPND;
 import net.frozenorb.potpvp.follow.FollowHandler;
 import net.frozenorb.potpvp.follow.command.UnfollowCommand;
 import net.frozenorb.potpvp.kit.listener.KitEditorListener;
@@ -32,10 +32,10 @@ public final class LobbyHandler {
     private final Map<UUID, Long> returnedToLobby = new HashMap<>();
 
     public LobbyHandler() {
-        Bukkit.getPluginManager().registerEvents(new LobbyGeneralListener(this), PotPvPSI.getInstance());
-        Bukkit.getPluginManager().registerEvents(new LobbyItemListener(this), PotPvPSI.getInstance());
-        Bukkit.getPluginManager().registerEvents(new LobbySpecModeListener(), PotPvPSI.getInstance());
-        Bukkit.getPluginManager().registerEvents(new LobbyParkourListener(), PotPvPSI.getInstance());
+        Bukkit.getPluginManager().registerEvents(new LobbyGeneralListener(this), PotPvPND.getInstance());
+        Bukkit.getPluginManager().registerEvents(new LobbyItemListener(this), PotPvPND.getInstance());
+        Bukkit.getPluginManager().registerEvents(new LobbySpecModeListener(), PotPvPND.getInstance());
+        Bukkit.getPluginManager().registerEvents(new LobbyParkourListener(), PotPvPND.getInstance());
     }
 
     /**
@@ -56,8 +56,8 @@ public final class LobbyHandler {
     private void returnToLobbySkipItemSlot(Player player) {
         player.teleport(getLobbyLocation());
 
-        PotPvPSI.getInstance().nametagEngine.reloadPlayer(player);
-        PotPvPSI.getInstance().nametagEngine.reloadOthersFor(player);
+        PotPvPND.getInstance().nametagEngine.reloadPlayer(player);
+        PotPvPND.getInstance().nametagEngine.reloadOthersFor(player);
 
         VisibilityUtils.updateVisibility(player);
         PatchedPlayerUtils.resetInventory(player, GameMode.SURVIVAL, true);
@@ -76,7 +76,7 @@ public final class LobbyHandler {
         Game game = GameQueue.INSTANCE.getCurrentGame(player);
         boolean isInGame = game != null && game.getPlayers().contains(player);
 
-        boolean isInMatch = PotPvPSI.getInstance().getMatchHandler().isPlayingOrSpectatingMatch(player);
+        boolean isInMatch = PotPvPND.getInstance().getMatchHandler().isPlayingOrSpectatingMatch(player);
 
         boolean isEditingKit = KitEditorListener.isEditingKit(player);
 
@@ -93,7 +93,7 @@ public final class LobbyHandler {
         if (mode) {
             changed = spectatorMode.add(player.getUniqueId());
         } else {
-            FollowHandler followHandler = PotPvPSI.getInstance().getFollowHandler();
+            FollowHandler followHandler = PotPvPND.getInstance().getFollowHandler();
             followHandler.getFollowing(player).ifPresent(i -> UnfollowCommand.unfollow(player));
 
             changed = spectatorMode.remove(player.getUniqueId());

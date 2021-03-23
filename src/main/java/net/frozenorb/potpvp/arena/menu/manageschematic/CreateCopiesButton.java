@@ -2,7 +2,7 @@ package net.frozenorb.potpvp.arena.menu.manageschematic;
 
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
-import net.frozenorb.potpvp.PotPvPSI;
+import net.frozenorb.potpvp.PotPvPND;
 import net.frozenorb.potpvp.arena.ArenaHandler;
 import net.frozenorb.potpvp.arena.ArenaSchematic;
 import net.frozenorb.potpvp.kt.menu.Button;
@@ -46,7 +46,7 @@ final class CreateCopiesButton extends Button {
 
     @Override
     public void clicked(Player player, int slot, ClickType clickType, InventoryView view) {
-        ArenaHandler arenaHandler = PotPvPSI.getInstance().getArenaHandler();
+        ArenaHandler arenaHandler = PotPvPND.getInstance().getArenaHandler();
         int existing = arenaHandler.countArenas(schematic);
         int create = clickType.isShiftClick() ? 10 : 1;
         int desired = existing + create;

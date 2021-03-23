@@ -10,18 +10,19 @@ import net.md_5.bungee.api.chat.TextComponent;
 import org.bukkit.entity.Player;
 
 import java.util.LinkedList;
+import java.util.Objects;
 
 public class EventsCommand {
     @Command(names = {"events", "games", "queue"}, permission = "")
     public static void showEvents(Player sender) {
         LinkedList<TextComponent> messages = new LinkedList<>();
 
-        if (GameQueue.INSTANCE.getCurrentGame() != null) {
+        if (GameQueue.INSTANCE.getCurrentGame(sender) != null) {
             TextComponent runningGameMessage = new TextComponent("Running game:");
             runningGameMessage.setColor(ChatColor.GREEN);
 
             messages.add(runningGameMessage);
-            messages.add(gameToTextComponent(GameQueue.INSTANCE.getCurrentGame(), true));
+            messages.add(gameToTextComponent(Objects.requireNonNull(GameQueue.INSTANCE.getCurrentGame(sender)), true));
         }
 
         if (GameQueue.INSTANCE.size() > 0) {
